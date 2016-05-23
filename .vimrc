@@ -4,9 +4,10 @@ set expandtab           " Use spaces for tabs
 set softtabstop=4       " 4-spaces tab
 set shiftwidth=4        " An indent gives 4 spaces
 set modelines=1
+set autoindent          " Self-explanatory
+set smartindent
 filetype indent on
 filetype plugin on
-set autoindent
 
 " User Interface "
 set number              " Show line numbers
@@ -14,6 +15,7 @@ set showcmd             " Show command in bottom bar
 set nocursorline        " Highlight current line
 set wildmenu            " Autocomplete-assist menu
 set showmatch           " Highlight matching parenthesis
+set ruler               " Show row & column number at bottom-right
 colorscheme desert      " Preferred color scheme
 syntax enable           " Syntax highlighting
 
@@ -24,6 +26,7 @@ set hlsearch            " Highlight matches
 
 " Backup "
 set nobackup
+set noswapfile
 
 " Here be dragons... "
 set ttyfast
