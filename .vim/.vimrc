@@ -1,9 +1,15 @@
+" Disable backward compatibility to vi
+set nocompatible
+
+" Run pathogen
+execute pathogen#infect()
+
 " Spaces & Tabs "
 set tabstop=4           " 4-spaces tab
 set expandtab           " Use spaces for tabs
 set softtabstop=4       " 4-spaces tab
 set shiftwidth=4        " An indent gives 4 spaces
-set modelines=1
+set modelines=1         " ???
 set autoindent          " Self-explanatory
 set smartindent
 filetype indent on
@@ -16,7 +22,8 @@ set nocursorline        " Highlight current line
 set wildmenu            " Autocomplete-assist menu
 set showmatch           " Highlight matching parenthesis
 set ruler               " Show row & column number at bottom-right
-colorscheme desert      " Preferred color scheme
+set background=dark
+colorscheme molokai     " Preferred color scheme
 syntax enable           " Syntax highlighting
 
 " Searching "
@@ -29,5 +36,8 @@ set nobackup
 set noswapfile
 
 " Here be dragons... "
-set ttyfast
-set backspace=indent,eol,start          " What?
+set ttyfast                     " ???
+set backspace=indent,eol,start  " ???
+
+" Configure Molokai colorscheme
+let g:rehash256 = 1
