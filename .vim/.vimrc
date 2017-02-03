@@ -22,7 +22,8 @@ set nocursorline        " Highlight current line
 set wildmenu            " Autocomplete-assist menu
 set showmatch           " Highlight matching parenthesis
 set ruler               " Show row & column number at bottom-right
-colorscheme desert      " Preferred color scheme
+set background=dark
+colorscheme molokai     " Preferred color scheme
 syntax enable           " Syntax highlighting
 
 " Searching "
@@ -37,3 +38,6 @@ set noswapfile
 " Here be dragons... "
 set ttyfast                     " ???
 set backspace=indent,eol,start  " ???
+
+" Configure Molokai colorscheme
+let g:rehash256 = 1
