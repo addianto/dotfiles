@@ -41,3 +41,6 @@ set backspace=indent,eol,start  " ???
 
 " Configure Molokai colorscheme
 let g:rehash256 = 1
+
+" Configure riv.vim plugin
+let g:riv_fold_auto_update = 0
