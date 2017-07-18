@@ -15,7 +15,7 @@ if exists('*minpac#init')
     call minpac#add('ctrlpvim/ctrlp.vim')
     call minpac#add('itchyny/lightline.vim')
     call minpac#add('janko-m/vim-test')
-    call minpac#add('klen/python-mode')
+    " call minpac#add('klen/python-mode')
     call minpac#add('nathanaelkane/vim-indent-guides')
     call minpac#add('othree/html5.vim')
     call minpac#add('scrooloose/nerdtree')
@@ -75,6 +75,10 @@ set backspace=indent,eol,start  " ???
 let g:pymode_python = 'python3'
 let g:lightline = {
     \ 'colorscheme': 'solarized',
+    \ }
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll)$',
     \ }
 
 " Custom user commands
