@@ -1,0 +1,2 @@
+# Ignore Git plugins managed by `minpac`
+.vim/pack
