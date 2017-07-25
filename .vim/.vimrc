@@ -20,11 +20,13 @@ if exists('*minpac#init')
     call minpac#add('othree/html5.vim')
     call minpac#add('scrooloose/nerdtree')
     call minpac#add('sheerun/vim-polyglot')
+    call minpac#add('skywind3000/asyncrun.vim')
+    call minpac#add('tpope/vim-surround')
+    call minpac#add('tpope/vim-fugitive')
 
     " Colors
     call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
     call minpac#add('tomasr/molokai', {'type': 'opt'})
-
 endif
 
 " Spaces & tabs "
@@ -80,7 +82,14 @@ let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/]\.(git|hg|svn)$',
     \ 'file': '\v\.(exe|so|dll)$',
     \ }
+let test#strategy = 'asyncrun'
 
 " Custom user commands
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
 command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+augroup vimrc
+    autocmd QuickFixCmdPost * call asyncrun#quickfix_toggle(8, 1)
+augroup END
+
+" Custom keymaps
+noremap <F9> :call asyncrun#quickfix_toggle(8)<cr>
