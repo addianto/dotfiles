@@ -12,12 +12,14 @@ if exists('*minpac#init')
 
     " Plugins
     call minpac#add('ap/vim-css-color')
+    call minpac#add('editorconfig/editorconfig-vim')
     call minpac#add('ctrlpvim/ctrlp.vim')
     call minpac#add('itchyny/lightline.vim')
     call minpac#add('janko-m/vim-test')
-    " call minpac#add('klen/python-mode')
+    call minpac#add('mxw/vim-jsx')
     call minpac#add('nathanaelkane/vim-indent-guides')
     call minpac#add('othree/html5.vim')
+    call minpac#add('pangloss/vim-javascript')
     call minpac#add('scrooloose/nerdtree')
     call minpac#add('sheerun/vim-polyglot')
     call minpac#add('skywind3000/asyncrun.vim')
@@ -74,7 +76,6 @@ set ttyfast                     " ???
 set backspace=indent,eol,start  " ???
 "
 " Plugins configuration
-let g:pymode_python = 'python3'
 let g:lightline = {
     \ 'colorscheme': 'solarized',
     \ }
@@ -83,6 +84,10 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(exe|so|dll)$',
     \ }
 let test#strategy = 'asyncrun'
+
+" vim-javascript & vim-jsx configs
+let g:javascript_plugin_jsdoc = 1
+let g:jsx_ext_required = 0
 
 " Custom user commands
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
