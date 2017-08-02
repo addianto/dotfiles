@@ -25,6 +25,7 @@ if exists('*minpac#init')
     call minpac#add('skywind3000/asyncrun.vim')
     call minpac#add('tpope/vim-surround')
     call minpac#add('tpope/vim-fugitive')
+    call minpac#add('w0rp/ale')
 
     " Colors
     call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
@@ -74,7 +75,8 @@ set noswapfile
 " Here be dragons... "
 set ttyfast                     " ???
 set backspace=indent,eol,start  " ???
-"
+set encoding=utf8
+
 " Plugins configuration
 let g:lightline = {
     \ 'colorscheme': 'solarized',
@@ -89,9 +91,18 @@ let test#strategy = 'asyncrun'
 let g:javascript_plugin_jsdoc = 1
 let g:jsx_ext_required = 0
 
+" ale
+let g:ale_sign_column_always = 1
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_linters = {'javascript': ['prettier']}
+let g:ale_fixers = {'javascript': ['prettier']}
+
 " Custom user commands
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
 command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+command! ColorLight colorscheme solarized8_light
+command! ColorDark colorscheme solarized8_dark
+
 augroup vimrc
     autocmd QuickFixCmdPost * call asyncrun#quickfix_toggle(8, 1)
 augroup END
