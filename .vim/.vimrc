@@ -7,6 +7,7 @@ endif
 
 " Add plugins
 if exists('*minpac#init')
+    set packpath^=~/.config/nvim
     call minpac#init()
     call minpac#add('k-takata/minpac', {'type': 'opt'})
 
@@ -52,18 +53,9 @@ set ruler                   " Show row & column number at bottom-right
 set modelines=1
 set laststatus=2
 set noshowmode
-set background=dark
-colorscheme desert          " Preferred color scheme
 syntax enable               " Syntax highlighting
-
-if has('gui_running')
-    set guioptions-=T   " No toolbar
-    if has('gui_win32')
-        set guifont=Consolas:h11
-        set background=dark
-        colorscheme solarized8_dark
-    endif
-endif
+colorscheme industry        " Preferred color scheme
+set background=dark
 
 " Searching "
 set ignorecase          " Ignore case when searching
@@ -87,7 +79,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 " lightline
 let g:lightline = {
-    \ 'colorscheme': 'solarized',
+    \ 'colorscheme': 'industry',
     \ }
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/]\.(git|hg|svn)$',
@@ -108,8 +100,6 @@ let g:ale_fixers = {'javascript': ['prettier']}
 " Custom user commands
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
 command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
-command! ColorLight set background=light | colorscheme solarized8_light
-command! ColorDark set background=dark | colorscheme solarized8_dark
 
 augroup vimrc
     autocmd QuickFixCmdPost * call asyncrun#quickfix_toggle(8, 1)
