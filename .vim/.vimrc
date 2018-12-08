@@ -26,6 +26,7 @@ if exists('*minpac#init')
     call minpac#add('tpope/vim-surround')
     call minpac#add('tpope/vim-fugitive')
     call minpac#add('w0rp/ale')
+    call minpac#add('davidhalter/jedi-vim')
 
     " Colors
     call minpac#add('lifepillar/vim-solarized8', {'type': 'opt'})
