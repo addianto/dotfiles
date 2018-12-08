@@ -113,8 +113,19 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " ale
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 'normal'
-let g:ale_linters = {'javascript': ['prettier']}
-let g:ale_fixers = {'javascript': ['prettier']}
+let g:ale_completion_enabled = 1
+let g:ale_linters = {
+    \ 'sh': ['language_server'],
+    \ 'css': ['stylelint'],
+    \ 'dockerfile': ['dockerfile_lint'],
+    \ 'html': ['htmlhint', 'proselint'],
+    \ 'python': ['flake8', 'mypy', 'pycodestyle', 'pylint'],
+    \ 'yaml': ['yamllint'],
+    \ }
+let g:ale_fixers = {
+    \ 'python': ['autopep8', 'isort'],
+    \ }
+let g:ale_python_auto_pipenv = 1
 
 " Custom user commands
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
@@ -127,3 +138,7 @@ augroup END
 " Custom keymaps
 noremap <F9> :call asyncrun#quickfix_toggle(8)<CR>
 map <C-n> :NERDTreeToggle<CR>
+
+" Load all plugins
+packloadall
+silent! helptags ALL
