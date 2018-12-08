@@ -94,11 +94,12 @@ let g:lightline = {
     \ },
     \ }
 
+" vim-test
+let test#strategy = 'asyncrun'
+
 " vim-indent
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-
-let test#strategy = 'asyncrun'
 
 " vim-javascript & vim-jsx configs
 let g:javascript_plugin_jsdoc = 1
