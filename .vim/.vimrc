@@ -17,10 +17,10 @@ if exists('*minpac#init')
     call minpac#add('ctrlpvim/ctrlp.vim')
     call minpac#add('itchyny/lightline.vim')
     call minpac#add('janko-m/vim-test')
+    call minpac#add('pangloss/vim-javascript')
     call minpac#add('mxw/vim-jsx')
     call minpac#add('nathanaelkane/vim-indent-guides')
     call minpac#add('othree/html5.vim')
-    call minpac#add('pangloss/vim-javascript')
     call minpac#add('scrooloose/nerdtree')
     call minpac#add('sheerun/vim-polyglot')
     call minpac#add('skywind3000/asyncrun.vim')
@@ -101,8 +101,9 @@ let test#strategy = 'asyncrun'
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
-" vim-javascript & vim-jsx configs
+" vim-javascript & vim-jsx
 let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
 " ale
