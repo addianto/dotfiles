@@ -1,20 +1,20 @@
-:: Name     : setup.cmd
-:: Purpose  : Windows-specific environment initialisation script
-:: Author   : See Git's logs
+rem Name     : setup.cmd
+rem Purpose  : Windows-specific environment initialisation script
+rem Author   : See Git's logs
 
-:: Pre-initialisation
-@ECHO OFF
-SETLOCAL
-SET home=%USERPROFILE%
-SET dotfiles=%~dp0
+rem Pre-initialisation
+@echo OFF
+setlocal
+set home=%USERPROFILE%
+set dotfiles=%~dp0
 
-:: MKLINK invocations are restricted to Administrator-level user
-:: Therefore, these commands might only works when you run this
-:: script as an Administrator
-MKLINK /D "%home%\vimfiles" "%dotfiles%\.vim"
-MKLINK "%home%\.vimrc" "%home%\vimfiles\.vimrc"
+rem MKLINK invocations are restricted to Administrator-level user
+rem Therefore, these commands might only works when you run this
+rem script as an Administrator
+mklink /D "%home%\vimfiles" "%dotfiles%\.vim"
+mklink "%home%\.vimrc" "%home%\vimfiles\.vimrc"
 
-:: Post-initialisation
-ENDLOCAL
-ECHO ON
-@EXIT /B 0
+rem Post-initialisation
+endlocal
+echo ON
+@exit /B 0
