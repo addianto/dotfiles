@@ -76,18 +76,28 @@ set encoding=utf8
 " editorconfig-vim
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
-" vim-indent
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-
-" lightline
-let g:lightline = {
-    \ 'colorscheme': 'industry',
-    \ }
+" ctrlp
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/]\.(git|hg|svn)$',
     \ 'file': '\v\.(exe|so|dll)$',
     \ }
+
+" lightline
+let g:lightline = {
+    \ 'colorscheme': 'material',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitive#head'
+    \ },
+    \ }
+
+" vim-indent
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+
 let test#strategy = 'asyncrun'
 
 " vim-javascript & vim-jsx configs
