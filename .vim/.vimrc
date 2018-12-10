@@ -106,11 +106,6 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
-" nerdtree
-" Open NERDTree automatically when Vim opening no files
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " ale
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 'normal'
