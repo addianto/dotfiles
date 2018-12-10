@@ -134,6 +134,10 @@ augroup END
 " Custom keymaps
 noremap <F9> :call asyncrun#quickfix_toggle(8)<CR>
 map <C-n> :NERDTreeToggle<CR>
+map <silent> <A-Left> :wincmd h<CR>
+map <silent> <A-Right> :wincmd l<CR>
+map <silent> <A-Up> :wincmd k<CR>
+map <silent> <A-Down> :wincmd j<CR>
 
 " Load all plugins
 packloadall
