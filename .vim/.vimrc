@@ -1,4 +1,4 @@
-" Setup plugins (instructions from: https://github.com/k-takata/minpac)
+﻿" Setup plugins (instructions from: https://github.com/k-takata/minpac)
 
 " Disable backward compatibility to vi
 if &compatible
@@ -87,7 +87,10 @@ let g:lightline = {
     \ 'colorscheme': 'material',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'smile' ] ],
+    \ },
+    \ 'component': {
+    \   'smile': '▒(>_<)▒'
     \ },
     \ 'component_function': {
     \   'gitbranch': 'fugitive#head'
