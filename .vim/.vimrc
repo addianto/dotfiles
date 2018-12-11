@@ -5,9 +5,11 @@ if &compatible
     set nocompatible
 endif
 
+" Set the path where the packages are located
+set packpath^=~/.config/nvim
+
 " Add plugins
 if exists('*minpac#init')
-    set packpath^=~/.config/nvim
     call minpac#init()
     call minpac#add('k-takata/minpac', {'type': 'opt'})
 
