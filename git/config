@@ -1,0 +1,6 @@
+[core]
+    editor = vi
+[color]
+    ui = auto
+[blame]
+    coloring = highlightRecent
