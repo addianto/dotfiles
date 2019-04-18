@@ -22,22 +22,22 @@ Plug 'w0rp/ale'
 call plug#end()
 
 " Configure indentation
-set expandtab		" Use spaces instead of tabs
-set tabstop=4		" 4-spaces tab
-set shiftwidth=4	" 4-spaces tab
+set expandtab       " Use spaces instead of tabs
+set tabstop=4       " 4-spaces tab
+set shiftwidth=4    " 4-spaces tab
 set autoindent
 set smartindent
 filetype indent on
 filetype plugin on
 
 " Configure UI
-set number		" Show line numbers in the gutter
-set showcmd		" Show command in the bottom bar
-set ruler		" Show position
-set showmatch	" Highlight matching parenthesis
-set wildmenu    " Enable auto-completion menu
+set number          " Show line numbers in the gutter
+set showcmd         " Show command in the bottom bar
+set ruler           " Show position
+set showmatch       " Highlight matching parenthesis
+set wildmenu        " Enable auto-completion menu
 set wildmode=longest:full,full
-set noshowmode  " Do not show mode information (done by lightline)
+set noshowmode      " Do not show mode information (done by lightline)
 syntax enable
 colorscheme iceberg
 
