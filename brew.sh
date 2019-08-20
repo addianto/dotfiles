@@ -59,8 +59,22 @@ brew install tree
 brew install xz
 
 # Install preferred, personal utilities
+brew install htop
 brew install nvim
+brew install python
+
+# Install `nvm` (Node.js version manager)
 brew install nvm
 
-# Remove outdated versions from the cellar
-brew cleanup
+# Initialise brew cask
+brew cask
+
+# Install applications
+brew cask install brave-browser
+brew cask install firefox
+brew cask install tunnelblick
+brew cask install visual-studio-code
+
+# Install OpenJDK latest LTS from AdoptOpenJDK
+brew tap AdoptOpenJDK/openjdk
+brew cask install adoptopenjdk11
