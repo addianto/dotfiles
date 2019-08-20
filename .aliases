@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+# Collection of Bash command aliases
+# Taken from: https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+
+# Shortcuts
+alias g="git"
 
 # Detect which `ls` flavour is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -18,9 +23,23 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# Canonical hex dump; some systems have this symlinked
+command -v hd > /dev/null || alias hd="hexdump -C"
+
+# macOS has no `md5sum`, so use `md5` as a fallback
+command -v md5sum > /dev/null || alias md5sum="md5"
+
+# macOS has no `sha1sum`, so use `shasum` as a fallback
+command -v sha1sum > /dev/null | alias sha1sum="shasum"
+
+# Get macOS Software Updates, and update packages installed by Homebrew
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade;'
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
-alias path="echo -e ${PATH//:/\\n}"
-
+alias path='echo -e ${PATH//:/\\n}'
