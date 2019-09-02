@@ -68,10 +68,12 @@ brew install nvm
 
 # Initialise brew cask
 brew cask
+brew tap homebrew/cask-versions
 
 # Install applications
 brew cask install brave-browser
 brew cask install firefox-developer-edition
+brew cask install iterm2
 brew cask install tunnelblick
 brew cask install visual-studio-code
 
