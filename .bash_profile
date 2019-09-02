@@ -15,7 +15,7 @@ shopt -s nocaseglob;
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend;
 
-# Autocorreft typos in path names when using `cd`
+# Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
 
 # Enable some Bash 4 features when possible:
