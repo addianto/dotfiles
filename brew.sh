@@ -59,6 +59,7 @@ brew install tree
 brew install xz
 
 # Install preferred, personal utilities
+brew install editorconfig
 brew install htop
 brew install nvim
 brew install python
