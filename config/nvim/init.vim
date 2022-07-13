@@ -11,6 +11,7 @@ Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ap/vim-css-color'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
