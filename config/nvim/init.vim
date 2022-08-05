@@ -10,6 +10,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
@@ -59,3 +60,6 @@ let g:lightline = {
 "" ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+"" ale
+"" https://github.com/dense-analysis/ale#5xvi-will-this-plugin-eat-all-of-my-laptop-battery-power
