@@ -1,0 +1,15 @@
+[core]
+    autocrlf = input
+    editor = nvim
+[color]
+    ui = auto
+[init]
+    defaultBranch = main
+[commit]
+    gpgSign = true
+[gpg]
+    format = openpgp
+[push]
+    default = nothing
+[user]
+    useConfigOnly = true
