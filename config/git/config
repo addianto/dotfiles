@@ -13,3 +13,7 @@
     default = nothing
 [user]
     useConfigOnly = true
+[diff]
+    tool = nvimdiff
+[merge]
+    tool = nvimdiff

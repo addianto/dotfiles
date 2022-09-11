@@ -13,6 +13,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'tiagovla/tokyodark.nvim'
 call plug#end()
 
 " Filetype detection "
@@ -38,7 +39,13 @@ set number
 set wildmenu
 set laststatus=2
 set noshowmode      " Let lightline plugin to display mode information instead
-colorscheme nord
+
+" tokyodark.nvim configuration
+let g:tokyodark_transparent_background = 1
+let g:tokyodark_enable_italic_comment = 1
+let g:tokyodark_enable_italic = 1
+
+colorscheme tokyodark
 
 " Text editing experience "
 set backspace=indent,eol,start
@@ -53,8 +60,9 @@ set incsearch
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 "" lightline
+"" See available colorschemes here: https://github.com/itchyny/lightline.vim
 let g:lightline = {
-    \ 'colorscheme': 'nord',
+    \ 'colorscheme': 'one',
     \ }
 
 "" ctrlp.vim
@@ -62,4 +70,5 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 "" ale
-"" https://github.com/dense-analysis/ale#5xvi-will-this-plugin-eat-all-of-my-laptop-battery-power
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
