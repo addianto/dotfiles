@@ -14,6 +14,7 @@ Plug 'dense-analysis/ale'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ap/vim-css-color'
 Plug 'arcticicestudio/nord-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " Filetype detection "
