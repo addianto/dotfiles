@@ -46,8 +46,7 @@ set noshowmode      " Let lightline plugin to display mode information instead
 let g:tokyodark_transparent_background = 1
 let g:tokyodark_enable_italic_comment = 1
 let g:tokyodark_enable_italic = 1
-
-colorscheme tokyodark
+colorscheme tokyodark   " Require neovim 0.7+
 
 " Text editing experience "
 set backspace=indent,eol,start
