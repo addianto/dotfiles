@@ -25,6 +25,8 @@ set wildmenu
 set laststatus=2
 set noshowmode      " Let lightline plugin to display mode information instead
 
+colorscheme evening
+
 " Text editing experience "
 set backspace=indent,eol,start
 set encoding=utf-8
