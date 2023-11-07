@@ -1,27 +1,13 @@
 return {
-    {
-        "neovim/nvim-lspconfig",
-    },
-    {
-        "mfussenegger/nvim-lint",
-        config = function()
-            require("lint").linters_by_ft = {
-                dockerfile = { "hadolint", },
-                markdown = { "vale", },
-            }
-            vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost" }, {
-                callback = function()
-                    require("lint").try_lint()
-                end,
-            })
-        end
-    },
+    "neovim/nvim-lspconfig",
     {
         "akinsho/flutter-tools.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "stevearc/dressing.nvim",
         },
+        ft = "dart",
+        cond = not vim.g.vscode,
         config = function()
             require("flutter-tools").setup({
                 lsp = {
@@ -31,7 +17,5 @@ return {
                 },
             })
         end,
-        lazy = true,
-        ft = "dart",
     }
 }

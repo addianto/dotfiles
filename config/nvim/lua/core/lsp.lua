@@ -1,11 +1,22 @@
 -- Based on https://github.com/neovim/nvim-lspconfig
 local lspconfig = require("lspconfig")
 
+-- Enable language servers
+lspconfig.ansiblels.setup {}
+lspconfig.docker_compose_language_service.setup {
+    root_dir = lspconfig.util.root_pattern("docker-compose.yml", "docker-compose.yaml", "compose.yml", "compose.yaml")
+}
+lspconfig.dockerls.setup {}
+lspconfig.yamlls.setup {}
+
+-- Configure LSP
+local keys = require("helpers.keys")
+
 -- TODO: Refactor to use `lsp_map` helper function?
-vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+keys.map("n", "<space>e", vim.diagnostic.open_float)
+keys.map("n", "[d", vim.diagnostic.goto_prev)
+keys.map("n", "]d", vim.diagnostic.goto_next)
+keys.map("n", "<space>q", vim.diagnostic.setloclist)
 
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
