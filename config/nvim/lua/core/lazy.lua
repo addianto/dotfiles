@@ -22,7 +22,13 @@ end
 require("helpers.keys").set_leader("\\") -- Use '\' as the leader key
 
 -- Load plugins from specifications
-lazy.setup("plugins")
+lazy.setup("plugins", {
+    -- Disable notification raised due to change detection
+    -- (https://github.com/folke/lazy.nvim/issues/32#issuecomment-1443733721)
+    change_detection = {
+        notify = false,
+    },
+})
 
 -- Might as well set up an easy-access keybinding
 require("helpers.keys").map("n", "<leader>L", lazy.show, "Show Lazy")
