@@ -1,21 +1,16 @@
 return {
-    "neovim/nvim-lspconfig",
     {
-        "akinsho/flutter-tools.nvim",
+        "neovim/nvim-lspconfig",
         dependencies = {
-            "nvim-lua/plenary.nvim",
-            "stevearc/dressing.nvim",
+            {
+                "j-hui/fidget.nvim",
+                tag = "v1.2.0",
+                event = "LspAttach",
+            },
         },
-        ft = "dart",
-        cond = not vim.g.vscode,
         config = function()
-            require("flutter-tools").setup({
-                lsp = {
-                    color = {
-                        enabled = true,
-                    },
-                },
-            })
+            -- Turn on LSP status information
+            require("fidget").setup()
         end,
-    }
+    },
 }
