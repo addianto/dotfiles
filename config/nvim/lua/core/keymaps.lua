@@ -23,10 +23,10 @@ map("n", "<S-Up>", "<C-w><S-k>", "Move window up")
 map("n", "<S-Right>", "<C-w><S-l>", "Move window to the right")
 
 -- Resize with arrows
-map("n", "<C-Up">, ":resize +2<CR>")
-map("n", "<C-Down">, ":resize -2<CR>")
-map("n", "<C-Left">, ":vertical resize -2<CR>")
-map("n", "<C-Right">, ":vertical resize -2<CR>")
+map("n", "<C-Up>", ":resize +2<CR>")
+map("n", "<C-Down>", ":resize -2<CR>")
+map("n", "<C-Left>", ":vertical resize -2<CR>")
+map("n", "<C-Right>", ":vertical resize -2<CR>")
 
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<CR>")
@@ -43,7 +43,7 @@ map("n", "<leader>ut", function()
     else
         vim.o.background = "dark"
     end
-end, "Toggle between light & dark themes"))
+end, "Toggle between light & dark themes")
 
 -- Clear after search
 map("n", "<leader>ur", "<cmd>nohl<cr>", "Clear highlights")
