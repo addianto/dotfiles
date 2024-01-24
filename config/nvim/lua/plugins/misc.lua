@@ -62,7 +62,6 @@ return {
             keys.map("n", "<leader>fh", builtin.help_tags)
         end,
     },
-    "tpope/vim-fugitive",
     "tpope/vim-sensible",
     "tpope/vim-sleuth",
     "tpope/vim-surround",

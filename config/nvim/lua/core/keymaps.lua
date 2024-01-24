@@ -28,6 +28,12 @@ map("n", "<C-Down>", ":resize -2<CR>")
 map("n", "<C-Left>", ":vertical resize -2<CR>")
 map("n", "<C-Right>", ":vertical resize -2<CR>")
 
+-- Deleting buffers
+local buffers = require("helpers.buffers")
+map("n", "<leader>db", buffers.delete_this, "Current buffer")
+map("n", "<leader>do", buffers.delete_others, "Other buffers")
+map("n", "<leader>da", buffers.delete_all, "All buffers")
+
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<CR>")
 map("n", "<S-h>", ":bprevious<CR>")
