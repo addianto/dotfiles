@@ -14,7 +14,7 @@ if ok then
     end
 
     M.delete_others = function()
-        close_buffers.delete({ type = "others", force = true })
+        close_buffers.delete({ type = "other", force = true })
     end
 else
     M.delete_this = function()

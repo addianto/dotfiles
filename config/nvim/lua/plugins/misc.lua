@@ -31,38 +31,21 @@ return {
             })
         end
     },
+    -- Move stuff with <M-j> and <M-k> in both normal and visual mode
     {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
-        },
-        keys = {
-            { "<leader>ft", "<cmd>Neotree toggle<cr>", desc = "Toggle file explorer (NeoTree)" },
-        },
-        config = function()
-            require("neo-tree").setup()
-        end,
+        "echasnovski/mini.move",
+		config = function()
+			require("mini.move").setup()
+		end,
     },
+    -- Better buffer closing actions. Available via the buffers helpers.
     {
-        "nvim-telescope/telescope.nvim",
-        tag = "0.1.4",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
+        "kazhala/close-buffers.nvim",
+        opts = {
+            preserve_window_layout = { "this", "nameless" },
         },
-        config = function()
-            local keys = require("helpers.keys")
-            local builtin = require("telescope.builtin")
-
-            keys.map("n", "<leader>ff", builtin.find_files)
-            keys.map("n", "<leader>fg", builtin.live_grep)
-            keys.map("n", "<leader>fb", builtin.buffers)
-            keys.map("n", "<leader>fh", builtin.help_tags)
-        end,
     },
-    "tpope/vim-sensible",
-    "tpope/vim-sleuth",
-    "tpope/vim-surround",
+    "tpope/vim-sensible", -- Sensible default configuration for Vim/Neovim
+    "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+    "tpope/vim-surround", -- Surround stuff with the ys-, cs-, and ds- commands
 }
