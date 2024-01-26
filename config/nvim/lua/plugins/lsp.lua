@@ -26,10 +26,10 @@ return {
                     "docker_compose_language_service",
                     "gradle_ls",
                     "html",
-                    "htmx",
+                    -- "htmx",
                     "jsonls",
                     "jdtls",
-                    "pylsp",
+                    -- "pylsp",
                     "rust_analyzer",
                     "texlab",
                 },
@@ -96,37 +96,7 @@ return {
             end
 
             -- TODO: Configure autocompletion
-
-            -- Configure Python LSP
-            require("lspconfig").pylsp.setup({
-                on_attach = on_attach,
-                settings = {
-                    pylsp = {
-                        plugins = {
-                            flake8 = {
-                                enabled = true,
-                                maxLineLength = 88, -- Black's line length
-                            },
-                            -- Disable plugins overlapping with flake8
-                            pycodestyle = {
-                                enabled = false,
-                            },
-                            mccabe = {
-                                enabled = false,
-                            },
-                            pyflakes = {
-                                enabled = false,
-                            },
-                            -- Use Black as the formatter
-                            autopep8 = {
-                                enabled = false,
-                            },
-                        },
-                    },
-                },
-            })
-
-            -- TODO: Configure LSP for other languages
+            -- TODO: Configure LSP
         end,
     },
 }
