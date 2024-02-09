@@ -9,8 +9,9 @@ return {
                 tag = "v1.2.0",
                 event = "LspAttach",
             },
+            "folke/neodev.nvim",
             "RRethy/vim-illuminate",
-            -- TODO: Add and configure cmp-nvim-lsp plugin
+            "hrsh7th/cmp-nvim-lsp",
         },
         config = function()
             -- Set up Mason before anything else
@@ -21,23 +22,23 @@ return {
                 ensure_installed = {
                     "ansiblels",
                     "bashls",
-                    "cucumber_language_server",
                     "dockerls",
-                    "docker_compose_language_service",
-                    "gradle_ls",
                     "html",
-                    -- "htmx",
+                    "htmx",
                     "jsonls",
-                    "jdtls",
-                    -- "pylsp",
+                    "pylsp",
                     "rust_analyzer",
                     "texlab",
+                    "yamlls",
                 },
                 automatic_installation = true,
             })
 
             -- Quick access via keymap
             require("helpers.keys").map("n", "<leader>M", "<cmd>Mason<cr>", "Show Mason")
+
+            -- Neodev setup before LSP config
+            require("neodev").setup()
 
             -- Turn on LSP status information
             require("fidget").setup()
@@ -95,8 +96,88 @@ return {
 				require("illuminate").on_attach(client)
             end
 
-            -- TODO: Configure autocompletion
-            -- TODO: Configure LSP
+            -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+            -- Ansible
+            require("lspconfig").ansiblels.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            -- Bash
+            require("lspconfig").bashls.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            -- Docker
+            require("lspconfig").dockerls.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                filetypes = { "Dockerfile", "Containerfile", "dockerfile", "containerfile" },
+            })
+
+            -- HTML
+            require("lspconfig").html.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            -- JSON
+            require("lspconfig").jsonls.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            -- Python
+            require("lspconfig").pylsp.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                settings = {
+                    pylsp = {
+                        plugins = {
+                            flake8 = {
+                                enabled = true,
+                                maxLineLength = 88, -- Black's line length
+                            },
+                            -- Disable plugins overlapping with flake8
+                            pycodestyle = {
+                                enabled = false,
+                            },
+                            mccabe = {
+                                enabled = false,
+                            },
+                            pyflakes = {
+                                enabled = false,
+                            },
+                            -- Use Black as formatter
+                            autopep8 = {
+                                enabled = false,
+                            },
+                        },
+                    }
+                }
+            })
+
+            -- Rust
+            require("lspconfig").rust_analyzer.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            -- LaTeX
+            require("lspconfig").texlab.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            -- YAML
+            require("lspconfig").yamlls.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
         end,
     },
 }

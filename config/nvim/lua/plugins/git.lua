@@ -5,6 +5,22 @@ return {
         opts = {},
     },
     {
+        "akinsho/git-conflict.nvim",
+        tag = "v1.3.0",
+        config = function()
+            require("git-conflict").setup({
+                default_mappings = {
+                    ours = "co",
+                    theirs = "ct",
+                    none = "c0",
+                    both = "cb",
+                    next = "cn",
+                    prev = "cp",
+                },
+            })
+        end,
+    },
+    {
         "tpope/vim-fugitive",
         config = function()
             local map = require("helpers.keys").map
