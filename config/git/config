@@ -11,9 +11,20 @@
     format = openpgp
 [push]
     default = nothing
+    gpgSign = true
 [user]
     useConfigOnly = true
 [diff]
     tool = nvimdiff
 [merge]
     tool = nvimdiff
+[rerere]
+    enabled = true
+    autoUpdate = true
+[column]
+    ui = auto
+[branch]
+    sort = -committerdate
+[alias]
+    force-push = push --force-with-lease
+    stash-all = stash --all
