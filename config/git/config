@@ -12,14 +12,14 @@
     format = openpgp
 [push]
     default = nothing
-    gpgSign = true
+    gpgSign = if-asked
 [user]
     useConfigOnly = true
 [diff]
     algorithm = histogram
     tool = nvimdiff
 [merge]
-    conflictstyle = zdiff3
+    conflictStyle = zdiff3
     tool = nvimdiff
 [rerere]
     enabled = true
