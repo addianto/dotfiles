@@ -27,4 +27,5 @@
     sort = -committerdate
 [alias]
     force-push = push --force-with-lease
+    root = rev-parse --show-toplevel
     stash-all = stash --all
