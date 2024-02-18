@@ -7,6 +7,7 @@
     defaultBranch = main
 [commit]
     gpgSign = true
+    verbose = true
 [gpg]
     format = openpgp
 [push]
@@ -15,8 +16,10 @@
 [user]
     useConfigOnly = true
 [diff]
+    algorithm = histogram
     tool = nvimdiff
 [merge]
+    conflictstyle = zdiff3
     tool = nvimdiff
 [rerere]
     enabled = true
@@ -27,5 +30,7 @@
     sort = -committerdate
 [alias]
     force-push = push --force-with-lease
+    log-graph = log --graph --oneline --color
     root = rev-parse --show-toplevel
+    search = log -E -i --grep
     stash-all = stash --all
