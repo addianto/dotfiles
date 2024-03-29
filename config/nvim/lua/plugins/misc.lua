@@ -1,24 +1,5 @@
 return {
     {
-        "jackmort/ChatGPT.nvim",
-        branch = "main",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "folke/trouble.nvim",
-            "nvim-telescope/telescope.nvim",
-        },
-        lazy = true,
-        event = "VeryLazy",
-        cond = not vim.g.vscode,
-        config = function()
-            local config_dir = vim.fn.expand("$XDG_CONFIG_HOME")
-            require("chatgpt").setup({
-                api_key_cmd = "gpg --decrypt " .. config_dir .. "/nvim/secrets/openai.gpg",
-            })
-        end,
-    },
-    {
         "mfussenegger/nvim-lint",
         config = function()
             require("lint").linters_by_ft = {

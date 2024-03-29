@@ -14,6 +14,7 @@ return {
                    u = { name = "UI" },
                    b = { name = "Debugging" },
                    g = { name = "Git" },
+                   a = { name = "Assistant" },
                }
            }
            wk.setup()

@@ -13,6 +13,7 @@ return {
             "RRethy/vim-illuminate",
             "hrsh7th/cmp-nvim-lsp",
         },
+        cond = not vim.g.vscode,
         config = function()
             -- Set up Mason before anything else
             require("mason").setup()
