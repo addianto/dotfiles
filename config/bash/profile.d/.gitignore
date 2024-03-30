@@ -1,0 +1,5 @@
+# Ignore the script containing secrets as environment variables
+secrets.sh
+
+# But keep the script file example
+!secrets.sh.example

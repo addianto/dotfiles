@@ -10,3 +10,11 @@ properties:
       settings:
         id: Wilfred.difftastic
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: shellcheck
+      directives:
+        description: Install shellcheck
+        allowPrerelease: false
+      settings:
+        id: koalaman.shellcheck
+        source: winget

@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "panekj.powershell",
-        "sumneko.lua"
+        "sumneko.lua",
+        "timonwong.shellcheck"
     ]
 }
