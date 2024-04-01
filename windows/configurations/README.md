@@ -1,6 +1,6 @@
 # WinGet Configuration
 
-This directory contains the WinGet Configuration file for setting up my Windows machine.
+This directory has a WinGet Configuration file used to set up software packages on a Windows machine.
 
 ## Required DSC Modules
 
@@ -9,6 +9,14 @@ This directory contains the WinGet Configuration file for setting up my Windows 
 
 ## How to Use
 
+To use, execute the following command:
+
 ```pwsh
 winget configure --file .\configurations\configuration.dsc.yaml
 ```
+
+## References
+
+- [`microsoft/devhome`](https://github.com/microsoft/devhome/tree/main/docs/sampleConfigurations)
+  and [`oliverlabs/winget-dsc-examples`](https://github.com/oliverlabs/winget-dsc-examples)
+  contain some WinGet DSC examples

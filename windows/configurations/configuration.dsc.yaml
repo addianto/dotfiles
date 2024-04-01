@@ -1,20 +1,84 @@
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
 properties:
-  configurationVersion: "0.2.0"
+  configurationVersion: 0.2.0
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: difftastic
+      id: Microsoft.PowerShell
+      directives:
+        description: Install PowerShell
+        allowPrerelease: true
+      settings:
+        id: Microsoft.PowerShell
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.WindowsTerminal
+      directives:
+        description: Install Windows Terminal
+        allowPrerelease: true
+      settings:
+        id: Microsoft.WindowsTerminal
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: 7zip.7zip
+      directives:
+        description: Install 7-Zip
+        allowPrerelease: true
+      settings:
+        id: 7zip.7zip
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Git.Git
+      directives:
+        description: Install Git
+        allowPrerelease: true
+      settings:
+        id: Git.Git
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Wilfred.difftastic
       directives:
         description: Install difftastic
-        allowPrerelease: false
+        allowPrerelease: true
       settings:
         id: Wilfred.difftastic
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: shellcheck
+      id: koalaman.shellcheck
       directives:
         description: Install shellcheck
-        allowPrerelease: false
+        allowPrerelease: true
       settings:
         id: koalaman.shellcheck
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Docker.DockerDesktop
+      directives:
+        description: Install Docker Desktop
+        allowPrerelease: true
+      settings:
+        id: Docker.DockerDesktop
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: kubernetes.kubectl
+      directives:
+        description: Install kubectl
+        allowPrerelease: true
+      settings:
+        id: kubernetes.kubectl
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: SumatraPDF.SumatraPDF
+      directives:
+        description: Install SumatraPDF
+        allowPrerelease: true
+      settings:
+        id: SumatraPDF.SumatraPDF
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: dotPDN.PaintDotNet
+      directives:
+        description: Install Paint.NET
+        allowPrerelease: true
+      settings:
+        id: dotPDN.PaintDotNet
         source: winget
