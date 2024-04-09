@@ -1,6 +1,7 @@
 return {
     {
         "neovim/nvim-lspconfig",
+        cond = not vim.g.vscode,
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
@@ -13,7 +14,6 @@ return {
             "RRethy/vim-illuminate",
             "hrsh7th/cmp-nvim-lsp",
         },
-        cond = not vim.g.vscode,
         config = function()
             -- Set up Mason before anything else
             require("mason").setup()
