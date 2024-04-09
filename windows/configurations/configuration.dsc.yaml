@@ -75,6 +75,14 @@ properties:
         id: SumatraPDF.SumatraPDF
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: File-New-Project.EarTrumpet
+      directives:
+        description: Install EarTrumpet
+        allowPrerelease: true
+      settings:
+        id: File-New-Project.EarTrumpet
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: dotPDN.PaintDotNet
       directives:
         description: Install Paint.NET
