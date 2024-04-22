@@ -1,6 +1,13 @@
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
 properties:
   configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerShell
@@ -12,7 +19,7 @@ properties:
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Microsoft.WindowsTerminal
+      id: installWindowsTerminal
       dependsOn:
         - installPowerShell
       directives:
@@ -78,6 +85,7 @@ properties:
         Id: kubernetes.kubectl
         Source: winget
         Ensure: Present
+        Version: "1.30.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
@@ -115,14 +123,14 @@ properties:
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installMullvadBrowser
+      id: uninstallMullvadBrowser
       directives:
-        description: Install Mullvad Browser
+        description: Uninstall Mullvad Browser
         allowPrerelease: true
       settings:
         Id: MullvadVPN.MullvadBrowser
         Source: winget
-        Ensure: Present
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installUngoogledChromium
       directives:
@@ -132,3 +140,33 @@ properties:
         Id: eloston.ungoogled-chromium
         Source: winget
         Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPnpm
+      directives:
+        description: Install pnpm
+        allowPrerelease: true
+      settings:
+        Id: pnpm.pnpm
+        Source: winget
+        Ensure: Present
+        Version: "9.0.5"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installHadolint
+      directives:
+        description: Install hadolint
+        allowPrerelease: true
+      settings:
+        Id: hadolint.hadolint
+        Source: winget
+        Ensure: Present
+        Version: "2.12.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installVale
+      directives:
+        description: Install Vale
+        allowPrerelease: true
+      settings:
+        Id: errata-ai.Vale
+        Source: winget
+        Ensure: Present
+        Version: "3.4.1"
