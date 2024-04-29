@@ -4,8 +4,17 @@ This directory has a WinGet Configuration file used to set up software packages 
 
 ## Required DSC Modules
 
+Install the following DSC modules before running the WinGet Configuration files:
+
 - [`Microsoft.Windows.Developer`](https://www.powershellgallery.com/packages/Microsoft.Windows.Developer/0.2.1-alpha)
-- [`Microsoft.WinGet.DSC`](https://www.powershellgallery.com/packages/Microsoft.WinGet.DSC/0.2.0-alpha)
+- [`Microsoft.WinGet.DSC`](https://www.powershellgallery.com/packages/Microsoft.WinGet.DSC/1.8.1133-alpha)
+
+To install the modules:
+
+```pwsh
+Install-Module -Name Microsoft.Windows.Developer -AllowPrerelease
+Install-Module -Name Microsoft.WinGet.DSC -AllowPrerelease
+```
 
 ## How to Use
 

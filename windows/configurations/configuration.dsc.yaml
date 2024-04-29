@@ -170,3 +170,12 @@ properties:
         Source: winget
         Ensure: Present
         Version: "3.4.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installJq
+      directives:
+        description: Install jq
+        allowPrerelease: true
+      settings:
+        Id: jqlang.jq
+        Source: winget
+        Ensure: Present
