@@ -123,15 +123,6 @@ properties:
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallMullvadBrowser
-      directives:
-        description: Uninstall Mullvad Browser
-        allowPrerelease: true
-      settings:
-        Id: MullvadVPN.MullvadBrowser
-        Source: winget
-        Ensure: Absent
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installUngoogledChromium
       directives:
         description: Install Ungoogled Chromium
@@ -140,6 +131,24 @@ properties:
         Id: eloston.ungoogled-chromium
         Source: winget
         Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallFirefoxDeveloperEdition
+      directives:
+        description: Uninstall Firefox Developer Edition
+        allowPrerelease: true
+      settings:
+        Id: Mozilla.Firefox.DeveloperEdition
+        Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallMullvadBrowser
+      directives:
+        description: Uninstall Mullvad Browser
+        allowPrerelease: true
+      settings:
+        Id: MullvadVPN.MullvadBrowser
+        Source: winget
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPnpm
       directives:
