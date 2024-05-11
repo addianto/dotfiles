@@ -208,3 +208,12 @@ properties:
         Source: winget
         Ensure: Present
         Version: "3.0.756.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: InstallFd
+      directives:
+        description: Install fd
+        allowPrerelease: true
+      settings:
+        Id: sharkdp.fd
+        Source: winget
+        Ensure: Present
