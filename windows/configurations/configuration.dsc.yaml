@@ -77,16 +77,6 @@ properties:
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installKubectl
-      directives:
-        description: Install kubectl
-        allowPrerelease: true
-      settings:
-        Id: kubernetes.kubectl
-        Source: winget
-        Ensure: Present
-        Version: "1.30.0"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
         description: Install SumatraPDF
@@ -188,16 +178,6 @@ properties:
         Id: jqlang.jq
         Source: winget
         Ensure: Present
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installMinikube
-      directives:
-        description: Install Minikube
-        allowPrerelease: true
-      settings:
-        Id: Kubernetes.minikube
-        Source: winget
-        Ensure: Present
-        Version: "1.33.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNanaZip
       directives:

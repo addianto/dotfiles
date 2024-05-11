@@ -49,7 +49,8 @@ return {
                                 messages = {
                                     {
                                         role = "system",
-                                        content = "Your task is to proofread and revise English text written by a non-native English speaker to ensure it adheres to correct grammatical rules and sounds idiomatic. This includes checking for proper punctuation, sentence structure, word choice, and phrasing.",
+                                        content =
+                                        "Your task is to proofread and revise English text written by a non-native English speaker to ensure it adheres to correct grammatical rules and sounds idiomatic. This includes checking for proper punctuation, sentence structure, word choice, and phrasing.",
                                     },
                                     {
                                         role = "user",

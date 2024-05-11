@@ -46,11 +46,11 @@ return {
             require("fidget").setup()
 
             -- Set up cool signs for diagnostics
-			local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-			for type, icon in pairs(signs) do
-				local hl = "DiagnosticSign" .. type
-				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-			end
+            local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+            for type, icon in pairs(signs) do
+                local hl = "DiagnosticSign" .. type
+                vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+            end
 
             -- Diagnostic config
             local config = {
@@ -84,23 +84,23 @@ return {
                 lsp_map("gd", vim.lsp.buf.definition, bufnr, "Goto Definition")
                 lsp_map("gr", require("telescope.builtin").lsp_references, bufnr, "Goto References")
                 lsp_map("gI", vim.lsp.buf.implementation, bufnr, "Goto Implementation")
-				lsp_map("K", vim.lsp.buf.hover, bufnr, "Hover Documentation")
-				lsp_map("gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
+                lsp_map("K", vim.lsp.buf.hover, bufnr, "Hover Documentation")
+                lsp_map("gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
 
-				-- Create a command `:Format` local to the LSP buffer
-				vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-					vim.lsp.buf.format()
-				end, { desc = "Format current buffer with LSP" })
+                -- Create a command `:Format` local to the LSP buffer
+                vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
+                    vim.lsp.buf.format()
+                end, { desc = "Format current buffer with LSP" })
 
-				lsp_map("<leader>ff", "<cmd>Format<cr>", bufnr, "Format")
+                lsp_map("<leader>ff", "<cmd>Format<cr>", bufnr, "Format")
 
-				-- Attach and configure vim-illuminate
-				require("illuminate").on_attach(client)
+                -- Attach and configure vim-illuminate
+                require("illuminate").on_attach(client)
             end
 
             -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
             -- Ansible
             require("lspconfig").ansiblels.setup({
@@ -191,6 +191,41 @@ return {
             require("lspconfig").yamlls.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
+                settings = {
+                    redhat = {
+                        telemetry = {
+                            enabled = false,
+                        },
+                    },
+                    yaml = {
+                        format = {
+                            enable = true,
+                            bracketSpacing = true,
+                            printWidth = 80,
+                            proseWrap = "preserve",
+                        },
+                        validate = true,
+                        hover = true,
+                        completion = true,
+                        schemas = {
+                            ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*.yml",
+                            ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = {
+                                "/.gitlab-ci.yml",
+                                "/.gitlab/ci/*.yml",
+                            },
+                            ["https://aka.ms/configuration-dsc-schema/0.2"] = "/*.dsc.yaml",
+                            ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = {
+                                "/docker-compose.{yml,yaml}",
+                                "/compose.{yml,yaml}",
+                            },
+                            ["https://json.schemastore.org/prometheus.json"] = "/prometheus.yml",
+                        },
+                        schemaStore = {
+                            enable = true,
+                            url = "https://www.schemastore.org/json",
+                        },
+                    },
+                },
             })
         end,
     },

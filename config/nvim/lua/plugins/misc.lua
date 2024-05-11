@@ -17,9 +17,9 @@ return {
     -- Move stuff with <M-j> and <M-k> in both normal and visual mode
     {
         "echasnovski/mini.move",
-		config = function()
-			require("mini.move").setup()
-		end,
+        config = function()
+            require("mini.move").setup()
+        end,
     },
     -- Better buffer closing actions. Available via the buffers helpers.
     {
@@ -29,6 +29,6 @@ return {
         },
     },
     "tpope/vim-sensible", -- Sensible default configuration for Vim/Neovim
-    "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+    "tpope/vim-sleuth",   -- Detect tabstop and shiftwidth automatically
     "tpope/vim-surround", -- Surround stuff with the ys-, cs-, and ds- commands
 }
