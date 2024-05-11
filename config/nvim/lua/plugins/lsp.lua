@@ -23,6 +23,7 @@ return {
                 ensure_installed = {
                     "ansiblels",
                     "bashls",
+                    "cssls",
                     "dockerls",
                     "html",
                     "htmx",
@@ -108,6 +109,12 @@ return {
 
             -- Bash
             require("lspconfig").bashls.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            -- CSS
+            require("lspconfig").cssls.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
             })
