@@ -27,7 +27,6 @@ return {
                     "html",
                     "htmx",
                     "jsonls",
-                    "pylsp",
                     "rust_analyzer",
                     "texlab",
                     "yamlls",

@@ -4,7 +4,7 @@ return {
         -- https://github.com/gsuuon/model.nvim
         "gsuuon/model.nvim",
         branch = "main",
-        commit = "334c26b2d52dd7305acb391c491bc2914ecce93c",
+        commit = "2aeffdbc6bd453afbd0ad8db69cfe5cba6698b08",
         init = function()
             vim.filetype.add({
                 extension = {

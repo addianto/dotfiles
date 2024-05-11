@@ -1,7 +1,7 @@
 return {
     {
         "nvimtools/none-ls.nvim",
-        commit = "c10b7be",
+        commit = "f5632db2491fbe02b54f1a321a98548a8ba2bd15",
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
