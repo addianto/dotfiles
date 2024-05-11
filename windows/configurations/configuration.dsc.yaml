@@ -30,14 +30,14 @@ properties:
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: install7zip
+      id: uninstall7Zip
       directives:
-        description: Install 7-Zip
+        description: Uninstall 7-Zip
         allowPrerelease: true
       settings:
         Id: "7zip.7zip"
         Source: winget
-        Ensure: Present
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installDifftastic
       directives:
@@ -189,3 +189,13 @@ properties:
         Source: winget
         Ensure: Present
         Version: "1.33.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installNanaZip
+      directives:
+        description: Install NanaZip
+        allowPrerelease: true
+      settings:
+        Id: M2Team.NanaZip.Preview
+        Source: winget
+        Ensure: Present
+        Version: "3.0.756.0"
