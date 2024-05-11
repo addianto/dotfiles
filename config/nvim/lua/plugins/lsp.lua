@@ -133,34 +133,34 @@ return {
             })
 
             -- Python
-            require("lspconfig").pylsp.setup({
-                on_attach = on_attach,
-                capabilities = capabilities,
-                settings = {
-                    pylsp = {
-                        plugins = {
-                            flake8 = {
-                                enabled = true,
-                                maxLineLength = 88, -- Black's line length
-                            },
-                            -- Disable plugins overlapping with flake8
-                            pycodestyle = {
-                                enabled = false,
-                            },
-                            mccabe = {
-                                enabled = false,
-                            },
-                            pyflakes = {
-                                enabled = false,
-                            },
-                            -- Use Black as formatter
-                            autopep8 = {
-                                enabled = false,
-                            },
-                        },
-                    }
-                }
-            })
+            -- require("lspconfig").pylsp.setup({
+            --     on_attach = on_attach,
+            --     capabilities = capabilities,
+            --     settings = {
+            --         pylsp = {
+            --             plugins = {
+            --                 flake8 = {
+            --                     enabled = true,
+            --                     maxLineLength = 88, -- Black's line length
+            --                 },
+            --                 -- Disable plugins overlapping with flake8
+            --                 pycodestyle = {
+            --                     enabled = false,
+            --                 },
+            --                 mccabe = {
+            --                     enabled = false,
+            --                 },
+            --                 pyflakes = {
+            --                     enabled = false,
+            --                 },
+            --                 -- Use Black as formatter
+            --                 autopep8 = {
+            --                     enabled = false,
+            --                 },
+            --             },
+            --         }
+            --     }
+            -- })
 
             -- Rust
             require("lspconfig").rust_analyzer.setup({
