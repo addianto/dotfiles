@@ -29,6 +29,7 @@ return {
                     "htmx",
                     "jsonls",
                     "rust_analyzer",
+                    "taplo",
                     "texlab",
                     "yamlls",
                 },
@@ -170,6 +171,12 @@ return {
 
             -- Rust
             require("lspconfig").rust_analyzer.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            -- TOML
+            require("lspconfig").taplo.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
             })

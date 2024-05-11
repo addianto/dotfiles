@@ -19,7 +19,7 @@ end
 -- Configure Python provider
 if os.getenv("PYENV_HOME") then
     if vim.fn.has("win32") then
-        vim.g.python3_host_prog = "$PYENV_HOME/versions/pynvim/python"
+        vim.g.python3_host_prog = "$PYENV_HOME/versions/pynvim/python3"
     else
         vim.g.python3_host_prog = "$PYENV_HOME/versions/pynvim/bin/python3"
     end
