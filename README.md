@@ -39,6 +39,11 @@ ln -s nvim "$XDG_CONFIG_HOME/nvim"
 
 > Note: On Windows, use `New-Item -Type SymbolicLink` command to create symbolic link.
 
+## Windows-specific Configuration
+
+Besides dotfiles, this project also contains WinGet Configuration files.
+The files can be found at [`windows/configurations`](./windows/configurations/) directory.
+
 ## Acknowledgements
 
 - [The Lazy Neovim Starter](https://github.com/frans-johansson/lazy-nvim-starter) by Frans Johansson as starting point for configuring Neovim.

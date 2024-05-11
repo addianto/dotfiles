@@ -1,6 +1,6 @@
 # WinGet Configuration
 
-This directory has a WinGet Configuration file used to set up software packages on a Windows machine.
+This directory contains WinGet Configuration files used to set up software packages on a Windows machine.
 
 ## Required DSC Modules
 
@@ -22,6 +22,7 @@ To use, execute the following command:
 
 ```pwsh
 winget configure --file .\configurations\configuration.dsc.yaml
+winget configure --file .\configurations\installPowerToys.dsc.yaml
 ```
 
 ## References
