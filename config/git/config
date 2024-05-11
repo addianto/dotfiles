@@ -1,0 +1,46 @@
+[core]
+    autocrlf = input
+    editor = nvim
+[color]
+    ui = auto
+[init]
+    defaultBranch = main
+[commit]
+    gpgSign = true
+    verbose = true
+[gpg]
+    format = openpgp
+[push]
+    default = nothing
+    gpgSign = if-asked
+[user]
+    useConfigOnly = true
+[diff]
+    algorithm = histogram
+    tool = difftastic
+[difftool]
+    prompt = false
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+    difftool = true
+[merge]
+    conflictStyle = zdiff3
+    tool = nvimdiff
+[rerere]
+    enabled = true
+    autoUpdate = true
+[rebase]
+    updateRefs = true
+[column]
+    ui = auto
+[branch]
+    sort = -committerdate
+[alias]
+    force-push = push --force-with-lease
+    log-graph = log --graph --oneline --color
+    root = rev-parse --show-toplevel
+    search = log -E -i --grep
+    stash-all = stash --all
+    word-diff = diff --word-diff --ignore-all-space
+    difft = difftool

@@ -1,0 +1,219 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPowerShell
+      directives:
+        description: Install PowerShell
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.PowerShell
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installWindowsTerminal
+      dependsOn:
+        - installPowerShell
+      directives:
+        description: Install Windows Terminal
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.WindowsTerminal
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstall7Zip
+      directives:
+        description: Uninstall 7-Zip
+        allowPrerelease: true
+      settings:
+        Id: "7zip.7zip"
+        Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installDifftastic
+      directives:
+        description: Install difftastic
+        allowPrerelease: true
+      settings:
+        Id: Wilfred.difftastic
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installGit
+      dependsOn:
+        - installDifftastic
+      directives:
+        description: Install Git
+        allowPrerelease: true
+      settings:
+        Id: Git.Git
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installShellcheck
+      directives:
+        description: Install shellcheck
+        allowPrerelease: true
+      settings:
+        Id: koalaman.shellcheck
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installDockerDesktop
+      directives:
+        description: Install Docker Desktop
+        allowPrerelease: true
+      settings:
+        Id: Docker.DockerDesktop
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installKubectl
+      directives:
+        description: Install kubectl
+        allowPrerelease: true
+      settings:
+        Id: kubernetes.kubectl
+        Source: winget
+        Ensure: Present
+        Version: "1.30.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installSumatraPDF
+      directives:
+        description: Install SumatraPDF
+        allowPrerelease: true
+      settings:
+        Id: SumatraPDF.SumatraPDF
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installEarTrumpet
+      directives:
+        description: Install EarTrumpet
+        allowPrerelease: true
+      settings:
+        Id: File-New-Project.EarTrumpet
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPaintDotNet
+      directives:
+        description: Install Paint.NET
+        allowPrerelease: true
+      settings:
+        Id: dotPDN.PaintDotNet
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installLibreWolf
+      directives:
+        description: Install LibreWolf
+        allowPrerelease: true
+      settings:
+        Id: LibreWolf.LibreWolf
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installUngoogledChromium
+      directives:
+        description: Install Ungoogled Chromium
+        allowPrerelease: true
+      settings:
+        Id: eloston.ungoogled-chromium
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallFirefoxDeveloperEdition
+      directives:
+        description: Uninstall Firefox Developer Edition
+        allowPrerelease: true
+      settings:
+        Id: Mozilla.Firefox.DeveloperEdition
+        Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallMullvadBrowser
+      directives:
+        description: Uninstall Mullvad Browser
+        allowPrerelease: true
+      settings:
+        Id: MullvadVPN.MullvadBrowser
+        Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPnpm
+      directives:
+        description: Install pnpm
+        allowPrerelease: true
+      settings:
+        Id: pnpm.pnpm
+        Source: winget
+        Ensure: Present
+        Version: "9.0.5"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installHadolint
+      directives:
+        description: Install hadolint
+        allowPrerelease: true
+      settings:
+        Id: hadolint.hadolint
+        Source: winget
+        Ensure: Present
+        Version: "2.12.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installVale
+      directives:
+        description: Install Vale
+        allowPrerelease: true
+      settings:
+        Id: errata-ai.Vale
+        Source: winget
+        Ensure: Present
+        Version: "3.4.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installJq
+      directives:
+        description: Install jq
+        allowPrerelease: true
+      settings:
+        Id: jqlang.jq
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installMinikube
+      directives:
+        description: Install Minikube
+        allowPrerelease: true
+      settings:
+        Id: Kubernetes.minikube
+        Source: winget
+        Ensure: Present
+        Version: "1.33.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installNanaZip
+      directives:
+        description: Install NanaZip
+        allowPrerelease: true
+      settings:
+        Id: M2Team.NanaZip.Preview
+        Source: winget
+        Ensure: Present
+        Version: "3.0.756.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: InstallFd
+      directives:
+        description: Install fd
+        allowPrerelease: true
+      settings:
+        Id: sharkdp.fd
+        Source: winget
+        Ensure: Present
