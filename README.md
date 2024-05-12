@@ -7,16 +7,16 @@ I try to organise them according to [XDG Base Directory specification](https://s
 
 ## Installation
 
-Configure the XDG Base Directory-related environment variables in the user/home directory.
-There are four variables to configure:
+Configure the XDG Base Directory-related environment variables in the user/home directory,
+such as:
 
 - `XDG_DATA_HOME`
 - `XDG_CONFIG_HOME`
 - `XDG_STATE_HOME`
 - `XDG_CACHE_HOME`
 
-On Windows, this is done manually via the Control Panel.
-Some automation might be possible in the future using [`xPSDesiredStateConfiguration`](https://github.com/dsccommunity/xPSDesiredStateConfiguration) module.
+On Windows, configure the environment variables manually via the Control Panel.
+Some automation might possible in the future using [`xPSDesiredStateConfiguration`](https://github.com/dsccommunity/xPSDesiredStateConfiguration) module.
 On Linux, run [`xdg.sh`](./config/bash/common.d/xdg.sh) script at least once.
 
 After setting up environment variables, create the XDG directories:
@@ -41,8 +41,7 @@ ln -s nvim "$XDG_CONFIG_HOME/nvim"
 
 ## Windows-specific Configuration
 
-Besides dotfiles, this project also contains WinGet Configuration files.
-The files can be found at [`windows/configurations`](./windows/configurations/) directory.
+Besides dotfiles, this project also contains WinGet Configuration files located in the [`windows/configurations`](./windows/configurations/) directory.
 
 ## Acknowledgements
 

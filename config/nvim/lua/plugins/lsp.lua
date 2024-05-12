@@ -4,7 +4,10 @@ return {
         cond = not vim.g.vscode,
         dependencies = {
             "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
+            {
+                "williamboman/mason-lspconfig.nvim",
+                version = "v1.*",
+            },
             {
                 "j-hui/fidget.nvim",
                 tag = "v1.2.0",
@@ -31,6 +34,7 @@ return {
                     "rust_analyzer",
                     "taplo",
                     "texlab",
+                    "vale_ls",
                     "yamlls",
                 },
                 automatic_installation = true,
@@ -183,6 +187,12 @@ return {
 
             -- LaTeX
             require("lspconfig").texlab.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            -- Vale Language Server
+            require("lspconfig").vale_ls.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
             })
