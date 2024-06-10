@@ -30,15 +30,6 @@ properties:
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstall7Zip
-      directives:
-        description: Uninstall 7-Zip
-        allowPrerelease: true
-      settings:
-        Id: "7zip.7zip"
-        Source: winget
-        Ensure: Absent
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installDifftastic
       directives:
         description: Install difftastic
@@ -85,6 +76,7 @@ properties:
         Id: SumatraPDF.SumatraPDF
         Source: winget
         Ensure: Present
+        Version: "3.5.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installEarTrumpet
       directives:
@@ -122,24 +114,6 @@ properties:
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallFirefoxDeveloperEdition
-      directives:
-        description: Uninstall Firefox Developer Edition
-        allowPrerelease: true
-      settings:
-        Id: Mozilla.Firefox.DeveloperEdition
-        Source: winget
-        Ensure: Absent
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallMullvadBrowser
-      directives:
-        description: Uninstall Mullvad Browser
-        allowPrerelease: true
-      settings:
-        Id: MullvadVPN.MullvadBrowser
-        Source: winget
-        Ensure: Absent
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPnpm
       directives:
         description: Install pnpm
@@ -148,7 +122,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "9.0.5"
+        Version: "9.2.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -178,6 +152,7 @@ properties:
         Id: jqlang.jq
         Source: winget
         Ensure: Present
+        Version: "1.7.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNanaZip
       directives:
@@ -189,7 +164,7 @@ properties:
         Ensure: Present
         Version: "3.0.756.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: InstallFd
+      id: installFd
       directives:
         description: Install fd
         allowPrerelease: true
@@ -197,3 +172,44 @@ properties:
         Id: sharkdp.fd
         Source: winget
         Ensure: Present
+        Version: "10.1.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installK6
+      directives:
+        description: Install k6
+        allowPrerelease: true
+      settings:
+        Id: k6.k6
+        Source: winget
+        Ensure: Present
+        Version: "0.50.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installScrcpy
+      directives:
+        description: Install scrcpy
+        allowPrerelease: true
+      settings:
+        Id: Genymobile.scrcpy
+        Source: winget
+        Ensure: Present
+        Version: "2.4"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installRufus
+      directives:
+        description: Install Rufus
+        allowPrerelease: true
+      settings:
+        Id: Rufus.Rufus
+        Source: winget
+        Ensure: Present
+        Version: "4.5"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPostman
+      directives:
+        description: Install Postman
+        allowPrerelease: true
+      settings:
+        Id: Postman.Postman
+        Source: winget
+        Ensure: Present
+        Version: "11.1.14"
