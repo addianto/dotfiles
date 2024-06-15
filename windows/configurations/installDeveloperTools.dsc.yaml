@@ -11,118 +11,100 @@ properties:
         MinVersion: "10.0.19041"
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installPowerShell
+      id: installDifftastic
       directives:
-        description: Install PowerShell
+        description: Install difftastic
         allowPrerelease: true
       settings:
-        Id: Microsoft.PowerShell
+        Id: Wilfred.difftastic
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installWindowsTerminal
+      id: installGit
       dependsOn:
-        - installPowerShell
+        - installDifftastic
       directives:
-        description: Install Windows Terminal
+        description: Install Git
         allowPrerelease: true
       settings:
-        Id: Microsoft.WindowsTerminal
+        Id: Git.Git
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installSumatraPDF
+      id: installShellcheck
       directives:
-        description: Install SumatraPDF
+        description: Install shellcheck
         allowPrerelease: true
       settings:
-        Id: SumatraPDF.SumatraPDF
-        Source: winget
-        Ensure: Present
-        Version: "3.5.2"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installEarTrumpet
-      directives:
-        description: Install EarTrumpet
-        allowPrerelease: true
-      settings:
-        Id: File-New-Project.EarTrumpet
+        Id: koalaman.shellcheck
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installPaintDotNet
+      id: installDockerDesktop
       directives:
-        description: Install Paint.NET
+        description: Install Docker Desktop
         allowPrerelease: true
       settings:
-        Id: dotPDN.PaintDotNet
+        Id: Docker.DockerDesktop
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installLibreWolf
+      id: installPnpm
       directives:
-        description: Install LibreWolf
+        description: Install pnpm
         allowPrerelease: true
       settings:
-        Id: LibreWolf.LibreWolf
+        Id: pnpm.pnpm
         Source: winget
         Ensure: Present
+        Version: "9.2.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installUngoogledChromium
+      id: installHadolint
       directives:
-        description: Install Ungoogled Chromium
+        description: Install hadolint
         allowPrerelease: true
       settings:
-        Id: eloston.ungoogled-chromium
+        Id: hadolint.hadolint
         Source: winget
         Ensure: Present
+        Version: "2.12.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installVale
+      id: installJq
       directives:
-        description: Install Vale
+        description: Install jq
         allowPrerelease: true
       settings:
-        Id: errata-ai.Vale
+        Id: jqlang.jq
         Source: winget
         Ensure: Present
-        Version: "3.4.1"
+        Version: "1.7.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installNanaZip
+      id: installK6
       directives:
-        description: Install NanaZip
+        description: Install k6
         allowPrerelease: true
       settings:
-        Id: M2Team.NanaZip.Preview
+        Id: k6.k6
         Source: winget
         Ensure: Present
-        Version: "3.0.756.0"
+        Version: "0.50.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installFd
+      id: installPostman
       directives:
-        description: Install fd
+        description: Install Postman
         allowPrerelease: true
       settings:
-        Id: sharkdp.fd
+        Id: Postman.Postman
         Source: winget
         Ensure: Present
-        Version: "10.1.0"
+        Version: "11.1.14"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installScrcpy
+      id: installDbeaver
       directives:
-        description: Install scrcpy
+        description: Install DBeaver Community Edition
         allowPrerelease: true
       settings:
-        Id: Genymobile.scrcpy
+        Id: dbeaver.dbeaver
         Source: winget
         Ensure: Present
-        Version: "2.4"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installRufus
-      directives:
-        description: Install Rufus
-        allowPrerelease: true
-      settings:
-        Id: Rufus.Rufus
-        Source: winget
-        Ensure: Present
-        Version: "4.5"
+        Version: "24.1.0"
