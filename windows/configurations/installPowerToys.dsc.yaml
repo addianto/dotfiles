@@ -1,3 +1,4 @@
+---
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
 properties:
   configurationVersion: 0.2.0
@@ -18,6 +19,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
+        Version: "0.82.0"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys
@@ -32,6 +34,8 @@ properties:
           ShowWhatsNewAfterUpdates: true
           EnableExperimentation: false
         # Modified from: https://github.com/microsoft/PowerToys/blob/main/src/dsc/Microsoft.PowerToys.Configure/examples/disableAllModules.dsc.yaml
+        AdvancedPaste:
+          Enabled: true
         AlwaysOnTop:
           Enabled: false
         Awake:
@@ -93,7 +97,5 @@ properties:
           Enabled: true
         Hosts:
           Enabled: false
-        PastePlain:
-          Enabled: true
         RegistryPreview:
           Enabled: false

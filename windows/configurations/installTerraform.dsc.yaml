@@ -19,4 +19,4 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.7.2"
+        Version: "1.7.3"

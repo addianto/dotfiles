@@ -19,6 +19,7 @@ properties:
         Id: Microsoft.PowerShell
         Source: winget
         Ensure: Present
+        Version: "7.4.3.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -30,6 +31,7 @@ properties:
         Id: Microsoft.WindowsTerminal
         Source: winget
         Ensure: Present
+        Version: "1.20.11781.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
@@ -49,6 +51,7 @@ properties:
         Id: File-New-Project.EarTrumpet
         Source: winget
         Ensure: Present
+        Version: "2.3.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPaintDotNet
       directives:
@@ -58,6 +61,7 @@ properties:
         Id: dotPDN.PaintDotNet
         Source: winget
         Ensure: Present
+        Version: "5.0.13"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installLibreWolf
       directives:
