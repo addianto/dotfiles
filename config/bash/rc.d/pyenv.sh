@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-set -eo pipefail
+#!/usr/bin/bash
 
 # Configure pyenv (https://github.com/pyenv/pyenv)
 if [[ -d "$XDG_DATA_HOME/pyenv" ]]; then
