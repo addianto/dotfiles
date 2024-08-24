@@ -33,6 +33,24 @@ properties:
         Ensure: Present
         Version: "2.46.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installVSCodium
+      directives:
+        description: Install VSCodium
+        allowPrerelease: true
+      settings:
+        Id: VSCodium.VSCodium
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installJetBrainsToolbox
+      directives:
+        description: Install JetBrains Toolbox
+        allowPrerelease: true
+      settings:
+        Id: JetBrains.Toolbox
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShellcheck
       directives:
         description: Install shellcheck
