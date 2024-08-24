@@ -8,12 +8,14 @@ Install the following DSC modules before running the WinGet Configuration files:
 
 - [`Microsoft.Windows.Developer`](https://www.powershellgallery.com/packages/Microsoft.Windows.Developer/0.2.1-alpha)
 - [`Microsoft.WinGet.DSC`](https://www.powershellgallery.com/packages/Microsoft.WinGet.DSC/1.8.1133-alpha)
+- [`xPSDesiredStateConfiguration `](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/9.2.0-preview0008)
 
 To install the modules:
 
 ```pwsh
 Install-Module -Name Microsoft.Windows.Developer -AllowPrerelease
 Install-Module -Name Microsoft.WinGet.DSC -AllowPrerelease
+Install-Module -Name xPSDesiredStateConfiguration -AllowPrerelease
 ```
 
 ## How to Use
@@ -21,8 +23,8 @@ Install-Module -Name Microsoft.WinGet.DSC -AllowPrerelease
 To use, execute the following command:
 
 ```pwsh
-winget configure --file .\configurations\configuration.dsc.yaml
-winget configure --file .\configurations\installPowerToys.dsc.yaml
+winget configure --file .\configurations\setupCommon.dsc.yaml
+winget configure --file .\configurations\setupDevTools.dsc.yaml
 ```
 
 ## References
