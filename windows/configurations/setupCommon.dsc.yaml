@@ -121,6 +121,16 @@ properties:
         Ensure: Present
         Version: "2.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installZotero
+      directives:
+        description: Install Zotero
+        allowPrerelease: true
+      settings:
+        Id: DigitalScholar.Zotero
+        Source: winget
+        Ensure: Present
+        Version: "7.0.2"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerToys
       directives:
         description: Install PowerToys
