@@ -33,6 +33,16 @@ properties:
         Ensure: Present
         Version: "2.46.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installNeovim
+      directives:
+        description: Install Neovim
+        allowPrerelease: true
+      settings:
+        Id: Neovim.Neovim
+        Source: winget
+        Ensure: Present
+        Version: "0.10.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVSCodium
       directives:
         description: Install VSCodium
