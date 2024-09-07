@@ -21,6 +21,16 @@ properties:
         Ensure: Present
         Version: "7.4.5.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installOhMyPosh
+      directives:
+        description: Install Oh My Posh
+        allowPrerelease: true
+      settings:
+        Id: JanDeDobbeleer.OhMyPosh
+        Source: winget
+        Ensure: Present
+        Version: "23.10.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
         - installPowerShell
