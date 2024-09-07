@@ -31,7 +31,7 @@ properties:
         Id: Microsoft.WindowsTerminal
         Source: winget
         Ensure: Present
-        Version: "1.20.11781.0"
+        Version: "1.21.2361.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
@@ -129,7 +129,7 @@ properties:
         Id: DigitalScholar.Zotero
         Source: winget
         Ensure: Present
-        Version: "7.0.2"
+        Version: "7.0.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerToys
       directives:
@@ -139,7 +139,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.83.0"
+        Version: "0.84.0"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys
