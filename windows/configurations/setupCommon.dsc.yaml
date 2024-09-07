@@ -19,7 +19,17 @@ properties:
         Id: Microsoft.PowerShell
         Source: winget
         Ensure: Present
-        Version: "7.4.3.0"
+        Version: "7.4.5.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installOhMyPosh
+      directives:
+        description: Install Oh My Posh
+        allowPrerelease: true
+      settings:
+        Id: JanDeDobbeleer.OhMyPosh
+        Source: winget
+        Ensure: Present
+        Version: "23.10.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -31,7 +41,7 @@ properties:
         Id: Microsoft.WindowsTerminal
         Source: winget
         Ensure: Present
-        Version: "1.20.11781.0"
+        Version: "1.21.2361.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
@@ -89,27 +99,27 @@ properties:
         Id: errata-ai.Vale
         Source: winget
         Ensure: Present
-        Version: "3.4.1"
+        Version: "3.7.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallNanaZipPreview
+      directives:
+        description: Uninstall NanaZipPreview
+        allowPrerelease: true
+      settings:
+        Id: M2Team.NanaZip.Preview
+        Source: winget
+        Ensure: Absent
+        Version: "3.0.756.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNanaZip
       directives:
         description: Install NanaZip
         allowPrerelease: true
       settings:
-        Id: M2Team.NanaZip.Preview
+        Id: M2Team.NanaZip
         Source: winget
         Ensure: Present
-        Version: "3.0.756.0"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installFd
-      directives:
-        description: Install fd
-        allowPrerelease: true
-      settings:
-        Id: sharkdp.fd
-        Source: winget
-        Ensure: Present
-        Version: "10.1.0"
+        Version: "3.1.1080.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installScrcpy
       directives:
@@ -121,12 +131,101 @@ properties:
         Ensure: Present
         Version: "2.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installRufus
+      id: installZotero
       directives:
-        description: Install Rufus
+        description: Install Zotero
         allowPrerelease: true
       settings:
-        Id: Rufus.Rufus
+        Id: DigitalScholar.Zotero
         Source: winget
         Ensure: Present
-        Version: "4.5"
+        Version: "7.0.3"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPowerToys
+      directives:
+        description: Install PowerToys
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.PowerToys
+        Source: winget
+        Ensure: Present
+        Version: "0.84.0"
+    - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
+      dependsOn:
+        - installPowerToys
+      directives:
+        description: Configure PowerToys
+      settings:
+        GeneralSettings:
+          Startup: true
+          Theme: system
+          ShowNewUpdatesToastNotification: false
+          AutoDownloadUpdates: false
+          ShowWhatsNewAfterUpdates: true
+          EnableExperimentation: false
+        # Modified from: https://github.com/microsoft/PowerToys/blob/main/src/dsc/Microsoft.PowerToys.Configure/examples/disableAllModules.dsc.yaml
+        AdvancedPaste:
+          Enabled: true
+        AlwaysOnTop:
+          Enabled: false
+        Awake:
+          Enabled: false
+        ColorPicker:
+          Enabled: true
+          ActivationAction: OpenEditor
+          ShowColorName: true
+        CropAndLock:
+          Enabled: false
+        EnvironmentVariables:
+          Enabled: true
+          LaunchAdministrator: false
+        FancyZones:
+          Enabled: false
+        FileLocksmith:
+          Enabled: false
+        ImageResizer:
+          Enabled: false
+        KeyboardManager:
+          Enabled: false
+        FindMyMouse:
+          Enabled: false
+        MouseHighlighter:
+          Enabled: false
+        MouseJump:
+          Enabled: false
+        MousePointerCrosshairs:
+          Enabled: false
+        MouseWithoutBorders:
+          Enabled: false
+        Peek:
+          Enabled: false
+        PowerRename:
+          Enabled: false
+        PowerLauncher:
+          Enabled: false
+        PowerAccent:
+          Enabled: false
+        PowerPreview:
+          EnableSvgPreview: true
+          EnableSvgThumbnail: true
+          EnableMdPreview: true
+          EnableMonacoPreview: true
+          EnablePdfPreview: true
+          EnablePdfThumbnail: true
+          EnableGcodePreview: false
+          EnableGcodeThumbnail: false
+          EnableStlThumbnail: false
+          EnableQoiPreview: false
+          EnableQoiThumbnail: false
+        PowerOcr:
+          Enabled: true
+        ShortcutGuide:
+          Enabled: false
+        VideoConference:
+          Enabled: false
+        MeasureTool:
+          Enabled: true
+        Hosts:
+          Enabled: false
+        RegistryPreview:
+          Enabled: false

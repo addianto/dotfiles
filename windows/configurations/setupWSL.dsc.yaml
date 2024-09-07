@@ -1,0 +1,29 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+# Note: run as admin
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: xPSDesiredStateConfiguration/xWindowsOptionalFeature
+      id: enableWSL
+      directives:
+        description: Enable Windows Subsystem for Linux
+        allowPrerelease: true
+      settings:
+        Name: Microsoft-Windows-Subsystem-Linux
+        Ensure: Present
+    - resource: xPSDesiredStateConfiguration/xWindowsOptionalFeature
+      id: enableVirtualMachinePlatform
+      directives:
+        description: Enable Virtual Machine Platform
+        allowPrerelease: true
+      settings:
+        Name: VirtualMachinePlatform
+        Ensure: Present

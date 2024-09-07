@@ -1,0 +1,234 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installDifftastic
+      directives:
+        description: Install difftastic
+        allowPrerelease: true
+      settings:
+        Id: Wilfred.difftastic
+        Source: winget
+        Ensure: Present
+        Version: "0.58.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installGit
+      dependsOn:
+        - installDifftastic
+      directives:
+        description: Install Git
+        allowPrerelease: true
+      settings:
+        Id: Git.Git
+        Source: winget
+        Ensure: Present
+        Version: "2.46.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installNeovim
+      directives:
+        description: Install Neovim
+        allowPrerelease: true
+      settings:
+        Id: Neovim.Neovim
+        Source: winget
+        Ensure: Present
+        Version: "0.10.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installVSCodium
+      directives:
+        description: Install VSCodium
+        allowPrerelease: true
+      settings:
+        Id: VSCodium.VSCodium
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installJetBrainsToolbox
+      directives:
+        description: Install JetBrains Toolbox
+        allowPrerelease: true
+      settings:
+        Id: JetBrains.Toolbox
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installShellcheck
+      directives:
+        description: Install shellcheck
+        allowPrerelease: true
+      settings:
+        Id: koalaman.shellcheck
+        Source: winget
+        Ensure: Present
+        Version: "0.10.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPnpm
+      directives:
+        description: Install pnpm
+        allowPrerelease: true
+      settings:
+        Id: pnpm.pnpm
+        Source: winget
+        Ensure: Present
+        Version: "9.9.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installHadolint
+      directives:
+        description: Install hadolint
+        allowPrerelease: true
+      settings:
+        Id: hadolint.hadolint
+        Source: winget
+        Ensure: Present
+        Version: "2.12.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installJq
+      directives:
+        description: Install jq
+        allowPrerelease: true
+      settings:
+        Id: jqlang.jq
+        Source: winget
+        Ensure: Present
+        Version: "1.7.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installK6
+      directives:
+        description: Install k6
+        allowPrerelease: true
+      settings:
+        Id: k6.k6
+        Source: winget
+        Ensure: Present
+        Version: "0.53.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPostman
+      directives:
+        description: Install Postman
+        allowPrerelease: true
+      settings:
+        Id: Postman.Postman
+        Source: winget
+        Ensure: Present
+        Version: "11.11.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installDbeaver
+      directives:
+        description: Install DBeaver Community Edition
+        allowPrerelease: true
+      settings:
+        Id: dbeaver.dbeaver
+        Source: winget
+        Ensure: Present
+        Version: "24.2.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installGoogleCloudSDK
+      directives:
+        description: Install Google Cloud SDK
+        allowPrerelease: true
+      settings:
+        Id: Google.CloudSDK
+        Source: winget
+        Ensure: Present
+        Version: "490.0.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installFd
+      directives:
+        description: Install fd
+        allowPrerelease: true
+      settings:
+        Id: sharkdp.fd
+        Source: winget
+        Ensure: Present
+        Version: "10.2.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installRufus
+      directives:
+        description: Install Rufus
+        allowPrerelease: true
+      settings:
+        Id: Rufus.Rufus
+        Source: winget
+        Ensure: Present
+        Version: "4.5"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installOpenTofu
+      directives:
+        description: Install OpenTofu
+        allowPrerelease: true
+      settings:
+        Id: OpenTofu.Tofu
+        Source: winget
+        Ensure: Present
+        Version: "1.8.2"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installDockerDesktop
+      directives:
+        description: Install Docker Desktop
+        allowPrerelease: true
+      settings:
+        Id: Docker.DockerDesktop
+        Source: winget
+        Ensure: Present
+        Version: "4.34.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installKubectl
+      directives:
+        description: Install kubectl
+        allowPrerelease: true
+      settings:
+        Id: Kubernetes.kubectl
+        Source: winget
+        Ensure: Present
+        Version: "1.30.2"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installMinikube
+      dependsOn:
+        - installDockerDesktop
+      directives:
+        description: Install Minikube
+        allowPrerelease: true
+      settings:
+        Id: Kubernetes.minikube
+        Source: winget
+        Ensure: Present
+        Version: "1.33.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installHelm
+      directives:
+        description: Install Helm
+        allowPrerelease: true
+      settings:
+        Id: Helm.Helm
+        Source: winget
+        Ensure: Present
+        Version: "3.15.4" # See supported version skew in https://helm.sh/docs/topics/version_skew/
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installK9s
+      directives:
+        description: Install k9s
+        allowPrerelease: true
+      settings:
+        Id: Derailed.k9s
+        Source: winget
+        Ensure: Present
+        Version: "v0.32.5" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installKubeLinter
+      directives:
+        description: Install KubeLinter
+        allowPrerelease: true
+      settings:
+        Id: stackrox.kube-linter
+        Source: winget
+        Ensure: Present
+        Version: "0.6.8"
