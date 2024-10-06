@@ -19,7 +19,7 @@ properties:
         Id: Wilfred.difftastic
         Source: winget
         Ensure: Present
-        Version: "0.58.0"
+        Version: "0.60.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGit
       dependsOn:
@@ -41,7 +41,19 @@ properties:
         Id: Neovim.Neovim
         Source: winget
         Ensure: Present
-        Version: "0.10.1"
+        Version: "0.10.2"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installNeovide
+      dependsOn:
+        - installNeovim
+      directives:
+        description: Install Neovide
+        allowPrerelease: true
+      settings:
+        Id: Neovide.Neovide
+        Source: winget
+        Ensure: Present
+        Version: "0.13.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVSCodium
       directives:
@@ -139,7 +151,7 @@ properties:
         Id: Google.CloudSDK
         Source: winget
         Ensure: Present
-        Version: "490.0.0"
+        Version: "492.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFd
       directives:
@@ -179,7 +191,7 @@ properties:
         Id: Docker.DockerDesktop
         Source: winget
         Ensure: Present
-        Version: "4.34.1"
+        Version: "4.34.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKubectl
       directives:
@@ -201,7 +213,7 @@ properties:
         Id: Kubernetes.minikube
         Source: winget
         Ensure: Present
-        Version: "1.33.1"
+        Version: "1.34.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHelm
       directives:
@@ -211,7 +223,7 @@ properties:
         Id: Helm.Helm
         Source: winget
         Ensure: Present
-        Version: "3.15.4" # See supported version skew in https://helm.sh/docs/topics/version_skew/
+        Version: "3.16.1" # See supported version skew in https://helm.sh/docs/topics/version_skew/
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installK9s
       directives:

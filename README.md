@@ -46,6 +46,7 @@ Besides dotfiles, this project also contains WinGet Configuration files located 
 ## Acknowledgements
 
 - [The Lazy Neovim Starter](https://github.com/frans-johansson/lazy-nvim-starter) by Frans Johansson as starting point for configuring Neovim.
+- Some Neovim configuration options from [`kickstart-nvim`](https://github.com/nvim-lua/kickstart.nvim).
 
 ## License
 

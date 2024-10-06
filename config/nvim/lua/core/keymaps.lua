@@ -51,5 +51,5 @@ map("n", "<leader>ut", function()
     end
 end, "Toggle between light & dark themes")
 
--- Clear after search
-map("n", "<leader>ur", "<cmd>nohl<cr>", "Clear highlights")
+-- Clear highlights on search
+map("n", "<leader>ur", "<cmd>nohlsearch<CR>", "Clear highlights")

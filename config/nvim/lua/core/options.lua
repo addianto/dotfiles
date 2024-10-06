@@ -1,3 +1,4 @@
+-- See `:help clipboard'` for more information about each option
 local opts = {
     number = true,
     termguicolors = true,
@@ -9,6 +10,34 @@ local opts = {
     shiftwidth = 4,
     hlsearch = true,
     showcmd = true,
+    -- Enable mouse mode
+    mouse = 'a',
+    -- Don't show the mode, since it's already present in the status line
+    showmode = false,
+    -- Enable break indent
+    breakindent = true,
+    -- Save undo history
+    undofile = true,
+    -- Case-insensitive searching unless \C or one or more capital letters in the search term
+    ignorecase = true,
+    smartcase = true,
+    -- Keep signcolumn on by default
+    signcolumn = 'yes',
+    -- Configure swap file and how frequent it is written
+    swapfile = on,
+    updatetime = 500,
+    -- Decrease mapped sequence wait time
+    -- Displays which-key popup sooner
+    timeoutlen = 300,
+    -- Configure how new splits should be opened
+    splitright = true,
+    splitbelow = true,
+    -- Preview substitutions live
+    inccommand = 'split',
+    -- Show which line the cursor is on
+    cursorline = true,
+    -- Minimal number of screen lines to keep above & below the cursor
+    scrolloff = 10,
 }
 
 -- Set options from table

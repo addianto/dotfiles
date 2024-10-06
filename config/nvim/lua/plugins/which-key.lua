@@ -2,23 +2,21 @@
 return {
    {
        "folke/which-key.nvim",
+       event = "VeryLazy",
        config = function()
            local wk = require("which-key")
-           local config = {
-               ["<leader>"] = {
-                   f = { name = "File" },
-                   d = { name = "Delete/Close" },
-                   q = { name = "Quit" },
-                   s = { name = "Search" },
-                   l = { name = "LSP" },
-                   u = { name = "UI" },
-                   b = { name = "Debugging" },
-                   g = { name = "Git" },
-                   a = { name = "Assistant" },
-               }
-           }
            wk.setup()
-           wk.register(config)
+           wk.add({
+               { "<leader>f", name = "File" },
+               { "<leader>d", name = "Delete/Close" },
+               { "<leader>q", name = "Quit" },
+               { "<leader>s", name = "Search" },
+               { "<leader>l", name = "LSP" },
+               { "<leader>u", name = "UI" },
+               { "<leader>b", name = "Debug" },
+               { "<leader>g", name = "Git" },
+               { "<leader>a", name = "Assistant" },
+           })
        end
    }
 }
