@@ -141,16 +141,16 @@ properties:
         Ensure: Present
         Version: "3.5.20357"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installSiriKali
+      id: uninstallSiriKali
       dependsOn:
         - installSSHFS
       directives:
-        description: Install Siri Kali
+        description: Uninstall Siri Kali
         allowPrerelease: true
       settings:
         Id: FrancisBanyikwa.SiriKali
         Source: winget
-        Ensure: Present
+        Ensure: Absent
         Version: "1.6.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerToys
@@ -195,12 +195,16 @@ properties:
           Enabled: false
         FileLocksmith:
           Enabled: false
+        FindMyMouse:
+          Enabled: false
+        Hosts:
+          Enabled: false
         ImageResizer:
           Enabled: false
         KeyboardManager:
           Enabled: false
-        FindMyMouse:
-          Enabled: false
+        MeasureTool:
+          Enabled: true
         MouseHighlighter:
           Enabled: false
         MouseJump:
@@ -209,14 +213,18 @@ properties:
           Enabled: false
         MouseWithoutBorders:
           Enabled: false
+        NewPlus:
+          Enabled: false
         Peek:
-          Enabled: false
-        PowerRename:
-          Enabled: false
-        PowerLauncher:
           Enabled: false
         PowerAccent:
           Enabled: false
+        PowerLauncher:
+          Enabled: false
+        PowerOcr:
+          Enabled: true
+        PowerRename:
+          Enabled: true
         PowerPreview:
           EnableSvgPreview: true
           EnableSvgThumbnail: true
@@ -229,15 +237,11 @@ properties:
           EnableStlThumbnail: false
           EnableQoiPreview: false
           EnableQoiThumbnail: false
-        PowerOcr:
-          Enabled: true
+        RegistryPreview:
+          Enabled: false
         ShortcutGuide:
           Enabled: false
         VideoConference:
           Enabled: false
-        MeasureTool:
-          Enabled: true
-        Hosts:
-          Enabled: false
-        RegistryPreview:
+        Workspaces:
           Enabled: false

@@ -151,7 +151,7 @@ properties:
         Id: Google.CloudSDK
         Source: winget
         Ensure: Present
-        Version: "494.0.0"
+        Version: "495.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFd
       directives:

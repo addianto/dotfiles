@@ -1,0 +1,40 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installOffice365
+      directives:
+        description: Install Microsoft Office 365
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.Office
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installTeams
+      directives:
+        description: Install Microsoft Teams
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.Teams
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installZoom
+      directives:
+        description: Install Zoom
+        allowPrerelease: true
+      settings:
+        Id: Zoom.Zoom
+        Source: winget
+        Ensure: Present
+        Version: "6.2.47507"

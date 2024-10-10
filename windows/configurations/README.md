@@ -25,6 +25,7 @@ To use, execute the following command:
 ```pwsh
 winget configure --file .\configurations\setupCommon.dsc.yaml
 winget configure --file .\configurations\setupDevTools.dsc.yaml
+winget configure --file .\configurations\setupOfficeTools.dsc.yaml
 ```
 
 ## References
