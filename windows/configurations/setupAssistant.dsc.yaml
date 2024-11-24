@@ -11,47 +11,32 @@ properties:
         MinVersion: "10.0.19041"
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installOffice365
+      id: installOllama
       directives:
-        description: Install Microsoft Office 365
+        description: Install Ollama
         allowPrerelease: true
       settings:
-        Id: Microsoft.Office
+        Id: Ollama.Ollama
         Source: winget
         Ensure: Present
+        Version: "0.4.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallTeams
+      id: installJoplin
       directives:
-        description: Uninstall Microsoft Teams (WinGet)
+        description: Install Joplin
         allowPrerelease: true
       settings:
-        Id: Microsoft.Teams
+        Id: Joplin.Joplin
         Source: winget
         Ensure: Present
+        Version: "3.1.24"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installTeams
+      id: installAnythingLLM
       directives:
-        description: Install Microsoft Teams
+        description: Install AnythingLLM
         allowPrerelease: true
       settings:
-        Id: XP8BT8DW290MPQ
-        Source: msstore
-        Ensure: Present
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallZoom
-      directives:
-        description: Uninstall Zoom (WinGet)
-        allowPrerelease: true
-      settings:
-        Id: Zoom.Zoom
+        Id: MintplexLabs.AnythingLLM
         Source: winget
         Ensure: Present
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installZoom
-      directives:
-        description: Install Zoom Workplace
-        allowPrerelease: true
-      settings:
-        Id: XP99J3KP4XZ4VV
-        Source: msstore
-        Ensure: Present
+        Version: "1.6.11"

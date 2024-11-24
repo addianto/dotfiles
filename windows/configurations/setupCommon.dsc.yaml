@@ -19,7 +19,7 @@ properties:
         Id: Microsoft.PowerShell
         Source: winget
         Ensure: Present
-        Version: "7.4.5.0"
+        Version: "7.4.6.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOhMyPosh
       directives:
@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "23.16.0"
+        Version: "24.6.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -41,7 +41,7 @@ properties:
         Id: Microsoft.WindowsTerminal
         Source: winget
         Ensure: Present
-        Version: "1.21.2701.0"
+        Version: "1.21.3231.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
@@ -71,7 +71,7 @@ properties:
         Id: dotPDN.PaintDotNet
         Source: winget
         Ensure: Present
-        Version: "5.0.13"
+        Version: "5.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installLibreWolf
       directives:
@@ -129,7 +129,7 @@ properties:
         Id: DigitalScholar.Zotero
         Source: winget
         Ensure: Present
-        Version: "7.0.7"
+        Version: "7.0.9"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSSHFS
       directives:
@@ -161,7 +161,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.85.0"
+        Version: "0.86.0"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys
