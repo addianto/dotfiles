@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "24.6.5"
+        Version: "24.18.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -71,7 +71,7 @@ properties:
         Id: dotPDN.PaintDotNet
         Source: winget
         Ensure: Present
-        Version: "5.1"
+        Version: "5.1.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installLibreWolf
       directives:
@@ -99,7 +99,7 @@ properties:
         Id: errata-ai.Vale
         Source: winget
         Ensure: Present
-        Version: "3.7.0"
+        Version: "3.9.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNanaZip
       directives:
@@ -119,7 +119,7 @@ properties:
         Id: Genymobile.scrcpy
         Source: winget
         Ensure: Present
-        Version: "2.4"
+        Version: "3.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installZotero
       directives:
@@ -129,7 +129,7 @@ properties:
         Id: DigitalScholar.Zotero
         Source: winget
         Ensure: Present
-        Version: "7.0.9"
+        Version: "7.0.11"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSSHFS
       directives:
@@ -161,7 +161,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.86.0"
+        Version: "0.87.1"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys

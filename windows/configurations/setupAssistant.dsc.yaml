@@ -19,7 +19,7 @@ properties:
         Id: Ollama.Ollama
         Source: winget
         Ensure: Present
-        Version: "0.4.4"
+        Version: "0.5.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installJoplin
       directives:
@@ -39,4 +39,4 @@ properties:
         Id: MintplexLabs.AnythingLLM
         Source: winget
         Ensure: Present
-        Version: "1.6.11"
+        Version: "1.7.2"

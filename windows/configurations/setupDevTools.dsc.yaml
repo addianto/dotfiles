@@ -31,7 +31,7 @@ properties:
         Id: Git.Git
         Source: winget
         Ensure: Present
-        Version: "2.47.0.2"
+        Version: "2.47.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovim
       directives:
@@ -41,7 +41,7 @@ properties:
         Id: Neovim.Neovim
         Source: winget
         Ensure: Present
-        Version: "0.10.2"
+        Version: "0.10.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovide
       dependsOn:
@@ -91,7 +91,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "9.14.2"
+        Version: "9.15.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -121,7 +121,7 @@ properties:
         Id: k6.k6
         Source: winget
         Ensure: Present
-        Version: "0.55.0"
+        Version: "0.56.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPostman
       directives:
@@ -131,7 +131,7 @@ properties:
         Id: Postman.Postman
         Source: winget
         Ensure: Present
-        Version: "11.20.0"
+        Version: "11.27.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installDbeaver
       directives:
@@ -141,7 +141,7 @@ properties:
         Id: dbeaver.dbeaver
         Source: winget
         Ensure: Present
-        Version: "24.2.5"
+        Version: "24.3.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoogleCloudSDK
       directives:
@@ -151,7 +151,7 @@ properties:
         Id: Google.CloudSDK
         Source: winget
         Ensure: Present
-        Version: "499.0.0"
+        Version: "504.0.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFd
       directives:
@@ -181,7 +181,7 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.8.5"
+        Version: "1.9.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installDockerDesktop
       directives:
@@ -191,7 +191,7 @@ properties:
         Id: Docker.DockerDesktop
         Source: winget
         Ensure: Present
-        Version: "4.36.0"
+        Version: "4.37.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKubectl
       directives:
@@ -201,7 +201,7 @@ properties:
         Id: Kubernetes.kubectl
         Source: winget
         Ensure: Present
-        Version: "1.31.3"
+        Version: "1.32.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMinikube
       dependsOn:
@@ -223,7 +223,7 @@ properties:
         Id: Helm.Helm
         Source: winget
         Ensure: Present
-        Version: "3.16.3" # See supported version skew in https://helm.sh/docs/topics/version_skew/
+        Version: "3.16.4" # See supported version skew in https://helm.sh/docs/topics/version_skew/
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installK9s
       directives:
