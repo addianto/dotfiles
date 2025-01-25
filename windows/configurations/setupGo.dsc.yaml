@@ -1,0 +1,33 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installGo
+      directives:
+        description: Install Go
+        allowPrerelease: true
+      settings:
+        Id: GoLang.Go
+        Source: winget
+        Ensure: Present
+        Version: "1.23.5"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installGoLangCILint
+      directives:
+        # Official documentation site: https://golangci-lint.run/
+        description: Install golangci-lint
+        allowPrerelease: true
+      settings:
+        Id: GolangCI.golangci-lint
+        Source: winget
+        Ensure: Present
+        Version: "1.63.4"
