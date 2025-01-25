@@ -23,9 +23,11 @@ Install-Module -Name xPSDesiredStateConfiguration -AllowPrerelease
 To use, execute the following command:
 
 ```pwsh
+winget configure --file .\configurations\setupMachine.dsc.yaml
 winget configure --file .\configurations\setupCommon.dsc.yaml
 winget configure --file .\configurations\setupDevTools.dsc.yaml
 winget configure --file .\configurations\setupOfficeTools.dsc.yaml
+winget configure --file .\configurations\setupAssistant.dsc.yaml
 ```
 
 ## References
