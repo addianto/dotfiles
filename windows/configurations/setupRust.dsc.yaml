@@ -10,6 +10,17 @@ properties:
       settings:
         MinVersion: "10.0.19041"
   resources:
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: setRustupHome
+      directives:
+        description: Set RUSTUP_HOME environment variable
+        allowPrerelease: true
+      settings:
+        Name: RUSTUP_HOME
+        Value: "%USERPROFILE%\\.local\\lib\\rustup"
+        Ensure: Present
+        Path: false
+        Target: Process
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installRustup
       directives:

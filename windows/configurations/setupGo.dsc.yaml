@@ -23,7 +23,6 @@ properties:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoLangCILint
       directives:
-        # Official documentation site: https://golangci-lint.run/
         description: Install golangci-lint
         allowPrerelease: true
       settings:
