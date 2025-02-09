@@ -19,7 +19,7 @@ properties:
         Id: Microsoft.PowerShell
         Source: winget
         Ensure: Present
-        Version: "7.4.6.0"
+        Version: "7.5.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOhMyPosh
       directives:
@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "24.18.1"
+        Version: "24.19.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -41,7 +41,7 @@ properties:
         Id: Microsoft.WindowsTerminal
         Source: winget
         Ensure: Present
-        Version: "1.21.3231.0"
+        Version: "1.22.10352.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
@@ -109,7 +109,7 @@ properties:
         Id: M2Team.NanaZip
         Source: winget
         Ensure: Present
-        Version: "3.1.1080.0"
+        Version: "5.0.1250.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installScrcpy
       directives:
@@ -161,7 +161,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.87.1"
+        Version: "0.88.0"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys
