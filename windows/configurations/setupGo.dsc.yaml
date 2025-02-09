@@ -19,7 +19,7 @@ properties:
         Id: GoLang.Go
         Source: winget
         Ensure: Present
-        Version: "1.23.5"
+        Version: "1.23.6"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoLangCILint
       directives:
