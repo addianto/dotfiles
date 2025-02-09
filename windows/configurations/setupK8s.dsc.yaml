@@ -1,0 +1,74 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installDockerDesktop
+      directives:
+        description: Install Docker Desktop
+        allowPrerelease: true
+      settings:
+        Id: Docker.DockerDesktop
+        Source: winget
+        Ensure: Present
+        Version: "4.38.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installKubectl
+      directives:
+        description: Install kubectl
+        allowPrerelease: true
+      settings:
+        Id: Kubernetes.kubectl
+        Source: winget
+        Ensure: Present
+        Version: "1.32.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installMinikube
+      dependsOn:
+        - installDockerDesktop
+      directives:
+        description: Install Minikube
+        allowPrerelease: true
+      settings:
+        Id: Kubernetes.minikube
+        Source: winget
+        Ensure: Present
+        Version: "1.35.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installHelm
+      directives:
+        description: Install Helm
+        allowPrerelease: true
+      settings:
+        Id: Helm.Helm
+        Source: winget
+        Ensure: Present
+        Version: "3.17.0" # See supported version skew in https://helm.sh/docs/topics/version_skew/
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installK9s
+      directives:
+        description: Install k9s
+        allowPrerelease: true
+      settings:
+        Id: Derailed.k9s
+        Source: winget
+        Ensure: Present
+        Version: "0.32.7" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installKubeLinter
+      directives:
+        description: Install KubeLinter
+        allowPrerelease: true
+      settings:
+        Id: stackrox.kube-linter
+        Source: winget
+        Ensure: Present
+        Version: "0.6.8"
