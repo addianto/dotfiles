@@ -241,7 +241,5 @@ properties:
           Enabled: false
         ShortcutGuide:
           Enabled: false
-        VideoConference:
-          Enabled: false
         Workspaces:
           Enabled: false
