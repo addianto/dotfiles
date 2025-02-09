@@ -31,7 +31,7 @@ properties:
         Id: Git.Git
         Source: winget
         Ensure: Present
-        Version: "2.47.1"
+        Version: "2.47.1.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovim
       directives:
@@ -41,7 +41,7 @@ properties:
         Id: Neovim.Neovim
         Source: winget
         Ensure: Present
-        Version: "0.10.3"
+        Version: "0.10.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovide
       dependsOn:
@@ -53,7 +53,7 @@ properties:
         Id: Neovide.Neovide
         Source: winget
         Ensure: Present
-        Version: "0.13.3"
+        Version: "0.14.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVSCodium
       directives:
@@ -91,7 +91,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "9.15.3"
+        Version: "10.2.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -131,7 +131,7 @@ properties:
         Id: Postman.Postman
         Source: winget
         Ensure: Present
-        Version: "11.27.3"
+        Version: "11.31.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installDbeaver
       directives:
@@ -141,7 +141,7 @@ properties:
         Id: dbeaver.dbeaver
         Source: winget
         Ensure: Present
-        Version: "24.3.2"
+        Version: "24.3.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoogleCloudSDK
       directives:
@@ -151,7 +151,6 @@ properties:
         Id: Google.CloudSDK
         Source: winget
         Ensure: Present
-        Version: "504.0.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFd
       directives:
@@ -191,7 +190,7 @@ properties:
         Id: Docker.DockerDesktop
         Source: winget
         Ensure: Present
-        Version: "4.37.1"
+        Version: "4.38.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKubectl
       directives:
@@ -201,7 +200,7 @@ properties:
         Id: Kubernetes.kubectl
         Source: winget
         Ensure: Present
-        Version: "1.32.0"
+        Version: "1.32.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMinikube
       dependsOn:
@@ -213,7 +212,7 @@ properties:
         Id: Kubernetes.minikube
         Source: winget
         Ensure: Present
-        Version: "1.34.0"
+        Version: "1.35.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHelm
       directives:
