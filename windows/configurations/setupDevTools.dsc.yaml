@@ -31,7 +31,7 @@ properties:
         Id: Git.Git
         Source: winget
         Ensure: Present
-        Version: "2.47.1.2"
+        Version: "2.48.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovim
       directives:
@@ -91,7 +91,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "10.2.1"
+        Version: "10.4.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -121,7 +121,7 @@ properties:
         Id: k6.k6
         Source: winget
         Ensure: Present
-        Version: "0.56.0"
+        Version: "0.57.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPostman
       directives:
@@ -131,7 +131,7 @@ properties:
         Id: Postman.Postman
         Source: winget
         Ensure: Present
-        Version: "11.31.4"
+        Version: "11.33.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installDbeaver
       directives:
@@ -141,7 +141,7 @@ properties:
         Id: dbeaver.dbeaver
         Source: winget
         Ensure: Present
-        Version: "24.3.4"
+        Version: "24.3.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoogleCloudSDK
       directives:

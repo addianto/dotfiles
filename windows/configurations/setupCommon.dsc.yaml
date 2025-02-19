@@ -71,7 +71,7 @@ properties:
         Id: dotPDN.PaintDotNet
         Source: winget
         Ensure: Present
-        Version: "5.1.2"
+        Version: "5.1.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installLibreWolf
       directives:
@@ -99,7 +99,7 @@ properties:
         Id: errata-ai.Vale
         Source: winget
         Ensure: Present
-        Version: "3.9.1"
+        Version: "3.9.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNanaZip
       directives:
@@ -129,7 +129,7 @@ properties:
         Id: DigitalScholar.Zotero
         Source: winget
         Ensure: Present
-        Version: "7.0.11"
+        Version: "7.0.12"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSSHFS
       directives:

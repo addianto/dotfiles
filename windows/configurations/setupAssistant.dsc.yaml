@@ -19,7 +19,7 @@ properties:
         Id: Ollama.Ollama
         Source: winget
         Ensure: Present
-        Version: "0.5.7"
+        Version: "0.5.11"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installJoplin
       directives:
@@ -30,13 +30,14 @@ properties:
         Source: winget
         Ensure: Present
         Version: "3.2.12"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installAnythingLLM
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: setDisableTelemetry
       directives:
-        description: Install AnythingLLM
+        description: Set DISABLE_TELEMETRY environment variable
         allowPrerelease: true
       settings:
-        Id: MintplexLabs.AnythingLLM
-        Source: winget
+        Name: DISABLE_TELEMETRY
+        Value: true
         Ensure: Present
-        Version: "1.7.3"
+        Path: false
+        Target: Process

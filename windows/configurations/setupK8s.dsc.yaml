@@ -29,7 +29,7 @@ properties:
         Id: Kubernetes.kubectl
         Source: winget
         Ensure: Present
-        Version: "1.32.1"
+        Version: "1.32.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMinikube
       dependsOn:
@@ -51,7 +51,7 @@ properties:
         Id: Helm.Helm
         Source: winget
         Ensure: Present
-        Version: "3.17.0" # See supported version skew in https://helm.sh/docs/topics/version_skew/
+        Version: "3.17.1" # See supported version skew in https://helm.sh/docs/topics/version_skew/
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installK9s
       directives:
@@ -61,7 +61,7 @@ properties:
         Id: Derailed.k9s
         Source: winget
         Ensure: Present
-        Version: "0.32.7" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
+        Version: "0.40.5" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKubeLinter
       directives:
