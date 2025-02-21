@@ -55,3 +55,12 @@ properties:
         Id: XP99J3KP4XZ4VV
         Source: msstore
         Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installThunderbird
+      directives:
+        description: Install Mozilla Thunderbird
+        allowPrerelease: true
+      settings:
+        Id: Mozilla.Thunderbird.en-GB
+        Source: winget
+        Ensure: Present

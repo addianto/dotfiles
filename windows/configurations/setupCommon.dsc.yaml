@@ -162,6 +162,36 @@ properties:
         Source: winget
         Ensure: Present
         Version: "0.88.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installWinSCP
+      directives:
+        description: Install WinSCP
+        allowPrerelease: true
+      settings:
+        Id: WinSCP.WinSCP
+        Source: winget
+        Ensure: Present
+        Version: "6.3.6"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installFoobar2000
+      directives:
+        description: Install foobar2000
+        allowPrerelease: true
+      settings:
+        Id: PeterPawlowski.foobar2000
+        Source: winget
+        Ensure: Present
+        Version: "2.24.2"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installOpenVPN
+      directives:
+        description: Install OpenVPN
+        allowPrerelease: true
+      settings:
+        Id: OpenVPNTechnologies.OpenVPN
+        Source: winget
+        Ensure: Present
+        Version: "2.6.1301"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys

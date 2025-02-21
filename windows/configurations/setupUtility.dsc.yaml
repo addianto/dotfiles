@@ -1,0 +1,42 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installCPUZ
+      directives:
+        description: Install CPU-Z
+        allowPrerelease: true
+      settings:
+        Id: CPUID.CPU-Z
+        Source: winget
+        Ensure: Present
+        Version: "2.14"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installKrita
+      directives:
+        description: Install Krita
+        allowPrerelease: true
+      settings:
+        Id: KDE.Krita
+        Source: winget
+        Ensure: Present
+        Version: "5.2.9.100"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installShotcut
+      directives:
+        description: Install Shotcut
+        allowPrerelease: true
+      settings:
+        Id: Meltytech.Shotcut
+        Source: winget
+        Ensure: Present
+        Version: "25.01.25"
