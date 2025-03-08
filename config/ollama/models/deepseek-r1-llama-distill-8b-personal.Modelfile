@@ -1,0 +1,7 @@
+# DeepSeek-R1 Llama3.1 Distill 8B
+# A dense (distilled) model based on DeepSeek-R1 and Llama 3.1.
+FROM hf.co/bartowski/DeepSeek-R1-Distill-Llama-8B-GGUF:Q4_K_M
+
+# Follow the generation config from the upstream: https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-8B/blob/main/generation_config.json
+PARAMETER temperature 0.6
+PARAMETER top_p 0.95

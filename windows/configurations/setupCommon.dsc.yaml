@@ -141,17 +141,15 @@ properties:
         Ensure: Present
         Version: "3.5.20357"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallSiriKali
-      dependsOn:
-        - installSSHFS
+      id: installJoplin
       directives:
-        description: Uninstall Siri Kali
+        description: Install Joplin
         allowPrerelease: true
       settings:
-        Id: FrancisBanyikwa.SiriKali
+        Id: Joplin.Joplin
         Source: winget
-        Ensure: Absent
-        Version: "1.6.0"
+        Ensure: Present
+        Version: "3.2.12"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerToys
       directives:

@@ -39,4 +39,14 @@ properties:
         Id: MintplexLabs.AnythingLLM
         Source: winget
         Ensure: Present
-        Version: "1.7.3"
+        Version: "1.7.2"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installWindsurf
+      directives:
+        description: Install Windsurf
+        allowPrerelease: true
+      settings:
+        Id: Codeium.Windsurf
+        Source: winget
+        Ensure: Present
+        Version: "1.94.0"

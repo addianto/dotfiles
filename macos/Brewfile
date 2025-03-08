@@ -1,0 +1,84 @@
+# My Brewfile
+
+## Core packages
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "buo/cask-upgrade"
+brew "mas"
+
+## CLI
+brew "zsh"
+brew "zsh-syntax-highlighting"
+brew "git"
+brew "shellcheck"
+brew "difftastic"
+cask "iterm2"
+
+## Font
+cask "font-fira-code-nerd-font"
+
+## Security Suite
+brew "openssh"
+brew "gnupg"
+brew "pinentry-mac" if OS.mac?
+
+## Browsers
+cask "librewolf", args: { no_quarantine: true }
+cask "eloston-chromium"
+
+## Java
+cask "temurin@21"
+
+## Python
+brew "python@3.13"
+brew "poetry"
+brew "pyenv"
+brew "pyenv-virtualenv"
+
+## AI/LLM
+brew "ollama", restart_service: :changed
+cask "anythingllm"
+
+## Others
+tap "golangci/tap"
+tap "leoafarias/fvm"
+tap "rcmdnk/file"
+tap "th-ch/youtube-music"
+brew "chezmoi"
+brew "node"
+brew "firebase-cli"
+brew "go"
+brew "gopls"
+brew "icu4c@75"
+brew "neovim"
+brew "neovide"
+brew "pnpm"
+brew "podman"
+brew "podman-compose"
+brew "ruby@3.2"
+brew "golangci/tap/golangci-lint"
+brew "leoafarias/fvm/fvm"
+brew "rcmdnk/file/brew-file"
+cask "discord"
+cask "http-toolkit"
+cask "jetbrains-toolbox"
+cask "joplin"
+cask "mactex-no-gui"
+cask "microsoft-auto-update"
+cask "microsoft-office-businesspro"
+cask "postman"
+cask "raspberry-pi-imager"
+cask "scroll-reverser"
+cask "syncthing"
+cask "thunderbird"
+cask "vscodium"
+cask "youtube-music"
+cask "zoom"
+cask "zotero"
+mas "AdGuard for Safari", id: 1440147259
+mas "Developer", id: 640199958
+mas "Draw Things", id: 6444050820
+mas "Enchanted", id: 6474268307
+mas "Windows App", id: 1295203466
+mas "WireGuard", id: 1451685025
+mas "Xcode", id: 497799835

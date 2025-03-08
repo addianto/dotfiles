@@ -1,0 +1,6 @@
+# Llama 3.2 Abliterated 3B
+FROM huihui_ai/llama3.2-abliterate:3b-instruct-fp16
+
+# Follow the generation config from the upstream: https://huggingface.co/huihui-ai/Llama-3.2-3B-Instruct-abliterated/blob/main/generation_config.json
+PARAMETER temperature 0.6
+PARAMETER top_p 0.9
