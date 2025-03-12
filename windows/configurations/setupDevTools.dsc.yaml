@@ -53,7 +53,7 @@ properties:
         Id: Neovide.Neovide
         Source: winget
         Ensure: Present
-        Version: "0.14.0"
+        Version: "0.14.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVSCodium
       directives:
@@ -91,7 +91,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "10.4.1"
+        Version: "10.6.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:

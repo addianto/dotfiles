@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "24.19.0"
+        Version: "25.3.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -71,7 +71,7 @@ properties:
         Id: dotPDN.PaintDotNet
         Source: winget
         Ensure: Present
-        Version: "5.1.4"
+        Version: "5.1.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installLibreWolf
       directives:
@@ -169,7 +169,7 @@ properties:
         Id: WinSCP.WinSCP
         Source: winget
         Ensure: Present
-        Version: "6.3.6"
+        Version: "6.3.7"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFoobar2000
       directives:
@@ -179,7 +179,7 @@ properties:
         Id: PeterPawlowski.foobar2000
         Source: winget
         Ensure: Present
-        Version: "2.24.2"
+        Version: "2.24.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOpenVPN
       directives:
@@ -190,6 +190,16 @@ properties:
         Source: winget
         Ensure: Present
         Version: "2.6.1301"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installJoplin
+      directives:
+        description: Install Joplin
+        allowPrerelease: true
+      settings:
+        Id: Joplin.Joplin
+        Source: winget
+        Ensure: Present
+        Version: "3.2.13"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys

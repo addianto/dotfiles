@@ -29,7 +29,7 @@ properties:
         Id: Joplin.Joplin
         Source: winget
         Ensure: Present
-        Version: "3.2.12"
+        Version: "3.2.13"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setDisableTelemetry
       directives:

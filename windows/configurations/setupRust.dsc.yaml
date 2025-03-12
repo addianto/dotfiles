@@ -30,4 +30,4 @@ properties:
         Id: Rustlang.Rustup
         Source: winget
         Ensure: Present
-        Version: "1.27.1"
+        Version: "1.28.1"

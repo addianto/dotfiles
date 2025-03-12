@@ -19,7 +19,7 @@ properties:
         Id: Docker.DockerDesktop
         Source: winget
         Ensure: Present
-        Version: "4.38.0"
+        Version: "4.39.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKubectl
       directives:
