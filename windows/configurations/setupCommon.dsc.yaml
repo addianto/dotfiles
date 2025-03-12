@@ -190,16 +190,6 @@ properties:
         Source: winget
         Ensure: Present
         Version: "2.6.1301"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installJoplin
-      directives:
-        description: Install Joplin
-        allowPrerelease: true
-      settings:
-        Id: Joplin.Joplin
-        Source: winget
-        Ensure: Present
-        Version: "3.2.13"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys
