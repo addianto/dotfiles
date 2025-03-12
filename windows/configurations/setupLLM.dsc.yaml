@@ -41,3 +41,13 @@ properties:
         Ensure: Present
         Path: false
         Target: Process
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installWindsurf
+      directives:
+        description: Install Windsurf
+        allowPrerelease: true
+      settings:
+        Id: Codeium.Windsurf
+        Source: winget
+        Ensure: Present
+        Version: "1.94.0"

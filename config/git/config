@@ -11,13 +11,17 @@
 [gpg]
     format = openpgp
 [push]
-    default = nothing
+    default = simple
+    autoSetupRemote = true
     gpgSign = if-asked
 [user]
     useConfigOnly = true
 [diff]
     algorithm = histogram
     tool = difftastic
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
 [difftool]
     prompt = false
 [difftool "difftastic"]
@@ -36,6 +40,11 @@
     ui = auto
 [branch]
     sort = -committerdate
+[tag]
+    sort = version:refname
+    gpgSign = true
+[help]
+    autocorrect = prompt
 [alias]
     force-push = push --force-with-lease
     log-graph = log --graph --oneline --color
@@ -44,3 +53,5 @@
     stash-all = stash --all
     word-diff = diff --word-diff --ignore-all-space
     difft = difftool
+    unstage = reset HEAD
+    uncommit = reset --soft HEAD^
