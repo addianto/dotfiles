@@ -19,17 +19,7 @@ properties:
         Id: Ollama.Ollama
         Source: winget
         Ensure: Present
-        Version: "0.5.11"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installJoplin
-      directives:
-        description: Install Joplin
-        allowPrerelease: true
-      settings:
-        Id: Joplin.Joplin
-        Source: winget
-        Ensure: Present
-        Version: "3.2.13"
+        Version: "0.5.13"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setDisableTelemetry
       directives:
