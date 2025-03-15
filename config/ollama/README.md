@@ -14,13 +14,14 @@ See [`config.go`](https://github.com/ollama/ollama/blob/v0.5.7/envconfig/config.
 
 Currently, I use the following models:
 
-- [Llama 3.2 Abliterated 3B](./models/llama3.2-abliterated-3b-personal.Modelfile)
-- [DeepScaleR 1.5B Preview](./models/deepscaler-1.5b-personal.Modelfile)
-- [Sailor2 1B/8B](https://huggingface.co/sail/Sailor2-1B)
-- [Sarashina 2.2 3B](https://huggingface.co/sbintuitions/sarashina2.2-3b)
-- [Qwen 2.5 Coder Abliterated 1.5B](./models/qwen2.5-coder-abliterated-1.5b-personal.Modelfile)
-- [SmolLM2 1.7B](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct)
-- [Snowflake Arctic Embed 2 568M](https://huggingface.co/Snowflake/snowflake-arctic-embed-l-v2.0)
+- [Gemma 3 4B](https://huggingface.co/google/gemma-3-4b-it) as main general purpose model.
+- [Llama 3.2 Abliterated 3B](./models/llama3.2-abliterated-3b-personal.Modelfile) as secondary general purpose model.
+- [DeepScaleR 1.5B Preview](./models/deepscaler-1.5b-personal.Modelfile) as reasoning model.
+- [Qwen 2.5 Coder Abliterated 1.5B](./models/qwen2.5-coder-abliterated-1.5b-personal.Modelfile) as code completion model.
+- [Sailor2 3B](https://huggingface.co/sail/Sailor2-3B) for Bahasa Indonesia <-> English translation model.
+- [Sarashina 2.2 3B](https://huggingface.co/sbintuitions/sarashina2.2-3b) for Japanese <-> English translation model.
+- [SmolLM2 1.7B](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct) on my Raspberry Pi 5 as a general purpose model.
+- [Snowflake Arctic Embed 2 568M](https://huggingface.co/Snowflake/snowflake-arctic-embed-l-v2.0) for embedding.
 
 Use `ollama create` to build custom models from `Modelfile` files.
 For example, to build the personalised Llama 3.2 Abliterated model and quantize it to Q8_0 level:
