@@ -51,7 +51,7 @@ properties:
         Id: Helm.Helm
         Source: winget
         Ensure: Present
-        Version: "3.17.1" # See supported version skew in https://helm.sh/docs/topics/version_skew/
+        Version: "3.17.2" # See supported version skew in https://helm.sh/docs/topics/version_skew/
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installK9s
       directives:

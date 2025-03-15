@@ -27,10 +27,9 @@ winget configure --file .\configurations\setupMachine.dsc.yaml
 winget configure --file .\configurations\setupCommon.dsc.yaml
 winget configure --file .\configurations\setupDevTools.dsc.yaml
 winget configure --file .\configurations\setupOfficeTools.dsc.yaml
-winget configure --file .\configurations\setupAssistant.dsc.yaml
 ```
 
-Some configuration files are optional, such as those for setting up [Go](./setupGo.dsc.yaml) and [Rust](./setupRust.dsc.yaml) development environments.
+Some configuration files are optional, such as those for setting up [LLM](./setupLLM.dsc.yaml).
 
 ## References
 

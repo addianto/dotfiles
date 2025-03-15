@@ -19,7 +19,7 @@ properties:
         Id: Ollama.Ollama
         Source: winget
         Ensure: Present
-        Version: "0.5.13"
+        Version: "0.6.0"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setDisableTelemetry
       directives:

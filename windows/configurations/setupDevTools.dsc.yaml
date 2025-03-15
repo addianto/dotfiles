@@ -131,7 +131,7 @@ properties:
         Id: Postman.Postman
         Source: winget
         Ensure: Present
-        Version: "11.33.0"
+        Version: "11.36.6"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installDbeaver
       directives:
@@ -141,7 +141,7 @@ properties:
         Id: dbeaver.dbeaver
         Source: winget
         Ensure: Present
-        Version: "24.3.5"
+        Version: "25.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoogleCloudSDK
       directives:
@@ -181,3 +181,44 @@ properties:
         Source: winget
         Ensure: Present
         Version: "1.9.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installGo
+      directives:
+        description: Install Go
+        allowPrerelease: true
+      settings:
+        Id: GoLang.Go
+        Source: winget
+        Ensure: Present
+        Version: "1.24.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installGoLangCILint
+      directives:
+        description: Install golangci-lint
+        allowPrerelease: true
+      settings:
+        Id: GolangCI.golangci-lint
+        Source: winget
+        Ensure: Present
+        Version: "1.64.5"
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: setRustupHome
+      directives:
+        description: Set RUSTUP_HOME environment variable
+        allowPrerelease: true
+      settings:
+        Name: RUSTUP_HOME
+        Value: "%USERPROFILE%\\.local\\lib\\rustup"
+        Ensure: Present
+        Path: false
+        Target: Process
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installRustup
+      directives:
+        description: Install Rustup
+        allowPrerelease: true
+      settings:
+        Id: Rustlang.Rustup
+        Source: winget
+        Ensure: Present
+        Version: "1.28.1"
