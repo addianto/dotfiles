@@ -29,7 +29,7 @@ properties:
         Id: Kubernetes.kubectl
         Source: winget
         Ensure: Present
-        Version: "1.32.2"
+        Version: "1.32.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMinikube
       dependsOn:

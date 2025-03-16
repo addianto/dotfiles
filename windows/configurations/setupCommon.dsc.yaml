@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "25.3.0"
+        Version: "25.4.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -109,7 +109,7 @@ properties:
         Id: M2Team.NanaZip
         Source: winget
         Ensure: Present
-        Version: "5.0.1250.0"
+        Version: "5.0.1263.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installScrcpy
       directives:
@@ -149,7 +149,7 @@ properties:
         Id: Joplin.Joplin
         Source: winget
         Ensure: Present
-        Version: "3.2.12"
+        Version: "3.2.13"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerToys
       directives:

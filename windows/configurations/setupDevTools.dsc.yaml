@@ -152,6 +152,15 @@ properties:
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installAzureCLI
+      directives:
+        description: Install Microsoft Azure CLI
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.AzureCLI
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFd
       directives:
         description: Install fd
