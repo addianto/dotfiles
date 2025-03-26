@@ -31,7 +31,7 @@ properties:
         Id: Git.Git
         Source: winget
         Ensure: Present
-        Version: "2.48.1"
+        Version: "2.49.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovim
       directives:
@@ -131,7 +131,7 @@ properties:
         Id: Postman.Postman
         Source: winget
         Ensure: Present
-        Version: "11.36.6"
+        Version: "11.37.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installDbeaver
       directives:
@@ -141,7 +141,7 @@ properties:
         Id: dbeaver.dbeaver
         Source: winget
         Ensure: Present
-        Version: "25.0.0"
+        Version: "25.0.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoogleCloudSDK
       directives:
