@@ -14,7 +14,7 @@ See [`config.go`](https://github.com/ollama/ollama/blob/v0.5.7/envconfig/config.
 
 Currently, I use the following models:
 
-- [Gemma 3 4B](https://huggingface.co/google/gemma-3-4b-it) as main general purpose model.
+- [Gemma 3 4B with tools support](https://ollama.com/PetrosStav/gemma3-tools:4b) as main general purpose model.
 - [Llama 3.2 Abliterated 3B](./models/llama3.2-abliterated-3b-personal.Modelfile) as secondary general purpose model.
 - [DeepScaleR 1.5B Preview](./models/deepscaler-1.5b-personal.Modelfile) as reasoning model.
 - [Qwen 2.5 Coder Abliterated 1.5B](./models/qwen2.5-coder-abliterated-1.5b-personal.Modelfile) as code completion model.
