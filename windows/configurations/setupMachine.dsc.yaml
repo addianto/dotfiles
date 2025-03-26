@@ -1,0 +1,62 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.Windows.Developer/DeveloperMode
+      directives:
+        description: Enable developer mode
+        allowPrerelease: true
+      settings:
+        Ensure: Present
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: setXDGCacheHome
+      directives:
+        description: Set XDG_CACHE_HOME environment variable
+        allowPrerelease: true
+      settings:
+        Name: XDG_CACHE_HOME
+        Value: "%USERPROFILE%\\.cache"
+        Ensure: Present
+        Path: false
+        Target: Process
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: setXDGConfigHome
+      directives:
+        description: Set XDG_CONFIG_HOME environment variable
+        allowPrerelease: true
+      settings:
+        Name: XDG_CONFIG_HOME
+        Value: "%USERPROFILE%\\.config"
+        Ensure: Present
+        Path: false
+        Target: Process
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: setXDGDataHome
+      directives:
+        description: Set XDG_DATA_HOME environment variable
+        allowPrerelease: true
+      settings:
+        Name: XDG_DATA_HOME
+        Value: "%USERPROFILE%\\.local\\share"
+        Ensure: Present
+        Path: false
+        Target: Process
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: setXDGStateHome
+      directives:
+        description: Set XDG_STATE_HOME environment variable
+        allowPrerelease: true
+      settings:
+        Name: XDG_STATE_HOME
+        Value: "%USERPROFILE%\\.local\\state"
+        Ensure: Present
+        Path: false
+        Target: Process

@@ -1,0 +1,6 @@
+# DeepScaleR 1.5B Preview
+FROM deepscaler:1.5b-preview-fp16
+
+# Follow the generation config from the upstream: https://huggingface.co/agentica-org/DeepScaleR-1.5B-Preview/blob/main/generation_config.json
+PARAMETER temperature 0.6
+PARAMETER top_p 0.95

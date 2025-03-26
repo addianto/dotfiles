@@ -10,7 +10,7 @@ Install the following DSC modules before running the WinGet Configuration files:
 - [`Microsoft.WinGet.DSC`](https://www.powershellgallery.com/packages/Microsoft.WinGet.DSC/1.8.1133-alpha)
 - [`xPSDesiredStateConfiguration `](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/9.2.0-preview0008)
 
-To install the modules:
+To install the modules, run:
 
 ```pwsh
 Install-Module -Name Microsoft.Windows.Developer -AllowPrerelease
@@ -20,13 +20,16 @@ Install-Module -Name xPSDesiredStateConfiguration -AllowPrerelease
 
 ## How to Use
 
-To use, execute the following command:
+To use the configuration files, execute the following commands:
 
 ```pwsh
+winget configure --file .\configurations\setupMachine.dsc.yaml
 winget configure --file .\configurations\setupCommon.dsc.yaml
 winget configure --file .\configurations\setupDevTools.dsc.yaml
 winget configure --file .\configurations\setupOfficeTools.dsc.yaml
 ```
+
+Some configuration files are optional, such as those for setting up [LLM](./setupLLM.dsc.yaml).
 
 ## References
 

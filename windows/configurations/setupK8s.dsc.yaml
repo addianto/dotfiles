@@ -11,56 +11,64 @@ properties:
         MinVersion: "10.0.19041"
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installOffice365
+      id: installDockerDesktop
       directives:
-        description: Install Microsoft Office 365
+        description: Install Docker Desktop
         allowPrerelease: true
       settings:
-        Id: Microsoft.Office
+        Id: Docker.DockerDesktop
         Source: winget
         Ensure: Present
+        Version: "4.39.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallTeams
+      id: installKubectl
       directives:
-        description: Uninstall Microsoft Teams (WinGet)
+        description: Install kubectl
         allowPrerelease: true
       settings:
-        Id: Microsoft.Teams
+        Id: Kubernetes.kubectl
         Source: winget
         Ensure: Present
+        Version: "1.32.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installTeams
+      id: installMinikube
+      dependsOn:
+        - installDockerDesktop
       directives:
-        description: Install Microsoft Teams
+        description: Install Minikube
         allowPrerelease: true
       settings:
-        Id: XP8BT8DW290MPQ
-        Source: msstore
-        Ensure: Present
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallZoom
-      directives:
-        description: Uninstall Zoom (WinGet)
-        allowPrerelease: true
-      settings:
-        Id: Zoom.Zoom
+        Id: Kubernetes.minikube
         Source: winget
         Ensure: Present
+        Version: "1.35.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installZoom
+      id: installHelm
       directives:
-        description: Install Zoom Workplace
+        description: Install Helm
         allowPrerelease: true
       settings:
-        Id: XP99J3KP4XZ4VV
-        Source: msstore
-        Ensure: Present
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installThunderbird
-      directives:
-        description: Install Mozilla Thunderbird
-        allowPrerelease: true
-      settings:
-        Id: Mozilla.Thunderbird.en-GB
+        Id: Helm.Helm
         Source: winget
         Ensure: Present
+        Version: "3.17.2" # See supported version skew in https://helm.sh/docs/topics/version_skew/
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installK9s
+      directives:
+        description: Install k9s
+        allowPrerelease: true
+      settings:
+        Id: Derailed.k9s
+        Source: winget
+        Ensure: Present
+        Version: "0.40.10" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installKubeLinter
+      directives:
+        description: Install KubeLinter
+        allowPrerelease: true
+      settings:
+        Id: stackrox.kube-linter
+        Source: winget
+        Ensure: Present
+        Version: "0.6.8"

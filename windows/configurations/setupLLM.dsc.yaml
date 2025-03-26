@@ -19,24 +19,24 @@ properties:
         Id: Ollama.Ollama
         Source: winget
         Ensure: Present
-        Version: "0.5.5"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installJoplin
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: setDisableTelemetry
       directives:
-        description: Install Joplin
+        description: Set DISABLE_TELEMETRY environment variable
         allowPrerelease: true
       settings:
-        Id: Joplin.Joplin
-        Source: winget
+        Name: DISABLE_TELEMETRY
+        Value: true
         Ensure: Present
-        Version: "3.1.24"
+        Path: false
+        Target: Process
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installAnythingLLM
+      id: installWindsurf
       directives:
-        description: Install AnythingLLM
+        description: Install Windsurf
         allowPrerelease: true
       settings:
-        Id: MintplexLabs.AnythingLLM
+        Id: Codeium.Windsurf
         Source: winget
         Ensure: Present
-        Version: "1.7.2"
+        Version: "1.94.0"
