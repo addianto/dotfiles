@@ -16,7 +16,7 @@ Currently, I use the following models:
 
 - [Gemma 3 4B with tools support](https://ollama.com/PetrosStav/gemma3-tools:4b) as main general purpose model.
 - [Llama 3.2 Abliterated 3B](./models/llama3.2-abliterated-3b-personal.Modelfile) as secondary general purpose model.
-- [DeepScaleR 1.5B Preview](./models/deepscaler-1.5b-personal.Modelfile) as reasoning model.
+- [Cogito v1 Preview 3B](https://ollama.com/library/cogito:3b) as reasoning model.
 - [Qwen 2.5 Coder Abliterated 1.5B](./models/qwen2.5-coder-abliterated-1.5b-personal.Modelfile) as code completion model.
 - [Sailor2 3B](https://huggingface.co/sail/Sailor2-3B) for Bahasa Indonesia <-> English translation model.
 - [Sarashina 2.2 3B](https://huggingface.co/sbintuitions/sarashina2.2-3b) for Japanese <-> English translation model.
