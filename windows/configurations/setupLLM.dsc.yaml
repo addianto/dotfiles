@@ -42,12 +42,11 @@ properties:
         Path: false
         Target: Process
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installWindsurf
+      id: uninstallWindsurf
       directives:
-        description: Install Windsurf
+        description: Uninstall Windsurf
         allowPrerelease: true
       settings:
         Id: Codeium.Windsurf
         Source: winget
-        Ensure: Present
-        Version: "1.97.0"
+        Ensure: Absent
