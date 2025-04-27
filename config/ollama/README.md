@@ -14,12 +14,11 @@ See [`config.go`](https://github.com/ollama/ollama/blob/v0.5.7/envconfig/config.
 
 Currently, I use the following models:
 
-- [Gemma 3 4B with tools support](https://ollama.com/PetrosStav/gemma3-tools:4b) as a general-purpose model.
+- [Gemma 3 4B QAT](https://ollama.com/library/gemma3:4b-it-qat) as a general-purpose model and Japanese <-> English translator.
 - [Cogito v1 Preview 3B](https://ollama.com/library/cogito:3b) as a general-purpose and reasoning model.
 - [Qwen 2.5 Coder Abliterated 1.5B](./models/qwen2.5-coder-abliterated-1.5b-personal.Modelfile) as a code completion model.
-- [Sailor2 3B](https://huggingface.co/sail/Sailor2-3B) for Bahasa Indonesia <-> English translation.
+- [Sailor2 3B](https://huggingface.co/sail/Sailor2-3B) for Bahasa Indonesia <-> English translator.
   - On a beefier machine, I use [Sahabatai-AI 9B](https://huggingface.co/GoToCompany/gemma2-9b-cpt-sahabatai-v1-instruct).
-- [Qwen 2.5 Abliterated 3B](./models/qwen2.5-abliterated-3b-personal.Modelfile) for Japanese <-> English translation.
 - [SmolLM2 1.7B](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct) on my Raspberry Pi 5 as a general-purpose model.
 - [Snowflake Arctic Embed 2 568M](https://huggingface.co/Snowflake/snowflake-arctic-embed-l-v2.0) for embedding.
 

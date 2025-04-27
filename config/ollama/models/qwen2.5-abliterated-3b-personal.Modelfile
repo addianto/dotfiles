@@ -1,3 +1,4 @@
+# Qwen 2.5 Abliterated 3B
 FROM huihui_ai/qwen2.5-abliterate:3b-instruct-q8_0
 
 # Follow the generation config from the upstream: https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/blob/main/generation_config.json
