@@ -1,0 +1,59 @@
+---
+name: Default
+version: 0.0.1
+schema: v1
+
+models:
+  - name: Gemma 3B QAT
+    provider: ollama
+    model: gemma3:4b-it-qat
+    roles:
+      - chat
+      - edit
+
+  - name: Cogito v1 Preview 3B
+    provider: ollama
+    model: cogito:3b-v1-preview-llama-q8_0
+    roles:
+      - chat
+      - edit
+
+  - name: Cogito v1 Preview 3B (Reasoning)
+    provider: ollama
+    model: cogito:3b-v1-preview-llama-q8_0
+    chatOptions:
+      baseSystemMessage: "Enable deep thinking subroutine."
+    defaultCompletionOptions:
+      frequencyPenalty: 1.1
+    roles:
+      - chat
+      - edit
+
+  - name: Sailor 2 3B
+    provider: ollama
+    model: hf.co/mradermacher/Sailor2-3B-GGUF:Q6_K
+    roles:
+      - chat
+      - edit
+
+  - name: Qwen 2.5 Coder Abliterated 1.5B
+    provider: ollama
+    model: addianto/qwen2.5-coder-abliterated:1.5b
+    roles:
+      - autocomplete
+
+  - name: Snowflake Arctic Embed 2 568M
+    provider: ollama
+    model: snowflake-arctic-embed2:568m
+    roles:
+      - embed
+
+context:
+  - provider: diff
+  - provider: file
+  - provider: codebase
+    params:
+      nRetrieve: 25
+      nFinal: 5
+  - provider: code
+  - provider: docs
