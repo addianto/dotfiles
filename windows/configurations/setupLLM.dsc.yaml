@@ -10,6 +10,17 @@ properties:
       settings:
         MinVersion: "10.0.19041"
   resources:
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: setOllamaFlashAttention
+      directives:
+        description: Set OLLAMA_FLASH_ATTENTION environment variable
+        allowPrerelease: true
+      settings:
+        Name: OLLAMA_FLASH_ATTENTION
+        Value: 1
+        Ensure: Present
+        Path: false
+        Target: Process
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOllama
       directives:
@@ -31,12 +42,11 @@ properties:
         Path: false
         Target: Process
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installWindsurf
+      id: uninstallWindsurf
       directives:
-        description: Install Windsurf
+        description: Uninstall Windsurf
         allowPrerelease: true
       settings:
         Id: Codeium.Windsurf
         Source: winget
-        Ensure: Present
-        Version: "1.94.0"
+        Ensure: Absent

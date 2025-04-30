@@ -1,6 +1,0 @@
-# Gemma 3 4B with tools support
-FROM PetrosStav/gemma3-tools:4b
-
-# Follow the generation config from the upstream: https://huggingface.co/google/gemma-3-4b-it/blob/main/generation_config.json
-PARAMETER top_k 64
-PARAMETER top_p 0.95

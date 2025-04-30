@@ -4,23 +4,22 @@ My personalised Ollama configuration and models.
 
 ## Configuration
 
-I use the default configuration, except:
+I use the default configuration, with the following exception:
 
 - `OLLAMA_FLASH_ATTENTION` is set to 1 on a machine with an Nvidia GPU.
 
-See [`config.go`](https://github.com/ollama/ollama/blob/v0.5.7/envconfig/config.go) for the list of variables.
+See [`config.go`](https://github.com/ollama/ollama/blob/v0.5.7/envconfig/config.go) for the list of available variables.
 
 ## Models
 
 Currently, I use the following models:
 
-- [Gemma 3 4B with tools support](https://ollama.com/PetrosStav/gemma3-tools:4b) as main general purpose model.
-- [Llama 3.2 Abliterated 3B](./models/llama3.2-abliterated-3b-personal.Modelfile) as secondary general purpose model.
-- [DeepScaleR 1.5B Preview](./models/deepscaler-1.5b-personal.Modelfile) as reasoning model.
-- [Qwen 2.5 Coder Abliterated 1.5B](./models/qwen2.5-coder-abliterated-1.5b-personal.Modelfile) as code completion model.
-- [Sailor2 3B](https://huggingface.co/sail/Sailor2-3B) for Bahasa Indonesia <-> English translation model.
-- [Sarashina 2.2 3B](https://huggingface.co/sbintuitions/sarashina2.2-3b) for Japanese <-> English translation model.
-- [SmolLM2 1.7B](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct) on my Raspberry Pi 5 as a general purpose model.
+- [Gemma 3 4B QAT](https://ollama.com/library/gemma3:4b-it-qat) as a general-purpose model and Japanese <-> English translator.
+- [Cogito v1 Preview 3B](https://ollama.com/library/cogito:3b) as a general-purpose and reasoning model.
+- [Qwen 2.5 Coder Abliterated 1.5B](./models/qwen2.5-coder-abliterated-1.5b-personal.Modelfile) as a code completion model.
+- [Sailor2 3B](https://huggingface.co/sail/Sailor2-3B) for Bahasa Indonesia <-> English translator.
+  - On a beefier machine, I use [Sahabat-AI 9B](https://huggingface.co/GoToCompany/gemma2-9b-cpt-sahabatai-v1-instruct).
+- [SmolLM2 1.7B](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct) on my Raspberry Pi 5 as a general-purpose model.
 - [Snowflake Arctic Embed 2 568M](https://huggingface.co/Snowflake/snowflake-arctic-embed-l-v2.0) for embedding.
 
 Use `ollama create` to build custom models from `Modelfile` files.
