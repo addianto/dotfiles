@@ -27,11 +27,17 @@ models:
       frequencyPenalty: 1.1
     roles:
       - chat
-      - edit
 
   - name: Sailor 2 3B
     provider: ollama
     model: hf.co/mradermacher/Sailor2-3B-GGUF:Q6_K
+    roles:
+      - chat
+      - edit
+
+  - name: Sahabat-AI 9B
+    provider: ollama
+    model: hf.co/mradermacher/gemma2-9b-cpt-sahabatai-v1-instruct-GGUF:Q4_K_M
     roles:
       - chat
       - edit
