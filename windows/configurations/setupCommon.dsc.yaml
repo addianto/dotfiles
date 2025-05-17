@@ -19,7 +19,7 @@ properties:
         Id: Microsoft.PowerShell
         Source: winget
         Ensure: Present
-        Version: "7.5.0.0"
+        Version: "7.5.1.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOhMyPosh
       directives:
@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "25.6.0"
+        Version: "25.23.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -41,7 +41,7 @@ properties:
         Id: Microsoft.WindowsTerminal
         Source: winget
         Ensure: Present
-        Version: "1.22.10731.0"
+        Version: "1.22.11141.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
@@ -99,7 +99,7 @@ properties:
         Id: errata-ai.Vale
         Source: winget
         Ensure: Present
-        Version: "3.10.0"
+        Version: "3.11.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNanaZip
       directives:
@@ -149,8 +149,7 @@ properties:
         Id: Joplin.Joplin
         Source: winget
         Ensure: Present
-        Version: "3.2.13"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
+    - resource: Microsof1.WinGet.DSC/WinGetPackage
       id: installPowerToys
       directives:
         description: Install PowerToys
@@ -159,7 +158,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.89.0"
+        Version: "0.91.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWinSCP
       directives:
@@ -179,7 +178,7 @@ properties:
         Id: PeterPawlowski.foobar2000
         Source: winget
         Ensure: Present
-        Version: "2.24.3"
+        Version: "2.24.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOpenVPN
       directives:
