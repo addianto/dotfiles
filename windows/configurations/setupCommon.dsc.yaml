@@ -199,7 +199,7 @@ properties:
         Id: CPUID.CPU-Z
         Source: winget
         Ensure: Present
-        Version: "2.14"
+        Version: "2.15"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKrita
       directives:
@@ -219,7 +219,7 @@ properties:
         Id: Meltytech.Shotcut
         Source: winget
         Ensure: Present
-        Version: "25.01.25"
+        Version: "25.05.11"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCzkawka
       directives:
@@ -229,7 +229,7 @@ properties:
         Id: qarmin.czkawka.cli
         Source: winget
         Ensure: Present
-        Version: "8.0.0"
+        Version: "9.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOBSStudio
       directives:
@@ -239,7 +239,16 @@ properties:
         Id: OBSProject.OBSStudio
         Source: winget
         Ensure: Present
-        Version: "31.0.2"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installExactAudioCopy
+      directives:
+        description: Install Exact Audio Copy
+        allowPrerelease: true
+      settings:
+        Id: AndreWiethoff.ExactAudioCopy
+        Source: winget
+        Ensure: Present
+        Version: "1.8"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys
