@@ -19,7 +19,15 @@ properties:
         Id: Docker.DockerDesktop
         Source: winget
         Ensure: Present
-        Version: "4.39.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPodmanDesktop
+      directives:
+        description: Install Podman Desktop
+        allowPrerelease: true
+      settings:
+        Id: RedHat.Podman-Desktop
+        Source: winget
+        Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKubectl
       directives:
@@ -33,7 +41,7 @@ properties:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMinikube
       dependsOn:
-        - installDockerDesktop
+        - installPodmanDesktop
       directives:
         description: Install Minikube
         allowPrerelease: true
