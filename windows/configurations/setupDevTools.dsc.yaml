@@ -132,15 +132,15 @@ properties:
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installDbeaver
+      id: installDBeaver
       directives:
         description: Install DBeaver Community Edition
         allowPrerelease: true
       settings:
-        Id: dbeaver.dbeaver
+        Id: DBeaver.DBeaver.Community
         Source: winget
         Ensure: Present
-        Version: "25.0.1"
+        Version: "25.0.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoogleCloudSDK
       directives:
