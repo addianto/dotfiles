@@ -11,9 +11,9 @@ properties:
         MinVersion: "10.0.19041"
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installDockerDesktop
+      id: uninstallDockerDesktop
       directives:
-        description: Install Docker Desktop
+        description: Uninstall Docker Desktop
         allowPrerelease: true
       settings:
         Id: Docker.DockerDesktop
