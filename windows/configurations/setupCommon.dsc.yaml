@@ -248,6 +248,16 @@ properties:
         Source: winget
         Ensure: Present
         Version: "1.8"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installFLAC
+      directives:
+        description: Install FLAC
+        allowPrerelease: true
+      settings:
+        Id: Xiph.FLAC
+        Source: winget
+        Ensure: Present
+        Version: "1.5.0"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys
