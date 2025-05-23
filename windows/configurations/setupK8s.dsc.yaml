@@ -18,7 +18,7 @@ properties:
       settings:
         Id: Docker.DockerDesktop
         Source: winget
-        Ensure: Present
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPodmanDesktop
       directives:
