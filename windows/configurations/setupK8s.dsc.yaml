@@ -20,6 +20,15 @@ properties:
         Source: winget
         Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPodman
+      directives:
+        description: Install Podman
+        allowPrerelease: true
+      settings:
+        Id: RedHat.Podman
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPodmanDesktop
       directives:
         description: Install Podman Desktop
@@ -41,6 +50,7 @@ properties:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMinikube
       dependsOn:
+        - installPodman
         - installPodmanDesktop
       directives:
         description: Install Minikube
@@ -49,7 +59,7 @@ properties:
         Id: Kubernetes.minikube
         Source: winget
         Ensure: Present
-        Version: "1.35.0"
+        Version: "1.36.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHelm
       directives:
@@ -79,4 +89,4 @@ properties:
         Id: stackrox.kube-linter
         Source: winget
         Ensure: Present
-        Version: "0.6.8"
+        Version: "0.7.2"
