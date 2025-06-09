@@ -1,6 +1,6 @@
 ---
 name: Default
-version: 0.0.1
+version: 1.0.0
 schema: v1
 
 models:
@@ -10,13 +10,7 @@ models:
     roles:
       - chat
       - edit
-
-  - name: Cogito v1 Preview 3B
-    provider: ollama
-    model: cogito:3b-v1-preview-llama-q8_0
-    roles:
-      - chat
-      - edit
+      - apply
 
   - name: Cogito v1 Preview 3B (Reasoning)
     provider: ollama
