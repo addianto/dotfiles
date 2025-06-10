@@ -1,6 +1,6 @@
 # Ollama
 
-My personalised Ollama configuration and models.
+My customised Ollama configuration and models.
 
 ## Configuration
 

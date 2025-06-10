@@ -19,6 +19,7 @@ models:
       baseSystemMessage: "Enable deep thinking subroutine."
     defaultCompletionOptions:
       frequencyPenalty: 1.1
+      reasoning: true
     roles:
       - chat
 
