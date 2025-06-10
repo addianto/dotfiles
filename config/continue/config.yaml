@@ -42,11 +42,17 @@ models:
     roles:
       - autocomplete
 
-  - name: Snowflake Arctic Embed 2 568M
+  - name: Qwen 3 Embedding 0.6B
     provider: ollama
-    model: snowflake-arctic-embed2:568m
+    model: dengcao/Qwen3-Embedding-0.6B:Q8_0
     roles:
       - embed
+
+  - name: Qwen 3 Reranker 0.6B
+    provider: ollama
+    model: dengcao/Qwen3-Reranker-0.6B:Q8_0
+    roles:
+      - rerank
 
 context:
   - provider: diff
