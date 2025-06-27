@@ -146,7 +146,7 @@ properties:
         Id: Joplin.Joplin
         Source: winget
         Ensure: Present
-    - resource: Microsof1.WinGet.DSC/WinGetPackage
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerToys
       directives:
         description: Install PowerToys
