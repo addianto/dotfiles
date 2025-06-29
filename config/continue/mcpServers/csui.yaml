@@ -1,0 +1,17 @@
+---
+name: CSUI
+version: 0.0.1
+schema: v1
+mcpServers:
+  - name: GitLab CSUI
+    command: pnpm
+    args:
+      - "dlx"
+      - "@zereight/mcp-gitlab@2.0.13"
+    env:
+      GITLAB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITLAB_CSUI_PERSONAL_ACCESS_TOKEN }}
+      GITLAB_API_URL: ${{ secrets.GITLAB_CSUI_API_URL }}
+      GITLAB_DENIED_TOOLS_REGEX: "(label|labels|release|releases|release_evidence|release_asset|namespace|namespaces)$"
+      USE_GITLAB_WIKI: "false"
+      USE_PIPELINE: "false"
+      USE_MILESTONE: "true"

@@ -11,6 +11,6 @@ trim_trailing_whitespace = true
 [*.{bat,cmd,ps1}]
 end_of_line = crlf
 
-[*.{yml,yaml}]
+[*.{yml,yaml,json}]
 indent_size = 2
 indent_style = space

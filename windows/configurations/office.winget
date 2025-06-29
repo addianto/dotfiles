@@ -27,7 +27,7 @@ properties:
       settings:
         Id: Microsoft.Teams
         Source: winget
-        Ensure: Present
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installTeams
       directives:
@@ -45,7 +45,7 @@ properties:
       settings:
         Id: Zoom.Zoom
         Source: winget
-        Ensure: Present
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installZoom
       directives:
