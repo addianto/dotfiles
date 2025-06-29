@@ -1,6 +1,6 @@
 # Ollama
 
-My personalised Ollama configuration and models.
+My customised Ollama configuration and models.
 
 ## Configuration
 
@@ -20,7 +20,8 @@ Currently, I use the following models:
 - [Sailor2 3B](https://huggingface.co/sail/Sailor2-3B) for Bahasa Indonesia <-> English translator.
   - On a beefier machine, I use [Sahabat-AI 9B](https://huggingface.co/GoToCompany/gemma2-9b-cpt-sahabatai-v1-instruct).
 - [SmolLM2 1.7B](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct) on my Raspberry Pi 5 as a general-purpose model.
-- [Snowflake Arctic Embed 2 568M](https://huggingface.co/Snowflake/snowflake-arctic-embed-l-v2.0) for embedding.
+- [Qwen 3 Embedding 0.6B](https://ollama.com/dengcao/Qwen3-Embedding-0.6B) for embedding.
+- [Qwen 3 Reranker 0.6B](https://ollama.com/dengcao/Qwen3-Reranker-0.6B) for reranking.
 
 Use `ollama create` to build custom models from `Modelfile` files.
 For example, to build the personalised Llama 3.2 Abliterated model and quantize it to Q8_0 level:

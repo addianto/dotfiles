@@ -11,15 +11,32 @@ properties:
         MinVersion: "10.0.19041"
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installDockerDesktop
+      id: uninstallDockerDesktop
       directives:
-        description: Install Docker Desktop
+        description: Uninstall Docker Desktop
         allowPrerelease: true
       settings:
         Id: Docker.DockerDesktop
         Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPodman
+      directives:
+        description: Install Podman
+        allowPrerelease: true
+      settings:
+        Id: RedHat.Podman
+        Source: winget
         Ensure: Present
-        Version: "4.39.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPodmanDesktop
+      directives:
+        description: Install Podman Desktop
+        allowPrerelease: true
+      settings:
+        Id: RedHat.Podman-Desktop
+        Source: winget
+        Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKubectl
       directives:
@@ -29,11 +46,12 @@ properties:
         Id: Kubernetes.kubectl
         Source: winget
         Ensure: Present
-        Version: "1.32.3"
+        Version: "1.33.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMinikube
       dependsOn:
-        - installDockerDesktop
+        - installPodman
+        - installPodmanDesktop
       directives:
         description: Install Minikube
         allowPrerelease: true
@@ -41,7 +59,7 @@ properties:
         Id: Kubernetes.minikube
         Source: winget
         Ensure: Present
-        Version: "1.35.0"
+        Version: "1.36.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHelm
       directives:
@@ -51,7 +69,7 @@ properties:
         Id: Helm.Helm
         Source: winget
         Ensure: Present
-        Version: "3.17.2" # See supported version skew in https://helm.sh/docs/topics/version_skew/
+        Version: "3.18.0" # See supported version skew in https://helm.sh/docs/topics/version_skew/
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installK9s
       directives:
@@ -61,7 +79,7 @@ properties:
         Id: Derailed.k9s
         Source: winget
         Ensure: Present
-        Version: "0.40.10" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
+        Version: "0.50.6" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKubeLinter
       directives:
@@ -71,4 +89,4 @@ properties:
         Id: stackrox.kube-linter
         Source: winget
         Ensure: Present
-        Version: "0.6.8"
+        Version: "0.7.2"

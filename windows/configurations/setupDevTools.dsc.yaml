@@ -19,7 +19,7 @@ properties:
         Id: Wilfred.difftastic
         Source: winget
         Ensure: Present
-        Version: "0.60.0"
+        Version: "0.63.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGit
       dependsOn:
@@ -41,7 +41,7 @@ properties:
         Id: Neovim.Neovim
         Source: winget
         Ensure: Present
-        Version: "0.10.4"
+        Version: "0.11.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovide
       dependsOn:
@@ -53,7 +53,7 @@ properties:
         Id: Neovide.Neovide
         Source: winget
         Ensure: Present
-        Version: "0.14.1"
+        Version: "0.15.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVSCodium
       directives:
@@ -91,7 +91,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "10.6.2"
+        Version: "10.11.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -121,7 +121,7 @@ properties:
         Id: k6.k6
         Source: winget
         Ensure: Present
-        Version: "0.57.0"
+        Version: "1.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPostman
       directives:
@@ -131,17 +131,16 @@ properties:
         Id: Postman.Postman
         Source: winget
         Ensure: Present
-        Version: "11.37.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installDbeaver
+      id: installDBeaver
       directives:
         description: Install DBeaver Community Edition
         allowPrerelease: true
       settings:
-        Id: dbeaver.dbeaver
+        Id: DBeaver.DBeaver.Community
         Source: winget
         Ensure: Present
-        Version: "25.0.1"
+        Version: "25.0.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoogleCloudSDK
       directives:
@@ -179,7 +178,7 @@ properties:
         Id: Rufus.Rufus
         Source: winget
         Ensure: Present
-        Version: "4.6"
+        Version: "4.7"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOpenTofu
       directives:
@@ -189,7 +188,7 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.9.0"
+        Version: "1.9.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGo
       directives:
@@ -199,7 +198,7 @@ properties:
         Id: GoLang.Go
         Source: winget
         Ensure: Present
-        Version: "1.24.1"
+        Version: "1.24.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoLangCILint
       directives:
@@ -209,7 +208,7 @@ properties:
         Id: GolangCI.golangci-lint
         Source: winget
         Ensure: Present
-        Version: "1.64.5"
+        Version: "2.1.6"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setRustupHome
       directives:
@@ -230,4 +229,4 @@ properties:
         Id: Rustlang.Rustup
         Source: winget
         Ensure: Present
-        Version: "1.28.1"
+        Version: "1.28.2"
