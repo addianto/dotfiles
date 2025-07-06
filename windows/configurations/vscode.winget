@@ -108,7 +108,7 @@ properties:
         description: Install GitLab Workflow extension
         allowPrerelease: true
       settings:
-        Name: vscode-icons-team.vscode-icons
+        Name: GitLab.gitlab-workflow
         Exist: true
     # Themes & Icons
     - resource: Microsoft.VSCode.Dsc/VSCodeExtension
