@@ -110,6 +110,15 @@ properties:
       settings:
         Name: GitLab.gitlab-workflow
         Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install GitHub Pull Requests extension
+        allowPrerelease: true
+      settings:
+        Name: GitHub.vscode-pull-request-github
+        Exist: true
     # Themes & Icons
     - resource: Microsoft.VSCode.Dsc/VSCodeExtension
       dependsOn:
