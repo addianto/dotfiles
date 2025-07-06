@@ -10,6 +10,7 @@ properties:
       settings:
         MinVersion: "10.0.19041"
   resources:
+    # Extensions
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVSCode
       directives:
@@ -63,4 +64,68 @@ properties:
         allowPrerelease: true
       settings:
         Name: timonwong.shellcheck
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Rust language support extension
+        allowPrerelease: true
+      settings:
+        Name: rust-lang.rust-analyzer
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install GitHub Copilot extension
+        allowPrerelease: true
+      settings:
+        Name: GitHub.copilot
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install GitHub Copilot Chat extension
+        allowPrerelease: true
+      settings:
+        Name: GitHub.copilot-chat
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Error Lens extension
+        allowPrerelease: true
+      settings:
+        Name: usernamehw.errorlens
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install GitLab Workflow extension
+        allowPrerelease: true
+      settings:
+        Name: vscode-icons-team.vscode-icons
+        Exist: true
+    # Themes & Icons
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Tokyo Night theme
+        allowPrerelease: true
+      settings:
+        Name: enkia.tokyo-night
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Visual Studio Code icons pack
+        allowPrerelease: true
+      settings:
+        Name: vscode-icons-team.vscode-icons
         Exist: true
