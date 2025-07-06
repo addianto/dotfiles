@@ -119,6 +119,15 @@ properties:
       settings:
         Name: GitHub.vscode-pull-request-github
         Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Even Better TOML extension
+        allowPrerelease: true
+      settings:
+        Name: tamasfe.even-better-toml
+        Exist: true
     # Themes & Icons
     - resource: Microsoft.VSCode.Dsc/VSCodeExtension
       dependsOn:
