@@ -1,0 +1,66 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installVSCode
+      directives:
+        description: Install Visual Studio Code
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.VisualStudioCode
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install YAML language support extension
+        allowPrerelease: true
+      settings:
+        Name: redhat.vscode-yaml
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install VSCode Neovim extension
+        allowPrerelease: true
+      settings:
+        Name: asvetliakov.vscode-neovim
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Version Lens extension
+        allowPrerelease: true
+      settings:
+        Name: pflannery.vscode-versionlens
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install EditorConfig extension
+        allowPrerelease: true
+      settings:
+        Name: EditorConfig.EditorConfig
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install ShellCheck extension
+        allowPrerelease: true
+      settings:
+        Name: timonwong.shellcheck
+        Exist: true
