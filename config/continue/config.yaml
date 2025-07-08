@@ -4,9 +4,9 @@ version: 1.0.0
 schema: v1
 
 models:
-  - name: Gemma 3B QAT
+  - name: Gemma 3n E2B
     provider: ollama
-    model: gemma3:4b-it-qat
+    model: gemma3n:e2b
     roles:
       - chat
       - edit
@@ -14,25 +14,17 @@ models:
 
   - name: Cogito v1 Preview 3B (Reasoning)
     provider: ollama
-    model: cogito:3b-v1-preview-llama-q8_0
+    model: hf.co/bartowski/deepcogito_cogito-v1-preview-llama-3B-GGUF:Q6_K
     chatOptions:
-      baseSystemMessage: "Enable deep thinking subroutine."
+      baseSystemMessage: Enable deep thinking subroutine.
     defaultCompletionOptions:
       frequencyPenalty: 1.1
-      reasoning: true
     roles:
       - chat
 
   - name: Sailor 2 3B
     provider: ollama
     model: hf.co/mradermacher/Sailor2-3B-GGUF:Q6_K
-    roles:
-      - chat
-      - edit
-
-  - name: Sahabat-AI 9B
-    provider: ollama
-    model: hf.co/mradermacher/gemma2-9b-cpt-sahabatai-v1-instruct-GGUF:Q4_K_M
     roles:
       - chat
       - edit
@@ -46,6 +38,13 @@ models:
   - name: Qwen 3 Embedding 0.6B
     provider: ollama
     model: dengcao/Qwen3-Embedding-0.6B:Q8_0
+    roles:
+      - embed
+
+  - name: Qwen 3 Embedding 0.6B @ Homelab
+    provider: ollama
+    model: dengcao/Qwen3-Embedding-0.6B:Q8_0
+    apiBase: http://192.168.0.2:11434
     roles:
       - embed
 
