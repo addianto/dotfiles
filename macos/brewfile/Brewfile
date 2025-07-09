@@ -31,8 +31,7 @@ cask "joplin"
 cask "librewolf", args: { no_quarantine: true }
 cask "obs"
 cask "scroll-reverser"
-cask "syncthing"
-cask "syncthing-app"
+cask "syncthing-app", args: { no_quarantine: true }
 cask "viscosity"
 cask "th-ch/youtube-music/youtube-music"
 cask "zotero"
