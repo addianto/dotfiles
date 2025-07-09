@@ -93,3 +93,19 @@ mas "Slack", id: 618783545
 cask "anythingllm", { args: { require_sha: false } }
 cask "ollama-app"
 mas "Draw Things", id: 6444050820
+
+## VS Code Extensions
+vscode "asvetliakov.vscode-neovim"
+vscode "editorconfig.editorconfig"
+vscode "enkia.tokyo-night"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.vscode-pull-request-github"
+vscode "gitlab.gitlab-workflow"
+vscode "pflannery.vscode-versionlens"
+vscode "redhat.vscode-yaml"
+vscode "rust-lang.rust-analyzer"
+vscode "tamasfe.even-better-toml"
+vscode "timonwong.shellcheck"
+vscode "usernamehw.errorlens"
+vscode "vscode-icons-team.vscode-icons"
