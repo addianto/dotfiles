@@ -12,16 +12,6 @@ models:
       - edit
       - apply
 
-  - name: Cogito v1 Preview 3B (Reasoning)
-    provider: ollama
-    model: hf.co/bartowski/deepcogito_cogito-v1-preview-llama-3B-GGUF:Q6_K
-    chatOptions:
-      baseSystemMessage: Enable deep thinking subroutine.
-    defaultCompletionOptions:
-      frequencyPenalty: 1.1
-    roles:
-      - chat
-
   - name: Sailor 2 3B
     provider: ollama
     model: hf.co/mradermacher/Sailor2-3B-GGUF:Q6_K
@@ -33,7 +23,17 @@ models:
     provider: ollama
     model: addianto/qwen2.5-coder-abliterated:1.5b
     roles:
+      - apply
       - autocomplete
+
+  - name: Qwen 2.5 Coder Abliterated 3B
+    provider: ollama
+    model: addianto/qwen2.5-coder-abliterated:3b
+    roles:
+      - apply
+      - autocomplete
+      - chat
+      - edit
 
   - name: Qwen 3 Embedding 0.6B
     provider: ollama
@@ -47,12 +47,6 @@ models:
     apiBase: http://192.168.0.2:11434
     roles:
       - embed
-
-  - name: Qwen 3 Reranker 0.6B
-    provider: ollama
-    model: dengcao/Qwen3-Reranker-0.6B:Q8_0
-    roles:
-      - rerank
 
 context:
   - provider: diff
