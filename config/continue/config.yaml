@@ -4,20 +4,19 @@ version: 1.0.0
 schema: v1
 
 models:
-  - name: Gemma 3n E2B
+  - name: Gemma 3 4B QAT
     provider: ollama
-    model: gemma3n:e2b
+    model: gemma3:4b-it-qat
     roles:
+      - apply
       - chat
       - edit
-      - apply
 
   - name: Sailor 2 3B
     provider: ollama
     model: hf.co/mradermacher/Sailor2-3B-GGUF:Q6_K
     roles:
       - chat
-      - edit
 
   - name: Qwen 2.5 Coder Abliterated 1.5B
     provider: ollama
@@ -25,6 +24,7 @@ models:
     roles:
       - apply
       - autocomplete
+      - edit
 
   - name: Qwen 2.5 Coder Abliterated 3B
     provider: ollama
