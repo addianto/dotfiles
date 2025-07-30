@@ -1,0 +1,159 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installVSCode
+      directives:
+        description: Install Visual Studio Code
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.VisualStudioCode
+        Source: winget
+        Ensure: Present
+    # Extensions
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install YAML language support extension
+        allowPrerelease: true
+      settings:
+        Name: redhat.vscode-yaml
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install VSCode Neovim extension
+        allowPrerelease: true
+      settings:
+        Name: asvetliakov.vscode-neovim
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Version Lens extension
+        allowPrerelease: true
+      settings:
+        Name: pflannery.vscode-versionlens
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install EditorConfig extension
+        allowPrerelease: true
+      settings:
+        Name: EditorConfig.EditorConfig
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install ShellCheck extension
+        allowPrerelease: true
+      settings:
+        Name: timonwong.shellcheck
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install GitHub Copilot extension
+        allowPrerelease: true
+      settings:
+        Name: GitHub.copilot
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install GitHub Copilot Chat extension
+        allowPrerelease: true
+      settings:
+        Name: GitHub.copilot-chat
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Error Lens extension
+        allowPrerelease: true
+      settings:
+        Name: usernamehw.errorlens
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install GitLab Workflow extension
+        allowPrerelease: true
+      settings:
+        Name: GitLab.gitlab-workflow
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install GitHub Pull Requests extension
+        allowPrerelease: true
+      settings:
+        Name: GitHub.vscode-pull-request-github
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Even Better TOML extension
+        allowPrerelease: true
+      settings:
+        Name: tamasfe.even-better-toml
+        Exist: true
+    # Languages Support
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Rust language support extension
+        allowPrerelease: true
+      settings:
+        Name: rust-lang.rust-analyzer
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Extension Pack for Java
+        allowPrerelease: true
+      settings:
+        Name: vscjava.vscode-java-pack
+        Exist: true
+    # Themes & Icons
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Tokyo Night theme
+        allowPrerelease: true
+      settings:
+        Name: enkia.tokyo-night
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Visual Studio Code icons pack
+        allowPrerelease: true
+      settings:
+        Name: vscode-icons-team.vscode-icons
+        Exist: true

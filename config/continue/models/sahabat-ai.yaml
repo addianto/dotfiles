@@ -1,0 +1,12 @@
+---
+name: Sahabat-AI
+version: 1.0.0
+schema: v1
+
+models:
+  - name: Sahabat-AI 9B
+    provider: ollama
+    model: hf.co/mradermacher/gemma2-9b-cpt-sahabatai-v1-instruct-GGUF:Q4_K_M
+    roles:
+      - chat
+      - edit

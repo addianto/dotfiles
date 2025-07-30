@@ -4,44 +4,36 @@ version: 1.0.0
 schema: v1
 
 models:
-  - name: Gemma 3B QAT
+  - name: Gemma 3 4B QAT
     provider: ollama
     model: gemma3:4b-it-qat
     roles:
+      - apply
       - chat
       - edit
-      - apply
-
-  - name: Cogito v1 Preview 3B (Reasoning)
-    provider: ollama
-    model: cogito:3b-v1-preview-llama-q8_0
-    chatOptions:
-      baseSystemMessage: "Enable deep thinking subroutine."
-    defaultCompletionOptions:
-      frequencyPenalty: 1.1
-      reasoning: true
-    roles:
-      - chat
 
   - name: Sailor 2 3B
     provider: ollama
     model: hf.co/mradermacher/Sailor2-3B-GGUF:Q6_K
     roles:
       - chat
-      - edit
-
-  - name: Sahabat-AI 9B
-    provider: ollama
-    model: hf.co/mradermacher/gemma2-9b-cpt-sahabatai-v1-instruct-GGUF:Q4_K_M
-    roles:
-      - chat
-      - edit
 
   - name: Qwen 2.5 Coder Abliterated 1.5B
     provider: ollama
     model: addianto/qwen2.5-coder-abliterated:1.5b
     roles:
+      - apply
       - autocomplete
+      - edit
+
+  - name: Qwen 2.5 Coder Abliterated 3B
+    provider: ollama
+    model: addianto/qwen2.5-coder-abliterated:3b
+    roles:
+      - apply
+      - autocomplete
+      - chat
+      - edit
 
   - name: Qwen 3 Embedding 0.6B
     provider: ollama
@@ -49,11 +41,12 @@ models:
     roles:
       - embed
 
-  - name: Qwen 3 Reranker 0.6B
+  - name: Qwen 3 Embedding 0.6B @ Homelab
     provider: ollama
-    model: dengcao/Qwen3-Reranker-0.6B:Q8_0
+    model: dengcao/Qwen3-Embedding-0.6B:Q8_0
+    apiBase: http://192.168.0.2:11434
     roles:
-      - rerank
+      - embed
 
 context:
   - provider: diff

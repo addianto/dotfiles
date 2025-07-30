@@ -1,0 +1,112 @@
+# My Brewfile
+
+## Options
+cask_args require_sha: true
+
+## Core packages
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "buo/cask-upgrade"
+tap "leoafarias/fvm"
+tap "rcmdnk/file"
+tap "th-ch/youtube-music"
+
+## Common
+brew "btop"
+brew "czkawka"
+brew "flac"
+brew "gnupg"
+brew "mas"
+brew "openssh"
+brew "pinentry-mac" if OS.mac?
+brew "rcmdnk/file/brew-file"
+brew "scrcpy"
+brew "vale"
+brew "zsh"
+cask "ungoogled-chromium"
+cask "discord"
+cask "font-fira-code-nerd-font"
+cask "iterm2"
+cask "joplin"
+cask "librewolf", args: { no_quarantine: true }
+cask "obs"
+cask "scroll-reverser"
+cask "syncthing-app", args: { no_quarantine: true }
+cask "viscosity"
+cask "th-ch/youtube-music/youtube-music"
+cask "zotero"
+mas "AdGuard for Safari", id: 1440147259
+mas "BitWarden", id: 1352778147
+mas "WhatsApp", id: 310633997
+mas "Windows App", id: 1295203466
+mas "WireGuard", id: 1451685025
+
+## Development Tools
+brew "azure-cli"
+brew "difftastic"
+brew "fd"
+brew "firebase-cli"
+brew "git"
+brew "hadolint"
+brew "jq"
+brew "k6"
+brew "leoafarias/fvm/fvm@3.2.1"
+brew "neovide"
+brew "neovim"
+brew "node"
+brew "opentofu"
+brew "pnpm"
+brew "python@3.13"
+brew "ruby@3.2"
+brew "ruff"
+brew "rustup"
+brew "shellcheck"
+brew "trivy"
+brew "uv"
+cask "dbeaver-community"
+cask "google-cloud-sdk"
+cask "jetbrains-toolbox"
+cask "mactex-no-gui"
+cask "postman"
+cask "temurin@21"
+cask "vscodium"
+
+## K8S/Containers
+brew "helm"
+brew "k9s"
+brew "kube-linter"
+brew "kubernetes-cli"
+brew "podman"
+brew "podman-compose"
+cask "podman-desktop"
+mas "Developer", id: 640199958
+mas "Xcode", id: 497799835
+
+## Office
+cask "microsoft-auto-update"
+cask "microsoft-office-businesspro"
+cask "thunderbird"
+cask "zoom"
+mas "Slack", id: 618783545
+
+## AI/LLM
+cask "anythingllm", { args: { require_sha: false } }
+cask "ollama-app"
+mas "Draw Things", id: 6444050820
+
+## VS Code Extensions
+vscode "asvetliakov.vscode-neovim"
+vscode "editorconfig.editorconfig"
+vscode "enkia.tokyo-night"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.vscode-pull-request-github"
+vscode "gitlab.gitlab-workflow"
+vscode "pflannery.vscode-versionlens"
+vscode "redhat.vscode-yaml"
+vscode "rust-lang.rust-analyzer"
+vscode "tamasfe.even-better-toml"
+vscode "timonwong.shellcheck"
+vscode "usernamehw.errorlens"
+vscode "vscode-icons-team.vscode-icons"
+vscode "vscjava.vscode-java-pack"

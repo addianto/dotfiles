@@ -16,6 +16,14 @@ $pattern = 'Id:\s*([^\s]+)'
 # Find all matches and upgrade them
 $matches = [regex]::Matches($yamlContent, $pattern)
 $matches | ForEach-Object {
-    Write-Output "Upgrading $_.Groups[1].Value"
-    winget upgrade --disable-interactivity --id "$_.Groups[1].Value"
+    $id = $_.Groups[1].Value
+    $versionPattern = "Id:\s*$id\s*\n\s*Version:\s*([^\s]+)"
+
+    # Check if the version is pinned
+    if ([regex]::IsMatch($yamlContent, $versionPattern)) {
+        Write-Output "Skipping $id (version is pinned)"
+    } else {
+        Write-Output "Upgrading $id"
+        winget upgrade --disable-interactivity --id "$id"
+    }
 }
