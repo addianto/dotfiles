@@ -34,8 +34,7 @@ and installing [Visual Studio Code](./vscode.winget).
 
 ## References
 
-- [Use WinGet to install and manage applications](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
-  article.
+- [Use WinGet to install and manage applications](https://learn.microsoft.com/en-us/windows/package-manager/winget/) article.
 - [`microsoft/devhome`](https://github.com/microsoft/devhome/tree/main/docs/sampleConfigurations)
   and [`oliverlabs/winget-dsc-examples`](https://github.com/oliverlabs/winget-dsc-examples)
   contain some WinGet DSC examples
