@@ -8,9 +8,13 @@ models:
     provider: ollama
     model: gemma3:4b-it-qat
     roles:
-      - apply
       - chat
-      - edit
+
+  - name: Gemma 3n e2b
+    provider: ollama
+    model: gemma3n:e2b
+    roles:
+      - chat
 
   - name: Sailor 2 3B
     provider: ollama
@@ -24,6 +28,7 @@ models:
     roles:
       - apply
       - autocomplete
+      - chat
       - edit
 
   - name: Qwen 2.5 Coder Abliterated 3B
@@ -37,16 +42,29 @@ models:
 
   - name: Qwen 3 Embedding 0.6B
     provider: ollama
-    model: dengcao/Qwen3-Embedding-0.6B:Q8_0
+    model: hf.co/Qwen/Qwen3-Embedding-0.6B-GGUF:Q8_0
     roles:
       - embed
 
+  - name: Qwen 3 Reranker 0.6B
+    provider: ollama
+    model: hf.co/mradermacher/Qwen3-Reranker-0.6B-GGUF:Q8_0
+    roles:
+      - rerank
+
   - name: Qwen 3 Embedding 0.6B @ Homelab
     provider: ollama
-    model: dengcao/Qwen3-Embedding-0.6B:Q8_0
+    model: hf.co/Qwen/Qwen3-Embedding-0.6B-GGUF:Q8_0
     apiBase: http://192.168.0.2:11434
     roles:
       - embed
+
+  - name: Qwen 3 Reranker 0.6B @ Homelab
+    provider: ollama
+    model: hf.co/mradermacher/Qwen3-Reranker-0.6B-GGUF:Q8_0
+    apiBase: http://192.168.0.2:11434
+    roles:
+      - rerank
 
 context:
   - provider: diff
