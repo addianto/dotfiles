@@ -25,7 +25,6 @@ On a more powerful machine, I use:
 
 - [Sahabat-AI 9B](https://huggingface.co/GoToCompany/gemma2-9b-cpt-sahabatai-v1-instruct) for Bahasa Indonesia <-> English translator.
 
-
 Use `ollama create` to build custom models from `Modelfile` files.
 For example, to build the personalised Llama 3.2 Abliterated model and quantize it to Q8_0 level:
 

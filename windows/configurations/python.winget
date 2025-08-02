@@ -1,0 +1,42 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPython3
+      directives:
+        description: Install Python 3
+        allowPrerelease: true
+      settings:
+        Id: Python.Python.3.13
+        Source: winget
+        Ensure: Present
+        Version: "3.13.5"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installUv
+      directives:
+        description: Install uv
+        allowPrerelease: true
+      settings:
+        Id: astral-sh.uv
+        Source: winget
+        Ensure: Present
+        Version: "0.8.4"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installRuff
+      directives:
+        description: Install Ruff
+        allowPrerelease: true
+      settings:
+        Id: astral-sh.ruff
+        Source: winget
+        Ensure: Present
+        Version: "0.12.4"
