@@ -31,9 +31,9 @@ models:
       - chat
       - edit
 
-  - name: Qwen 2.5 Coder Abliterated 3B
+  - name: Qwen 2.5 Coder Abliterated 7B
     provider: ollama
-    model: addianto/qwen2.5-coder-abliterated:3b
+    model: addianto/qwen2.5-coder-abliterated:7b
     roles:
       - apply
       - autocomplete
