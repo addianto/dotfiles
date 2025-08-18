@@ -22,12 +22,6 @@ models:
      - chat
      - edit
 
-  - name: Sailor 2 3B
-    provider: ollama
-    model: hf.co/mradermacher/Sailor2-3B-GGUF:Q6_K
-    roles:
-      - chat
-
   - name: Qwen 2.5 Coder Abliterated 1.5B
     provider: ollama
     model: addianto/qwen2.5-coder-abliterated:1.5b
