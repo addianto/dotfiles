@@ -1,0 +1,11 @@
+---
+name: Context7 MCP Server
+version: 0.0.1
+schema: v1
+mcpServers:
+  - name: Context7
+    type: stdio
+    command: npx
+    args:
+      - "-y"
+      - "@upstash/context7-mcp"
