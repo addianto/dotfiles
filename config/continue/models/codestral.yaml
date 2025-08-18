@@ -9,4 +9,9 @@ models:
     model: codestral-2501
     apiKey: ${{ secrets.MISTRAL_API_KEY }}
     roles:
+      - apply
       - autocomplete
+      - chat
+      - edit
+    defaultCompletionOptions:
+      contextLength: 256000

@@ -8,13 +8,19 @@ models:
     provider: ollama
     model: gemma3:4b-it-qat
     roles:
+      - apply
+      - autocomplete
       - chat
+      - edit
 
   - name: Gemma 3n e2b
     provider: ollama
     model: gemma3n:e2b
     roles:
-      - chat
+     - apply
+     - autocomplete
+     - chat
+     - edit
 
   - name: Sailor 2 3B
     provider: ollama

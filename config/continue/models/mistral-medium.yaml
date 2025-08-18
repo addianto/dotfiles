@@ -6,7 +6,7 @@ schema: v1
 models:
   - name: Mistral Medium
     provider: mistral
-    model: mistral-medium-2505
+    model: mistral-medium-2508
     apiKey: ${{ secrets.MISTRAL_API_KEY }}
     roles:
       - apply

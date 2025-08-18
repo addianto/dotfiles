@@ -12,3 +12,7 @@ models:
       - apply
       - chat
       - edit
+    defaultCompletionOptions:
+      contextLength: 256000
+    capabilities:
+      - tool_use
