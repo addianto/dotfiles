@@ -57,6 +57,7 @@ brew "node"
 brew "opentofu"
 brew "pnpm"
 brew "python@3.13"
+brew "postgresql@15", restart_service: true
 brew "ruby@3.2"
 brew "ruff"
 brew "rustup"
