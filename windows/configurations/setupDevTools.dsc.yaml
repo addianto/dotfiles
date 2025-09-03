@@ -31,7 +31,7 @@ properties:
         Id: Git.Git
         Source: winget
         Ensure: Present
-        Version: "2.50.1"
+        Version: "2.51.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovim
       directives:
@@ -41,7 +41,7 @@ properties:
         Id: Neovim.Neovim
         Source: winget
         Ensure: Present
-        Version: "0.11.3"
+        Version: "0.11.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovide
       dependsOn:
@@ -81,7 +81,7 @@ properties:
         Id: koalaman.shellcheck
         Source: winget
         Ensure: Present
-        Version: "0.10.0"
+        Version: "0.11.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPnpm
       directives:
@@ -91,7 +91,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "10.13.1"
+        Version: "10.15.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -121,7 +121,7 @@ properties:
         Id: k6.k6
         Source: winget
         Ensure: Present
-        Version: "1.1.0"
+        Version: "1.2.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPostman
       directives:
@@ -140,7 +140,7 @@ properties:
         Id: DBeaver.DBeaver.Community
         Source: winget
         Ensure: Present
-        Version: "25.1.3"
+        Version: "25.2.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoogleCloudSDK
       directives:
@@ -168,7 +168,7 @@ properties:
         Id: sharkdp.fd
         Source: winget
         Ensure: Present
-        Version: "10.2.0"
+        Version: "10.3.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installRufus
       directives:
@@ -188,7 +188,7 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.10.3"
+        Version: "1.10.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGo
       directives:
@@ -198,7 +198,7 @@ properties:
         Id: GoLang.Go
         Source: winget
         Ensure: Present
-        Version: "1.24.5"
+        Version: "1.25.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoLangCILint
       directives:
@@ -208,7 +208,7 @@ properties:
         Id: GolangCI.golangci-lint
         Source: winget
         Ensure: Present
-        Version: "2.3.0"
+        Version: "2.4.0"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setRustupHome
       directives:
@@ -230,3 +230,13 @@ properties:
         Source: winget
         Ensure: Present
         Version: "1.28.2"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installBruno
+      directives:
+        description: Install Bruno
+        allowPrerelease: true
+      settings:
+        Id: Bruno.Bruno
+        Source: winget
+        Ensure: Present
+        Version: "2.10.0"
