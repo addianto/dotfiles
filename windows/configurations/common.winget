@@ -40,7 +40,7 @@ properties:
         Id: Microsoft.WindowsTerminal
         Source: winget
         Ensure: Present
-        Version: "1.23.12371.0"
+        Version: "1.23.12681.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
@@ -117,7 +117,7 @@ properties:
         Id: Genymobile.scrcpy
         Source: winget
         Ensure: Present
-        Version: "3.3.1"
+        Version: "3.3.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installZotero
       directives:
@@ -155,7 +155,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.93.0"
+        Version: "0.94.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWinSCP
       directives:
@@ -175,7 +175,7 @@ properties:
         Id: PeterPawlowski.foobar2000
         Source: winget
         Ensure: Present
-        Version: "2.25"
+        Version: "2.25.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOpenVPN
       directives:
@@ -205,7 +205,7 @@ properties:
         Id: KDE.Krita
         Source: winget
         Ensure: Present
-        Version: "5.2.11.0"
+        Version: "5.2.13.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShotcut
       directives:
