@@ -123,14 +123,14 @@ properties:
         Ensure: Present
         Version: "1.3.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installPostman
+      id: uninstallPostman
       directives:
-        description: Install Postman
+        description: Uninstall Postman
         allowPrerelease: true
       settings:
         Id: Postman.Postman
         Source: winget
-        Ensure: Present
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installDBeaver
       directives:
