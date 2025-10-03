@@ -1,0 +1,110 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installKrita
+      directives:
+        description: Install Krita
+        allowPrerelease: true
+      settings:
+        Id: KDE.Krita
+        Source: winget
+        Ensure: Present
+        Version: "5.2.13.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installShotcut
+      directives:
+        description: Install Shotcut
+        allowPrerelease: true
+      settings:
+        Id: Meltytech.Shotcut
+        Source: winget
+        Ensure: Present
+        Version: "25.07.26"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installOBSStudio
+      directives:
+        description: Install OBS Studio
+        allowPrerelease: true
+      settings:
+        Id: OBSProject.OBSStudio
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installExactAudioCopy
+      directives:
+        description: Install Exact Audio Copy
+        allowPrerelease: true
+      settings:
+        Id: AndreWiethoff.ExactAudioCopy
+        Source: winget
+        Ensure: Present
+        Version: "1.8"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installFLAC
+      directives:
+        description: Install FLAC
+        allowPrerelease: true
+      settings:
+        Id: Xiph.FLAC
+        Source: winget
+        Ensure: Present
+        Version: "1.5.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installWacomTabletDriver
+      directives:
+        description: Install Wacom Tablet Driver
+        allowPrerelease: true
+      settings:
+        Id: Wacom.WacomTabletDriver
+        Source: winget
+        Ensure: Present
+        Version: "6.4.11-1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installYouTubeMusic
+      directives:
+        description: Install YouTube Music
+        allowPrerelease: true
+      settings:
+        Id: th-ch.YouTubeMusic
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installFFmpeg
+      directives:
+        description: Install FFmpeg
+        allowPrerelease: true
+      settings:
+        Id: Gyan.FFmpeg
+        Source: winget
+        Ensure: Present
+        Version: "8.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installHaruna
+      directives:
+        description: Install Haruna
+        allowPrerelease: true
+      settings:
+        Id: KDE.Haruna
+        Source: winget
+        Ensure: Present
+        Version: "1.4.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installFoobar2000
+      directives:
+        description: Install foobar2000
+        allowPrerelease: true
+      settings:
+        Id: PeterPawlowski.foobar2000
+        Source: winget
+        Ensure: Present
+        Version: "2.25.1"

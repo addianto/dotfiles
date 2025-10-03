@@ -167,16 +167,6 @@ properties:
         Ensure: Present
         Version: "6.5.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installFoobar2000
-      directives:
-        description: Install foobar2000
-        allowPrerelease: true
-      settings:
-        Id: PeterPawlowski.foobar2000
-        Source: winget
-        Ensure: Present
-        Version: "2.25.1"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOpenVPN
       directives:
         description: Install OpenVPN
@@ -197,26 +187,6 @@ properties:
         Ensure: Present
         Version: "2.16"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installKrita
-      directives:
-        description: Install Krita
-        allowPrerelease: true
-      settings:
-        Id: KDE.Krita
-        Source: winget
-        Ensure: Present
-        Version: "5.2.13.0"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installShotcut
-      directives:
-        description: Install Shotcut
-        allowPrerelease: true
-      settings:
-        Id: Meltytech.Shotcut
-        Source: winget
-        Ensure: Present
-        Version: "25.07.26"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCzkawka
       directives:
         description: Install Czkawka
@@ -226,35 +196,6 @@ properties:
         Source: winget
         Ensure: Present
         Version: "10.0.0"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installOBSStudio
-      directives:
-        description: Install OBS Studio
-        allowPrerelease: true
-      settings:
-        Id: OBSProject.OBSStudio
-        Source: winget
-        Ensure: Present
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installExactAudioCopy
-      directives:
-        description: Install Exact Audio Copy
-        allowPrerelease: true
-      settings:
-        Id: AndreWiethoff.ExactAudioCopy
-        Source: winget
-        Ensure: Present
-        Version: "1.8"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installFLAC
-      directives:
-        description: Install FLAC
-        allowPrerelease: true
-      settings:
-        Id: Xiph.FLAC
-        Source: winget
-        Ensure: Present
-        Version: "1.5.0"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys
