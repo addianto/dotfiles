@@ -33,7 +33,7 @@ cask "obs"
 cask "scroll-reverser"
 cask "syncthing-app", args: { no_quarantine: true }
 cask "viscosity"
-cask "th-ch/youtube-music/youtube-music"
+cask "th-ch/youtube-music/youtube-music", args: { no_quarantine: true }
 cask "zotero"
 mas "AdGuard for Safari", id: 1440147259
 mas "BitWarden", id: 1352778147
