@@ -4,19 +4,15 @@ version: 1.0.0
 schema: v1
 
 models:
+  - uses: ollama/granite4-micro-h
+    override:
+      name: Granite 4 H Micro
+      model: hf.co/ibm-granite/granite-4.0-h-micro-GGUF:Q6_K
+
   - uses: ollama/gemma3-4b
     override:
       name: Gemma 3 4B QAT
       model: gemma3:4b-it-qat
-
-  - name: Gemma 3n e2b
-    provider: ollama
-    model: gemma3n:e2b
-    roles:
-     - apply
-     - autocomplete
-     - chat
-     - edit
 
   - uses: ollama/qwen2.5-coder-1.5b
     override:
@@ -57,20 +53,6 @@ models:
       MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
     override:
       model: devstral-medium-2507
-
-  - name: Qwen 3 Embedding 0.6B @ Homelab
-    provider: ollama
-    model: hf.co/Qwen/Qwen3-Embedding-0.6B-GGUF:Q8_0
-    apiBase: http://192.168.0.2:11434
-    roles:
-      - embed
-
-  - name: Qwen 3 Reranker 0.6B @ Homelab
-    provider: ollama
-    model: hf.co/mradermacher/Qwen3-Reranker-0.6B-GGUF:Q8_0
-    apiBase: http://192.168.0.2:11434
-    roles:
-      - rerank
 
 context:
   - provider: diff

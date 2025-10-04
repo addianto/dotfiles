@@ -26,6 +26,10 @@ On a more powerful machine, I use:
 - [Gemma 3n E2B](https://ollama.com/library/gemma3n:e2b) as a general-purpose model in English and Japanese.
 - [LLAMA-SEA-LION-v3.5-8B-R](https://huggingface.co/aisingapore/Llama-SEA-LION-v3.5-8B-R) for general-purpose model in Indonesian.
 
+New model(s) that I am testing right now:
+
+- [Granite 4 H Micro](https://huggingface.co/ibm-granite/granite-4.0-h-micro).
+
 Use `ollama create` to build custom models from `Modelfile` files.
 For example, to build the personalised Llama 3.2 Abliterated model and quantize it to Q8_0 level:
 
