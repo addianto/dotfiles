@@ -41,28 +41,39 @@ models:
       MISTRAL_API_KEY: ${{ secrets.CODESTRAL_API_KEY }}
     override:
       model: codestral-2508
+      defaultCompletionOptions:
+        contextLength: 256000
 
   - uses: mistral/mistral-large
     with:
       MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
     override:
       model: mistral-large-2411
+      defaultCompletionOptions:
+        contextLength: 131072
 
   - uses: mistral/devstral-medium
     with:
       MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
     override:
       model: devstral-medium-2507
+      defaultCompletionOptions:
+        contextLength: 131072
 
 mcpServers:
   - uses: upstash/context7-mcp
 
 context:
-  - provider: diff
   - provider: file
-  - provider: codebase
+  - provider: code
+  - provider: diff
+  - provider: tree
     params:
       nRetrieve: 25
       nFinal: 5
-  - provider: code
+      useReranking: true
   - provider: docs
+    params:
+      nRetrieve: 25
+      nFinal: 5
+      useReranking: true
