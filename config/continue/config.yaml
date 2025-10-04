@@ -54,6 +54,9 @@ models:
     override:
       model: devstral-medium-2507
 
+mcpServers:
+  - uses: upstash/context7-mcp
+
 context:
   - provider: diff
   - provider: file
