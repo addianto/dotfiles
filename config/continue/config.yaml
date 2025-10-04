@@ -60,6 +60,16 @@ models:
       defaultCompletionOptions:
         contextLength: 131072
 
+  - uses: openai/gpt-4.1
+    with:
+      # Use API key from GitHub Copilot
+      # Refer to https://aider.chat/docs/llms/github.html
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    override:
+      name: GPT 4.1 (via GitHub Copilot)
+      apiBase: https://api.githubcopilot.com
+      model: gpt-4.1
+
 mcpServers:
   - uses: upstash/context7-mcp
 
