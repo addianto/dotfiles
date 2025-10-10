@@ -1,0 +1,32 @@
+{
+  "general": {
+    "preferredEditor": "nvim",
+    "vimMode": true,
+    "disableAutoUpdate": true,
+    "disableUpdateNag": false,
+    "checkpointing": {
+      "enabled": false
+    }
+  },
+  "output": {
+    "format": "text"
+  },
+  "ui": {
+    "theme": "ANSI"
+  },
+  "ide": {
+    "enabled": true,
+    "hasSeenNudge": true
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "context": {
+    "fileName": ["AGENTS.md", "CONTEXT.md", "GEMINI.md"]
+  },
+  "security": {
+    "auth": {
+      "selectedType": "gemini-api-key"
+    }
+  }
+}
