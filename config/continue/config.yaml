@@ -4,56 +4,86 @@ version: 1.0.0
 schema: v1
 
 models:
-  - name: Gemma 3 4B QAT
-    provider: ollama
-    model: gemma3:4b-it-qat
-    roles:
-      - apply
-      - chat
-      - edit
+  - uses: ollama/granite4-micro-h
+    override:
+      name: Granite 4 H Micro
+      model: hf.co/ibm-granite/granite-4.0-h-micro-GGUF:Q6_K
 
-  - name: Sailor 2 3B
-    provider: ollama
-    model: hf.co/mradermacher/Sailor2-3B-GGUF:Q6_K
-    roles:
-      - chat
+  - uses: ollama/gemma3-4b
+    override:
+      name: Gemma 3 4B QAT
+      model: gemma3:4b-it-qat
 
-  - name: Qwen 2.5 Coder Abliterated 1.5B
-    provider: ollama
-    model: addianto/qwen2.5-coder-abliterated:1.5b
-    roles:
-      - apply
-      - autocomplete
-      - edit
+  - uses: ollama/qwen2.5-coder-1.5b
+    override:
+      name: Qwen 2.5 Coder 1.5B
+      model: addianto/qwen2.5-coder-abliterated:1.5b
 
-  - name: Qwen 2.5 Coder Abliterated 3B
-    provider: ollama
-    model: addianto/qwen2.5-coder-abliterated:3b
-    roles:
-      - apply
-      - autocomplete
-      - chat
-      - edit
+  - uses: ollama/qwen2.5-coder-7b
+    override:
+      name: Qwen 2.5 Coder 7B
+      model: addianto/qwen2.5-coder-abliterated:7b
 
   - name: Qwen 3 Embedding 0.6B
     provider: ollama
-    model: dengcao/Qwen3-Embedding-0.6B:Q8_0
+    model: hf.co/Qwen/Qwen3-Embedding-0.6B-GGUF:Q8_0
     roles:
       - embed
 
-  - name: Qwen 3 Embedding 0.6B @ Homelab
+  - name: Qwen 3 Reranker 0.6B
     provider: ollama
-    model: dengcao/Qwen3-Embedding-0.6B:Q8_0
-    apiBase: http://192.168.0.2:11434
+    model: hf.co/mradermacher/Qwen3-Reranker-0.6B-GGUF:Q8_0
     roles:
-      - embed
+      - rerank
+
+  - uses: mistral/codestral
+    with:
+      MISTRAL_API_KEY: ${{ secrets.CODESTRAL_API_KEY }}
+    override:
+      model: codestral-2508
+      defaultCompletionOptions:
+        contextLength: 256000
+
+  - uses: mistral/mistral-large
+    with:
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+    override:
+      model: mistral-large-2411
+      defaultCompletionOptions:
+        contextLength: 131072
+
+  - uses: mistral/devstral-medium
+    with:
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+    override:
+      model: devstral-medium-2507
+      defaultCompletionOptions:
+        contextLength: 131072
+
+  - uses: openai/gpt-4.1
+    with:
+      # Use API key from GitHub Copilot
+      # Refer to https://aider.chat/docs/llms/github.html
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    override:
+      name: GPT 4.1 (via GitHub Copilot)
+      apiBase: https://api.githubcopilot.com
+      model: gpt-4.1
+
+mcpServers:
+  - uses: upstash/context7-mcp
 
 context:
-  - provider: diff
   - provider: file
-  - provider: codebase
+  - provider: code
+  - provider: diff
+  - provider: tree
     params:
       nRetrieve: 25
       nFinal: 5
-  - provider: code
+      useReranking: true
   - provider: docs
+    params:
+      nRetrieve: 25
+      nFinal: 5
+      useReranking: true

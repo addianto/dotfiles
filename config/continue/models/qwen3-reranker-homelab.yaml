@@ -1,0 +1,12 @@
+---
+name: Qwen 3 Embedding @ Homelab
+version: 1.0.0
+schema: v1
+
+models:
+  - name: Qwen 3 Reranker 0.6B @ Homelab
+    provider: ollama
+    model: hf.co/mradermacher/Qwen3-Reranker-0.6B-GGUF:Q8_0
+    apiBase: http://192.168.0.2:11434
+    roles:
+      - rerank

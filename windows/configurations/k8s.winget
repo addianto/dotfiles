@@ -1,0 +1,92 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallDockerDesktop
+      directives:
+        description: Uninstall Docker Desktop
+        allowPrerelease: true
+      settings:
+        Id: Docker.DockerDesktop
+        Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPodman
+      directives:
+        description: Install Podman
+        allowPrerelease: true
+      settings:
+        Id: RedHat.Podman
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPodmanDesktop
+      directives:
+        description: Install Podman Desktop
+        allowPrerelease: true
+      settings:
+        Id: RedHat.Podman-Desktop
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installKubectl
+      directives:
+        description: Install kubectl
+        allowPrerelease: true
+      settings:
+        Id: Kubernetes.kubectl
+        Source: winget
+        Ensure: Present
+        Version: "1.34.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installMinikube
+      dependsOn:
+        - installPodman
+        - installPodmanDesktop
+      directives:
+        description: Install Minikube
+        allowPrerelease: true
+      settings:
+        Id: Kubernetes.minikube
+        Source: winget
+        Ensure: Present
+        Version: "1.37.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installHelm
+      directives:
+        description: Install Helm
+        allowPrerelease: true
+      settings:
+        Id: Helm.Helm
+        Source: winget
+        Ensure: Present
+        Version: "3.19.0" # See supported version skew in https://helm.sh/docs/topics/version_skew/
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installK9s
+      directives:
+        description: Install k9s
+        allowPrerelease: true
+      settings:
+        Id: Derailed.k9s
+        Source: winget
+        Ensure: Present
+        Version: "0.50.13" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installKubeLinter
+      directives:
+        description: Install KubeLinter
+        allowPrerelease: true
+      settings:
+        Id: stackrox.kube-linter
+        Source: winget
+        Ensure: Present
+        Version: "0.7.6"

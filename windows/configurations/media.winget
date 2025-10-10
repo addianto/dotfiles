@@ -11,82 +11,100 @@ properties:
         MinVersion: "10.0.19041"
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallDockerDesktop
+      id: installKrita
       directives:
-        description: Uninstall Docker Desktop
+        description: Install Krita
         allowPrerelease: true
       settings:
-        Id: Docker.DockerDesktop
+        Id: KDE.Krita
         Source: winget
-        Ensure: Absent
+        Ensure: Present
+        Version: "5.2.13.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installPodman
+      id: installShotcut
       directives:
-        description: Install Podman
+        description: Install Shotcut
         allowPrerelease: true
       settings:
-        Id: RedHat.Podman
+        Id: Meltytech.Shotcut
+        Source: winget
+        Ensure: Present
+        Version: "25.07.26"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installOBSStudio
+      directives:
+        description: Install OBS Studio
+        allowPrerelease: true
+      settings:
+        Id: OBSProject.OBSStudio
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installPodmanDesktop
+      id: installExactAudioCopy
       directives:
-        description: Install Podman Desktop
+        description: Install Exact Audio Copy
         allowPrerelease: true
       settings:
-        Id: RedHat.Podman-Desktop
+        Id: AndreWiethoff.ExactAudioCopy
+        Source: winget
+        Ensure: Present
+        Version: "1.8"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installFLAC
+      directives:
+        description: Install FLAC
+        allowPrerelease: true
+      settings:
+        Id: Xiph.FLAC
+        Source: winget
+        Ensure: Present
+        Version: "1.5.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installWacomTabletDriver
+      directives:
+        description: Install Wacom Tablet Driver
+        allowPrerelease: true
+      settings:
+        Id: Wacom.WacomTabletDriver
+        Source: winget
+        Ensure: Present
+        Version: "6.4.11-1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installYouTubeMusic
+      directives:
+        description: Install YouTube Music
+        allowPrerelease: true
+      settings:
+        Id: th-ch.YouTubeMusic
         Source: winget
         Ensure: Present
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installKubectl
+      id: installFFmpeg
       directives:
-        description: Install kubectl
+        description: Install FFmpeg
         allowPrerelease: true
       settings:
-        Id: Kubernetes.kubectl
+        Id: Gyan.FFmpeg
         Source: winget
         Ensure: Present
-        Version: "1.33.3"
+        Version: "8.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installMinikube
-      dependsOn:
-        - installPodman
-        - installPodmanDesktop
+      id: installHaruna
       directives:
-        description: Install Minikube
+        description: Install Haruna
         allowPrerelease: true
       settings:
-        Id: Kubernetes.minikube
+        Id: KDE.Haruna
         Source: winget
         Ensure: Present
-        Version: "1.36.0"
+        Version: "1.4.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installHelm
+      id: installFoobar2000
       directives:
-        description: Install Helm
+        description: Install foobar2000
         allowPrerelease: true
       settings:
-        Id: Helm.Helm
+        Id: PeterPawlowski.foobar2000
         Source: winget
         Ensure: Present
-        Version: "3.18.4" # See supported version skew in https://helm.sh/docs/topics/version_skew/
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installK9s
-      directives:
-        description: Install k9s
-        allowPrerelease: true
-      settings:
-        Id: Derailed.k9s
-        Source: winget
-        Ensure: Present
-        Version: "0.50.6" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installKubeLinter
-      directives:
-        description: Install KubeLinter
-        allowPrerelease: true
-      settings:
-        Id: stackrox.kube-linter
-        Source: winget
-        Ensure: Present
-        Version: "0.7.4"
+        Version: "2.25.1"

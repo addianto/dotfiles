@@ -40,7 +40,7 @@ properties:
         Id: Microsoft.WindowsTerminal
         Source: winget
         Ensure: Present
-        Version: "1.22.11141.0"
+        Version: "1.23.12681.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
@@ -97,7 +97,7 @@ properties:
         Id: errata-ai.Vale
         Source: winget
         Ensure: Present
-        Version: "3.11.2"
+        Version: "3.12.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNanaZip
       directives:
@@ -117,7 +117,7 @@ properties:
         Id: Genymobile.scrcpy
         Source: winget
         Ensure: Present
-        Version: "3.3.1"
+        Version: "3.3.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installZotero
       directives:
@@ -155,7 +155,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.92.1"
+        Version: "0.94.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWinSCP
       directives:
@@ -166,16 +166,6 @@ properties:
         Source: winget
         Ensure: Present
         Version: "6.5.3"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installFoobar2000
-      directives:
-        description: Install foobar2000
-        allowPrerelease: true
-      settings:
-        Id: PeterPawlowski.foobar2000
-        Source: winget
-        Ensure: Present
-        Version: "2.24.6"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOpenVPN
       directives:
@@ -197,26 +187,6 @@ properties:
         Ensure: Present
         Version: "2.16"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installKrita
-      directives:
-        description: Install Krita
-        allowPrerelease: true
-      settings:
-        Id: KDE.Krita
-        Source: winget
-        Ensure: Present
-        Version: "5.2.11.0"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installShotcut
-      directives:
-        description: Install Shotcut
-        allowPrerelease: true
-      settings:
-        Id: Meltytech.Shotcut
-        Source: winget
-        Ensure: Present
-        Version: "25.07.26"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCzkawka
       directives:
         description: Install Czkawka
@@ -225,36 +195,7 @@ properties:
         Id: qarmin.czkawka.cli
         Source: winget
         Ensure: Present
-        Version: "9.0.0"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installOBSStudio
-      directives:
-        description: Install OBS Studio
-        allowPrerelease: true
-      settings:
-        Id: OBSProject.OBSStudio
-        Source: winget
-        Ensure: Present
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installExactAudioCopy
-      directives:
-        description: Install Exact Audio Copy
-        allowPrerelease: true
-      settings:
-        Id: AndreWiethoff.ExactAudioCopy
-        Source: winget
-        Ensure: Present
-        Version: "1.8"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installFLAC
-      directives:
-        description: Install FLAC
-        allowPrerelease: true
-      settings:
-        Id: Xiph.FLAC
-        Source: winget
-        Ensure: Present
-        Version: "1.5.0"
+        Version: "10.0.0"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys

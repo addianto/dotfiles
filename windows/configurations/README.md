@@ -24,9 +24,9 @@ To use the configuration files, execute the following commands:
 
 ```pwsh
 winget configure --file .\configurations\setupMachine.dsc.yaml
-winget configure --file .\configurations\setupCommon.dsc.yaml
-winget configure --file .\configurations\setupDevTools.dsc.yaml
-winget configure --file .\configurations\setupOfficeTools.dsc.yaml
+winget configure --file .\configurations\common.winget
+winget configure --file .\configurations\devtools.winget
+winget configure --file .\configurations\office.winget
 ```
 
 Some configuration files are optional, such as those for setting up [LLM](./setupLLM.dsc.yaml)

@@ -33,7 +33,7 @@ cask "obs"
 cask "scroll-reverser"
 cask "syncthing-app", args: { no_quarantine: true }
 cask "viscosity"
-cask "th-ch/youtube-music/youtube-music"
+cask "th-ch/youtube-music/youtube-music", args: { no_quarantine: true }
 cask "zotero"
 mas "AdGuard for Safari", id: 1440147259
 mas "BitWarden", id: 1352778147
@@ -57,6 +57,7 @@ brew "node"
 brew "opentofu"
 brew "pnpm"
 brew "python@3.13"
+brew "postgresql@15", restart_service: true
 brew "ruby@3.2"
 brew "ruff"
 brew "rustup"
@@ -64,10 +65,9 @@ brew "shellcheck"
 brew "trivy"
 brew "uv"
 cask "dbeaver-community"
-cask "google-cloud-sdk"
+cask "gcloud-cli"
 cask "jetbrains-toolbox"
 cask "mactex-no-gui"
-cask "postman"
 cask "temurin@21"
 cask "vscodium"
 
@@ -87,15 +87,19 @@ cask "microsoft-auto-update"
 cask "microsoft-office-businesspro"
 cask "thunderbird"
 cask "zoom"
-mas "Slack", id: 618783545
+mas "Slack", id: 803453959
 
 ## AI/LLM
+brew "gemini-cli"
 cask "anythingllm", { args: { require_sha: false } }
 cask "ollama-app"
+cask "block-goose"
 mas "Draw Things", id: 6444050820
 
-## VS Code Extensions
+## Visual Studio Code & Extensions
+cask "visual-studio-code"
 vscode "asvetliakov.vscode-neovim"
+vscode "augment.vscode-augment"
 vscode "editorconfig.editorconfig"
 vscode "enkia.tokyo-night"
 vscode "github.copilot"
@@ -105,6 +109,7 @@ vscode "gitlab.gitlab-workflow"
 vscode "pflannery.vscode-versionlens"
 vscode "redhat.vscode-yaml"
 vscode "rust-lang.rust-analyzer"
+vscode "ryanluker.vscode-coverage-gutters"
 vscode "tamasfe.even-better-toml"
 vscode "timonwong.shellcheck"
 vscode "usernamehw.errorlens"

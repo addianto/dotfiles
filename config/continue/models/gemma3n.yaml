@@ -1,0 +1,9 @@
+---
+name: Gemma 3n
+version: 1.0.0
+schema: v1
+
+models:
+  - name: Gemma 3n e2b
+    provider: ollama
+    model: gemma3n:e2b

@@ -19,7 +19,7 @@ properties:
         Id: Wilfred.difftastic
         Source: winget
         Ensure: Present
-        Version: "0.63.0"
+        Version: "0.65.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGit
       dependsOn:
@@ -31,7 +31,7 @@ properties:
         Id: Git.Git
         Source: winget
         Ensure: Present
-        Version: "2.50.1"
+        Version: "2.51.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovim
       directives:
@@ -41,7 +41,7 @@ properties:
         Id: Neovim.Neovim
         Source: winget
         Ensure: Present
-        Version: "0.11.3"
+        Version: "0.11.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovide
       dependsOn:
@@ -53,7 +53,7 @@ properties:
         Id: Neovide.Neovide
         Source: winget
         Ensure: Present
-        Version: "0.15.0"
+        Version: "0.15.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVSCodium
       directives:
@@ -81,7 +81,7 @@ properties:
         Id: koalaman.shellcheck
         Source: winget
         Ensure: Present
-        Version: "0.10.0"
+        Version: "0.11.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPnpm
       directives:
@@ -91,7 +91,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "10.13.1"
+        Version: "10.18.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -101,7 +101,7 @@ properties:
         Id: hadolint.hadolint
         Source: winget
         Ensure: Present
-        Version: "2.12.0"
+        Version: "2.14.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installJq
       directives:
@@ -118,19 +118,19 @@ properties:
         description: Install k6
         allowPrerelease: true
       settings:
-        Id: k6.k6
+        Id: GrafanaLabs.k6
         Source: winget
         Ensure: Present
-        Version: "1.1.0"
+        Version: "1.3.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installPostman
+      id: uninstallPostman
       directives:
-        description: Install Postman
+        description: Uninstall Postman
         allowPrerelease: true
       settings:
         Id: Postman.Postman
         Source: winget
-        Ensure: Present
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installDBeaver
       directives:
@@ -140,7 +140,7 @@ properties:
         Id: DBeaver.DBeaver.Community
         Source: winget
         Ensure: Present
-        Version: "25.1.3"
+        Version: "25.2.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoogleCloudSDK
       directives:
@@ -168,7 +168,7 @@ properties:
         Id: sharkdp.fd
         Source: winget
         Ensure: Present
-        Version: "10.2.0"
+        Version: "10.3.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installRufus
       directives:
@@ -178,7 +178,7 @@ properties:
         Id: Rufus.Rufus
         Source: winget
         Ensure: Present
-        Version: "4.9"
+        Version: "4.11"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOpenTofu
       directives:
@@ -188,27 +188,7 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.10.3"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installGo
-      directives:
-        description: Install Go
-        allowPrerelease: true
-      settings:
-        Id: GoLang.Go
-        Source: winget
-        Ensure: Present
-        Version: "1.24.5"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installGoLangCILint
-      directives:
-        description: Install golangci-lint
-        allowPrerelease: true
-      settings:
-        Id: GolangCI.golangci-lint
-        Source: winget
-        Ensure: Present
-        Version: "2.3.0"
+        Version: "1.10.6"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setRustupHome
       directives:
@@ -230,3 +210,13 @@ properties:
         Source: winget
         Ensure: Present
         Version: "1.28.2"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installBruno
+      directives:
+        description: Install Bruno
+        allowPrerelease: true
+      settings:
+        Id: Bruno.Bruno
+        Source: winget
+        Ensure: Present
+        Version: "2.12.0"

@@ -138,6 +138,24 @@ properties:
       settings:
         Name: vscjava.vscode-java-pack
         Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Coverage Gutters
+        allowPrerelease: true
+      settings:
+        Name: ryanluker.vscode-coverage-gutters
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Augment Code
+        allowPrerelease: true
+      settings:
+        Name: augment.vscode-augment
+        Exist: true
     # Themes & Icons
     - resource: Microsoft.VSCode.Dsc/VSCodeExtension
       dependsOn:
