@@ -64,6 +64,10 @@
       "headers": {
         "Accept": "application/json, text/event-stream"
       }
+    },
+    "sequentialthinking": {
+      "command": "pnpx",
+      "args": ["@modelcontextprotocol/server-sequential-thinking@2025.7.1"]
     }
   }
 }
