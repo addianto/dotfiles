@@ -22,11 +22,38 @@
     "usageStatisticsEnabled": false
   },
   "context": {
-    "fileName": ["AGENTS.md", "CONTEXT.md", "GEMINI.md"]
+    "fileName": [
+      "AGENTS.md",
+      "CONTEXT.md",
+      "GEMINI.md"
+    ]
   },
   "security": {
     "auth": {
       "selectedType": "gemini-api-key"
+    }
+  },
+  "mcpServers": {
+    "github": {
+      "httpUrl": "https://api.githubcopilot.com/mcp",
+      "trust": true,
+      "headers": {
+        "Authorization": "Bearer $GITHUB_PAT"
+      },
+      "excludeTools": [
+        "create_gist",
+        "list_gist",
+        "update_gist",
+        "dismiss_notification",
+        "get_notification_details",
+        "list_notifications",
+        "manage_notification_subscription",
+        "manage_repository_notification_subscription",
+        "mark_all_notifications_read",
+        "star_repository",
+        "unstar_repository",
+        "search_users"
+      ]
     }
   }
 }
