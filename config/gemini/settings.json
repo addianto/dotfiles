@@ -71,6 +71,13 @@
         "dlx",
         "@modelcontextprotocol/server-sequential-thinking@2025.7.1"
       ]
+    },
+    "gcloud": {
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "@google-cloud/gcloud-mcp@0.3.0"
+      ]
     }
   }
 }

@@ -91,6 +91,12 @@ mcpServers:
     env:
       GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
 
+  - name: gcloud
+    command: pnpm
+    args:
+      - "dlx"
+      - "@google-cloud/gcloud-mcp@0.3.0"
+
 context:
   - provider: file
   - provider: code
