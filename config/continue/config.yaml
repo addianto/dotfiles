@@ -73,6 +73,13 @@ models:
 mcpServers:
   - uses: upstash/context7-mcp
 
+  - name: Sequential Thinking
+    type: stdio
+    command: pnpm
+    args:
+      - "dlx"
+      - "@modelcontextprotocol/server-sequential-thinking@2025.7.1"
+
 context:
   - provider: file
   - provider: code

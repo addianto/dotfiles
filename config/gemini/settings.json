@@ -66,8 +66,11 @@
       }
     },
     "sequentialthinking": {
-      "command": "pnpx",
-      "args": ["@modelcontextprotocol/server-sequential-thinking@2025.7.1"]
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "@modelcontextprotocol/server-sequential-thinking@2025.7.1"
+      ]
     }
   }
 }
