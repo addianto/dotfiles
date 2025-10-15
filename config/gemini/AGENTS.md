@@ -1,9 +1,9 @@
-# General Instructions for AI Agent
+# General Instructions for Gemini AI Agent
 
-## Command Substitutes
+## Shared Rules With Other AI Agent
 
-Unless specified otherwise, replace the following commands with their substitutes:
+@../continue/rules/context7-usage-rules.md
 
-- Replace Terraform (`tf` or `terraform`) with OpenTofu (`tf`)
-- Replace Docker (`docker`) with Podman (`podman`)
-- Replace `docker-compose` with `podman-compose`
+@../continue/rules/command-substitutes-rules.md
+
+@../continue/rules/english-writing-rules.md
