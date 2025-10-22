@@ -84,6 +84,12 @@
       "args": [
         "mcp-server-time==2025.9.25"
       ]
+    },
+    "git": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-time==2025.9.25"
+      ]
     }
   }
 }
