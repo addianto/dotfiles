@@ -14,5 +14,8 @@ pnpm dlx @google/gemini-cli
 
 After installing Gemini CLI, install the following extensions:
 
-- [Gemini CLI Code Review](https://github.com/gemini-cli-extensions/code-review)
-- [Gemini CLI Security](https://github.com/gemini-cli-extensions/security)
+- [Code Review](https://github.com/gemini-cli-extensions/code-review)
+- [Security](https://github.com/gemini-cli-extensions/security)
+- [Nano Banana](https://github.com/gemini-cli-extensions/nanobanana)
+- [Jules](https://github.com/gemini-cli-extensions/jules)
+- [Flutter](https://github.com/gemini-cli-extensions/flutter)
