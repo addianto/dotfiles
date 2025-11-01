@@ -97,7 +97,7 @@ properties:
         Id: KDE.Haruna
         Source: winget
         Ensure: Present
-        Version: "1.4.0"
+        Version: "1.6.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFoobar2000
       directives:
@@ -107,4 +107,4 @@ properties:
         Id: PeterPawlowski.foobar2000
         Source: winget
         Ensure: Present
-        Version: "2.25.1"
+        Version: "2.25.2"
