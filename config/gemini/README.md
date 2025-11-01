@@ -19,3 +19,14 @@ After installing Gemini CLI, install the following extensions:
 - [Nano Banana](https://github.com/gemini-cli-extensions/nanobanana)
 - [Jules](https://github.com/gemini-cli-extensions/jules)
 - [Flutter](https://github.com/gemini-cli-extensions/flutter)
+
+Finally, create symbolic links to [`AGENTS.md`](./AGENTS.md), [`.env`](./.env),
+and [Continue's `rules` directory](../continue/rules/) in user's Gemini configuration directory:
+
+```shell
+cd "$HOME/.gemini"
+ln -s "$HOME/.local/src/dotfiles/gemini/AGENTS.md"
+ln -s "$HOME/.local/src/dotfiles/gemini/.env"
+ln -s "$HOME/.continue/rules"
+# On Windows, use `New-Item -Type SymbolicLink` command to create symbolic links.
+```

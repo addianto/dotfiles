@@ -2,8 +2,8 @@
 
 ## Shared Rules With Other AI Agent
 
-@../continue/rules/context7-usage.md
+@rules/context7-usage.md
 
-@../continue/rules/command-substitutes.md
+@rules/command-substitutes.md
 
-@../continue/rules/english-writing.md
+@rules/english-writing.md
