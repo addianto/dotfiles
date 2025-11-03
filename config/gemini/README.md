@@ -9,7 +9,7 @@ brew install gemini-cli
 On Windows, use `pnpm` to install Gemini CLI globally:
 
 ```shell
-pnpm dlx @google/gemini-cli
+pnpm add -g @google/gemini-cli
 ```
 
 After installing Gemini CLI, install the following extensions:
