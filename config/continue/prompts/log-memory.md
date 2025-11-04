@@ -1,5 +1,5 @@
 ---
-name: Log memory
+name: Log Memory
 description: Generate a structured Markdown memory log
 invokable: true
 ---
