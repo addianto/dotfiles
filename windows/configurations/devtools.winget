@@ -220,3 +220,13 @@ properties:
         Source: winget
         Ensure: Present
         Version: "2.13.2"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installAlacritty
+      directives:
+        description: Install Alacritty
+        allowPrerelease: true
+      settings:
+        Id: Alacritty.Alacritty
+        Source: winget
+        Ensure: Present
+        Version: "0.16.1"
