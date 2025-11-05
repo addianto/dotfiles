@@ -50,3 +50,12 @@ properties:
         Id: Codeium.Windsurf
         Source: winget
         Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installWitsy
+      directives:
+        description: Install Witsy
+        allowPrerelease: true
+      settings:
+        Id: NicolasBonamy.Witsy
+        Source: winget
+        Ensure: Present
