@@ -88,7 +88,7 @@
     "git": {
       "command": "uvx",
       "args": [
-        "mcp-server-time==2025.9.25"
+        "mcp-server-git==2025.9.25"
       ]
     }
   }
