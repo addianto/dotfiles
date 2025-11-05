@@ -79,7 +79,7 @@ properties:
         Id: Derailed.k9s
         Source: winget
         Ensure: Present
-        Version: "0.50.13" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
+        Version: "0.50.16" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKubeLinter
       directives:

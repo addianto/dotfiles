@@ -119,6 +119,15 @@ properties:
       settings:
         Name: tamasfe.even-better-toml
         Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Augment Code
+        allowPrerelease: true
+      settings:
+        Name: augment.vscode-augment
+        Exist: true
     # Languages Support
     - resource: Microsoft.VSCode.Dsc/VSCodeExtension
       dependsOn:
@@ -151,10 +160,19 @@ properties:
       dependsOn:
         - installVSCode
       directives:
-        description: Install Augment Code
+        description: Install Vue language support
         allowPrerelease: true
       settings:
-        Name: augment.vscode-augment
+        Name: Vue.volar
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      dependsOn:
+        - installVSCode
+      directives:
+        description: Install Go language support
+        allowPrerelease: true
+      settings:
+        Name: golang.go
         Exist: true
     # Themes & Icons
     - resource: Microsoft.VSCode.Dsc/VSCodeExtension

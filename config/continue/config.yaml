@@ -73,6 +73,37 @@ models:
 mcpServers:
   - uses: upstash/context7-mcp
 
+  - name: Sequential Thinking
+    command: pnpm
+    args:
+      - "dlx"
+      - "@modelcontextprotocol/server-sequential-thinking@2025.7.1"
+
+  - name: GitHub
+    command: github-mcp-server
+    type: stdio
+    args:
+      - "stdio"
+    env:
+      GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+      GITHUB_TOOLSETS: default,code_security,secret_protection,security_advisories
+
+  - name: gcloud
+    command: pnpm
+    args:
+      - "dlx"
+      - "@google-cloud/gcloud-mcp@0.4.0"
+
+  - name: time
+    command: uvx
+    args:
+      - "mcp-server-time==2025.9.25"
+
+  - name: git
+    command: uvx
+    args:
+      - "mcp-server-git==2025.9.25"
+
 context:
   - provider: file
   - provider: code

@@ -97,7 +97,7 @@ properties:
         Id: errata-ai.Vale
         Source: winget
         Ensure: Present
-        Version: "3.12.0"
+        Version: "3.13.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNanaZip
       directives:
@@ -155,7 +155,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.94.0"
+        Version: "0.95.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWinSCP
       directives:
@@ -165,7 +165,7 @@ properties:
         Id: WinSCP.WinSCP
         Source: winget
         Ensure: Present
-        Version: "6.5.3"
+        Version: "6.5.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOpenVPN
       directives:
@@ -185,7 +185,7 @@ properties:
         Id: CPUID.CPU-Z
         Source: winget
         Ensure: Present
-        Version: "2.16"
+        Version: "2.17"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCzkawka
       directives:

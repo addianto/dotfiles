@@ -1,0 +1,95 @@
+{
+  "general": {
+    "preferredEditor": "nvim",
+    "vimMode": true,
+    "disableAutoUpdate": true,
+    "disableUpdateNag": false,
+    "checkpointing": {
+      "enabled": false
+    }
+  },
+  "output": {
+    "format": "text"
+  },
+  "ui": {
+    "theme": "ANSI"
+  },
+  "ide": {
+    "enabled": true,
+    "hasSeenNudge": true
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "context": {
+    "fileName": [
+      "AGENTS.md",
+      "CONTEXT.md",
+      "GEMINI.md"
+    ]
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "mcpServers": {
+    "github": {
+      "httpUrl": "https://api.githubcopilot.com/mcp",
+      "trust": true,
+      "headers": {
+        "Authorization": "Bearer $GITHUB_PERSONAL_ACCESS_TOKEN"
+      },
+      "excludeTools": [
+        "cancel_workflow_run",
+        "delete_workflow_run_logs",
+        "create_gist",
+        "list_gist",
+        "update_gist",
+        "dismiss_notification",
+        "get_notification_details",
+        "list_notifications",
+        "manage_notification_subscription",
+        "manage_repository_notification_subscription",
+        "mark_all_notifications_read",
+        "search_orgs",
+        "star_repository",
+        "unstar_repository",
+        "search_users"
+      ]
+    },
+    "context7": {
+      "httpUrl": "https://mcp.context7.com/mcp",
+      "trust": true,
+      "headers": {
+        "Accept": "application/json, text/event-stream"
+      }
+    },
+    "sequentialthinking": {
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "@modelcontextprotocol/server-sequential-thinking@2025.7.1"
+      ]
+    },
+    "gcloud": {
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "@google-cloud/gcloud-mcp@0.4.0"
+      ]
+    },
+    "time": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-time==2025.9.25"
+      ]
+    },
+    "git": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-git==2025.9.25"
+      ]
+    }
+  }
+}
