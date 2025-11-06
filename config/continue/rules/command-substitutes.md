@@ -3,10 +3,10 @@ name: Command Substitutes
 description: Rules for substituting specific commands with their alternatives.
 ---
 
-1. Unless specified otherwise, replace the following commands with their substitutes:
+1. Unless the user explicitly requests otherwise, always replace:
    - Terraform (`tf` or `terraform`) with OpenTofu (`tf`)
    - Docker (`docker`) with Podman (`podman`)
-   - `docker-compose` with `podman-compose`
-2. When working on Flutter project, prefix any `dart` and `flutter` commands with `fvm`.
-   For example, `flutter analyze` become `fvm flutter analyze`.
-   The reason is I use `fvm` (Flutter Version Manager) to manage multiple Flutter installation in my development machine.
+   - Docker Compose (`docker-compose`) with Podman Compose (`podman-compose`)
+2. For commands likely to be run within a Flutter project (identified by presence of a `pubspec.yaml` containing "flutter" as a dependency):
+   - Prefix all `dart` and `flutter` commands with `fvm` (e.g., `flutter analyze` to `fvm flutter analyze`)
+   - This ensures the use of Flutter Version Manager for managing multiple Flutter installations
