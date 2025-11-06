@@ -71,6 +71,7 @@ cask "jetbrains-toolbox"
 cask "mactex-no-gui"
 cask "temurin@21"
 cask "vscodium"
+cask "alacritty", args: { no_quarantine: true }
 
 ## K8S/Containers
 brew "helm"
