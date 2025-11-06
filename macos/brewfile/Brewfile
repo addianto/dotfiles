@@ -95,6 +95,7 @@ brew "gemini-cli"
 cask "anythingllm", { args: { require_sha: false } }
 cask "ollama-app"
 cask "block-goose"
+cask "witsy"
 mas "Draw Things", id: 6444050820
 
 ## Visual Studio Code & Extensions
