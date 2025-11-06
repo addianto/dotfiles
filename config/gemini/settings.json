@@ -90,6 +90,13 @@
       "args": [
         "mcp-server-git==2025.9.25"
       ]
+    },
+    "gitlab-csui": {
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "@zereight/mcp-gitlab@2.0.8"
+      ]
     }
   }
 }
