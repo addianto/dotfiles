@@ -1,0 +1,21 @@
+[window]
+padding = { x = 8, y = 8 }
+dynamic_padding = true
+decorations = "Full"
+decorations_theme_variant = "None"
+dynamic_title = true
+opacity = 0.95
+
+[font]
+normal = { family = "IosevkaTerm NF", style = "Regular" }
+bold = { family = "IosevkaTerm NF", style = "Bold" }
+italic = { family = "IosevkaTerm NF", style = "Italic" }
+bold_italic = { family = "IosevkaTerm NF", style = "Bold Italic" }
+size = 16
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
