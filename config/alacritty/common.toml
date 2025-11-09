@@ -7,10 +7,10 @@ dynamic_title = true
 opacity = 0.95
 
 [font]
-normal = { family = "IosevkaTerm NF", style = "Regular" }
-bold = { family = "IosevkaTerm NF", style = "Bold" }
-italic = { family = "IosevkaTerm NF", style = "Italic" }
-bold_italic = { family = "IosevkaTerm NF", style = "Bold Italic" }
+normal = { family = "IosevkaTerm NFP", style = "Regular" }
+bold = { family = "IosevkaTerm NFP", style = "Bold" }
+italic = { family = "IosevkaTerm NFP", style = "Italic" }
+bold_italic = { family = "IosevkaTerm NFP", style = "Bold Italic" }
 size = 16
 
 [selection]
