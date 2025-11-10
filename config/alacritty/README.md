@@ -24,5 +24,7 @@ import = [
     # Uncomment specific platform configuration line:
     # "macos.toml",
     # "windows.toml",
+    # Default theme set to Tokyo Night Storm
+    "themes/tokyo-night-storm.toml",
 ]
 ```
