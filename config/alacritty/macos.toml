@@ -1,2 +1,5 @@
+[window]
+padding = { x = 0, y = 0 }
+
 [terminal]
-shell = { program = "/bin/zsh" }
+shell = { program = "/opt/homebrew/bin/zsh" }
