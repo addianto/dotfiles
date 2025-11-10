@@ -99,6 +99,14 @@ cask "block-goose"
 cask "witsy"
 mas "Draw Things", id: 6444050820
 
+## Fonts
+cask "font-iosevka"
+cask "font-iosevka-nerd-font"
+cask "font-iosevka-aile"
+cask "font-iosevka-etoile"
+cask "font-iosevka-term-nerd-font"
+cask "font-sarasa-gothic"
+
 ## Visual Studio Code & Extensions
 cask "visual-studio-code"
 vscode "asvetliakov.vscode-neovim"
