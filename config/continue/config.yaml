@@ -4,25 +4,10 @@ version: 1.0.0
 schema: v1
 
 models:
-  - uses: ollama/granite4-micro-h
+  - uses: ollama/granite4-micro
     override:
-      name: Granite 4 H Micro
-      model: hf.co/ibm-granite/granite-4.0-h-micro-GGUF:Q6_K
-
-  - uses: ollama/gemma3-4b
-    override:
-      name: Gemma 3 4B QAT
-      model: gemma3:4b-it-qat
-
-  - uses: ollama/qwen2.5-coder-1.5b
-    override:
-      name: Qwen 2.5 Coder 1.5B
-      model: addianto/qwen2.5-coder-abliterated:1.5b
-
-  - uses: ollama/qwen2.5-coder-7b
-    override:
-      name: Qwen 2.5 Coder 7B
-      model: addianto/qwen2.5-coder-abliterated:7b
+      name: Granite 4 Micro
+      model: hf.co/mradermacher/Huihui-granite-4.0-micro-abliterated-GGUF:Q6_K
 
   - name: Qwen 3 Embedding 0.6B
     provider: ollama
