@@ -6,7 +6,8 @@
     "disableUpdateNag": false,
     "checkpointing": {
       "enabled": false
-    }
+    },
+    "previewFeatures": true
   },
   "output": {
     "format": "text"
