@@ -65,10 +65,17 @@ mcpServers:
       - "@modelcontextprotocol/server-sequential-thinking@2025.7.1"
 
   - name: GitHub
-    command: github-mcp-server
+    command: podman
     type: stdio
     args:
-      - "stdio"
+      - "run"
+      - "-i"
+      - "--rm"
+      - "-e"
+      - "GITHUB_PERSONAL_ACCESS_TOKEN"
+      - "-e"
+      - "GITHUB_TOOLSETS"
+      - "ghcr.io/github/github-mcp-server:v0.22.0"
     env:
       GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
       GITHUB_TOOLSETS: default,code_security,secret_protection,security_advisories
