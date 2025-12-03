@@ -4,10 +4,10 @@ version: 1.0.0
 schema: v1
 
 models:
-  - uses: ollama/granite4-micro
+  - uses: ollama/qwen2.5-coder-1.5b
     override:
-      name: Granite 4 Micro
-      model: hf.co/mradermacher/Huihui-granite-4.0-micro-abliterated-GGUF:Q6_K
+      name: Qwen 2.5 Coder 1.5B
+      model: addianto/qwen2.5-coder-abliterated:1.5b
 
   - name: Qwen 3 Embedding 0.6B
     provider: ollama
@@ -27,15 +27,18 @@ models:
     override:
       model: codestral-2508
       defaultCompletionOptions:
-        contextLength: 256000
+        contextLength: 128000
 
   - uses: mistral/mistral-large
     with:
       MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
     override:
-      model: mistral-large-2411
+      model: mistral-large-2512
       defaultCompletionOptions:
-        contextLength: 131072
+        contextLength: 256000
+      capabilities:
+        - tool_use
+        - image_input
 
   - uses: mistral/devstral-medium
     with:
@@ -43,7 +46,17 @@ models:
     override:
       model: devstral-medium-2507
       defaultCompletionOptions:
-        contextLength: 131072
+        contextLength: 128000
+
+  - name: Magistral Medium 1.2
+    provider: mistral
+    model: magistral-medium-2509
+    apiKey: ${{ secrets.MISTRAL_API_KEY }}
+    roles:
+      - chat
+    capabilities:
+      - tool_use
+      - image_input
 
   - uses: openai/gpt-4.1
     with:
@@ -56,29 +69,17 @@ models:
       model: gpt-4.1
 
 mcpServers:
-  - uses: upstash/context7-mcp
+  - name: Context7
+    command: pnpm
+    args:
+      - "dlx"
+      - "@upstash/context7-mcp@1.0.31"
 
   - name: Sequential Thinking
     command: pnpm
     args:
       - "dlx"
-      - "@modelcontextprotocol/server-sequential-thinking@2025.7.1"
-
-  - name: GitHub
-    command: podman
-    type: stdio
-    args:
-      - "run"
-      - "-i"
-      - "--rm"
-      - "-e"
-      - "GITHUB_PERSONAL_ACCESS_TOKEN"
-      - "-e"
-      - "GITHUB_TOOLSETS"
-      - "ghcr.io/github/github-mcp-server:v0.22.0"
-    env:
-      GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
-      GITHUB_TOOLSETS: default,code_security,secret_protection,security_advisories
+      - "@modelcontextprotocol/server-sequential-thinking@2025.11.25"
 
   - name: Google Cloud
     command: pnpm
@@ -94,20 +95,22 @@ mcpServers:
   - name: Git
     command: uvx
     args:
-      - "mcp-server-git==2025.9.25"
+      - "mcp-server-git==2025.11.25"
 
-  - name: GitLab CSUI
-    command: pnpm
-    args:
-      - "dlx"
-      - "@zereight/mcp-gitlab@2.0.8"
-    env:
-      GITLAB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITLAB_CSUI_PERSONAL_ACCESS_TOKEN }}
-      GITLAB_API_URL: ${{ secrets.GITLAB_CSUI_API_URL }}
-      GITLAB_DENIED_TOOLS_REGEX: "(label|labels|release|releases|release_evidence|release_asset|namespace|namespaces)$"
-      USE_GITLAB_WIKI: "false"
-      USE_PIPELINE: "false"
-      USE_MILESTONE: "false"
+  # - name: GitHub
+  #   command: podman
+  #   args:
+  #     - "run"
+  #     - "-i"
+  #     - "--rm"
+  #     - "-e"
+  #     - "GITHUB_PERSONAL_ACCESS_TOKEN"
+  #     - "-e"
+  #     - "GITHUB_TOOLSETS"
+  #     - "ghcr.io/github/github-mcp-server:v0.24.0"
+  #   env:
+  #     GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+  #     GITHUB_TOOLSETS: default,code_security,secret_protection,security_advisories
 
 context:
   - provider: file
