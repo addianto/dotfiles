@@ -97,20 +97,23 @@ mcpServers:
     args:
       - "mcp-server-git==2025.11.25"
 
-  # - name: GitHub
-  #   command: podman
-  #   args:
-  #     - "run"
-  #     - "-i"
-  #     - "--rm"
-  #     - "-e"
-  #     - "GITHUB_PERSONAL_ACCESS_TOKEN"
-  #     - "-e"
-  #     - "GITHUB_TOOLSETS"
-  #     - "ghcr.io/github/github-mcp-server:v0.24.0"
-  #   env:
-  #     GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
-  #     GITHUB_TOOLSETS: default,code_security,secret_protection,security_advisories
+  # TODO: Figure out why this GitHub MCP server config does not work on Windows.
+  #       The Continue plugin on VSCodium unable to call `podman`. Moreover,
+  #       calling the binary executable directly from ~/.local/bin also does not work.
+  - name: GitHub
+    command: podman
+    args:
+      - "run"
+      - "-i"
+      - "--rm"
+      - "-e"
+      - "GITHUB_PERSONAL_ACCESS_TOKEN"
+      - "-e"
+      - "GITHUB_TOOLSETS"
+      - "ghcr.io/github/github-mcp-server:v0.24.0"
+    env:
+      GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+      GITHUB_TOOLSETS: default,code_security,secret_protection,security_advisories
 
 context:
   - provider: file
