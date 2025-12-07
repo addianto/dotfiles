@@ -2,4 +2,4 @@
 padding = { x = 4, y = 4 }
 
 [terminal]
-shell = { program = "/opt/homebrew/bin/zsh" }
+shell = { program = "/opt/homebrew/bin/zsh", args = ["-l"] }

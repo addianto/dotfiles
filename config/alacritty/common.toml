@@ -1,3 +1,6 @@
+[env]
+TERM = "alacritty"
+
 [window]
 padding = { x = 8, y = 8 }
 dynamic_padding = true
@@ -19,8 +22,3 @@ save_to_clipboard = true
 [cursor]
 style = { shape = "Beam", blinking = "On" }
 vi_mode_style = { shape = "Block", blinking = "Off" }
-
-[keyboard]
-bindings = [
-    { key = "Return", "mods" = "Control|Shift", action = "SpawnNewInstance" }
-]
