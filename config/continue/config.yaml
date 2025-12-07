@@ -4,25 +4,10 @@ version: 1.0.0
 schema: v1
 
 models:
-  - uses: ollama/granite4-micro-h
-    override:
-      name: Granite 4 H Micro
-      model: hf.co/ibm-granite/granite-4.0-h-micro-GGUF:Q6_K
-
-  - uses: ollama/gemma3-4b
-    override:
-      name: Gemma 3 4B QAT
-      model: gemma3:4b-it-qat
-
   - uses: ollama/qwen2.5-coder-1.5b
     override:
       name: Qwen 2.5 Coder 1.5B
       model: addianto/qwen2.5-coder-abliterated:1.5b
-
-  - uses: ollama/qwen2.5-coder-7b
-    override:
-      name: Qwen 2.5 Coder 7B
-      model: addianto/qwen2.5-coder-abliterated:7b
 
   - name: Qwen 3 Embedding 0.6B
     provider: ollama
@@ -42,15 +27,18 @@ models:
     override:
       model: codestral-2508
       defaultCompletionOptions:
-        contextLength: 256000
+        contextLength: 128000
 
   - uses: mistral/mistral-large
     with:
       MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
     override:
-      model: mistral-large-2411
+      model: mistral-large-2512
       defaultCompletionOptions:
-        contextLength: 131072
+        contextLength: 256000
+      capabilities:
+        - tool_use
+        - image_input
 
   - uses: mistral/devstral-medium
     with:
@@ -58,7 +46,17 @@ models:
     override:
       model: devstral-medium-2507
       defaultCompletionOptions:
-        contextLength: 131072
+        contextLength: 128000
+
+  - name: Magistral Medium 1.2
+    provider: mistral
+    model: magistral-medium-2509
+    apiKey: ${{ secrets.MISTRAL_API_KEY }}
+    roles:
+      - chat
+    capabilities:
+      - tool_use
+      - image_input
 
   - uses: openai/gpt-4.1
     with:
@@ -71,38 +69,51 @@ models:
       model: gpt-4.1
 
 mcpServers:
-  - uses: upstash/context7-mcp
+  - name: Context7
+    command: pnpm
+    args:
+      - "dlx"
+      - "@upstash/context7-mcp@1.0.31"
 
   - name: Sequential Thinking
     command: pnpm
     args:
       - "dlx"
-      - "@modelcontextprotocol/server-sequential-thinking@2025.7.1"
+      - "@modelcontextprotocol/server-sequential-thinking@2025.11.25"
 
-  - name: GitHub
-    command: github-mcp-server
-    type: stdio
-    args:
-      - "stdio"
-    env:
-      GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
-      GITHUB_TOOLSETS: default,code_security,secret_protection,security_advisories
-
-  - name: gcloud
+  - name: Google Cloud
     command: pnpm
     args:
       - "dlx"
       - "@google-cloud/gcloud-mcp@0.4.0"
 
-  - name: time
+  - name: Time
     command: uvx
     args:
       - "mcp-server-time==2025.9.25"
 
-  - name: git
+  - name: Git
     command: uvx
     args:
-      - "mcp-server-git==2025.9.25"
+      - "mcp-server-git==2025.11.25"
+
+  # TODO: Figure out why this GitHub MCP server config does not work on Windows.
+  #       The Continue plugin on VSCodium unable to call `podman`. Moreover,
+  #       calling the binary executable directly from ~/.local/bin also does not work.
+  - name: GitHub
+    command: podman
+    args:
+      - "run"
+      - "-i"
+      - "--rm"
+      - "-e"
+      - "GITHUB_PERSONAL_ACCESS_TOKEN"
+      - "-e"
+      - "GITHUB_TOOLSETS"
+      - "ghcr.io/github/github-mcp-server:v0.24.0"
+    env:
+      GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+      GITHUB_TOOLSETS: default,code_security,secret_protection,security_advisories
 
 context:
   - provider: file

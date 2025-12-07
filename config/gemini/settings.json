@@ -6,7 +6,8 @@
     "disableUpdateNag": false,
     "checkpointing": {
       "enabled": false
-    }
+    },
+    "previewFeatures": true
   },
   "output": {
     "format": "text"
@@ -35,8 +36,7 @@
   },
   "mcpServers": {
     "github": {
-      "httpUrl": "https://api.githubcopilot.com/mcp",
-      "trust": true,
+      "httpUrl": "https://api.githubcopilot.com/mcp/",
       "headers": {
         "Authorization": "Bearer $GITHUB_PERSONAL_ACCESS_TOKEN"
       },
@@ -59,17 +59,17 @@
       ]
     },
     "context7": {
-      "httpUrl": "https://mcp.context7.com/mcp",
-      "trust": true,
-      "headers": {
-        "Accept": "application/json, text/event-stream"
-      }
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "@upstash/context7-mcp@1.0.31"
+      ]
     },
     "sequentialthinking": {
       "command": "pnpm",
       "args": [
         "dlx",
-        "@modelcontextprotocol/server-sequential-thinking@2025.7.1"
+        "@modelcontextprotocol/server-sequential-thinking@2025.11.25"
       ]
     },
     "gcloud": {
@@ -88,8 +88,23 @@
     "git": {
       "command": "uvx",
       "args": [
-        "mcp-server-git==2025.9.25"
+        "mcp-server-git==2025.11.25"
       ]
+    },
+    "gitlab-csui": {
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "@zereight/mcp-gitlab@2.0.13"
+      ],
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "$GITLAB_CSUI_PERSONAL_ACCESS_TOKEN",
+        "GITLAB_API_URL": "$GITLAB_CSUI_API_URL",
+        "GITLAB_DENIED_TOOLS_REGEX": "(label|labels|release|releases|release_evidence|release_asset|namespace|namespaces)$",
+        "USE_GITLAB_WIKI": "false",
+        "USE_PIPELINE": "false",
+        "USE_MILESTONE": "true"
+      }
     }
   }
 }

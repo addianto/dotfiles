@@ -1,6 +1,6 @@
 ---
 name: English Writing Rules
-description: Rules for writing consistent English in code/docs.
+description: Rules for writing consistent English in code and documentation.
 ---
 
 1. Style Matching

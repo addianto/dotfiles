@@ -71,6 +71,7 @@ cask "jetbrains-toolbox"
 cask "mactex-no-gui"
 cask "temurin@21"
 cask "vscodium"
+cask "alacritty", args: { no_quarantine: true }
 
 ## K8S/Containers
 brew "helm"
@@ -92,10 +93,19 @@ mas "Slack", id: 803453959
 
 ## AI/LLM
 brew "gemini-cli"
-cask "anythingllm", { args: { require_sha: false } }
+cask "anythingllm", args: { require_sha: false }
 cask "ollama-app"
 cask "block-goose"
+cask "witsy"
 mas "Draw Things", id: 6444050820
+
+## Fonts
+cask "font-iosevka"
+cask "font-iosevka-nerd-font"
+cask "font-iosevka-aile"
+cask "font-iosevka-etoile"
+cask "font-iosevka-term-nerd-font"
+cask "font-sarasa-gothic"
 
 ## Visual Studio Code & Extensions
 cask "visual-studio-code"

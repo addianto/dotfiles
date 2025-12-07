@@ -1,0 +1,24 @@
+[env]
+TERM = "alacritty"
+
+[window]
+padding = { x = 8, y = 8 }
+dynamic_padding = true
+decorations = "Full"
+decorations_theme_variant = "None"
+dynamic_title = true
+opacity = 0.9
+
+[font]
+normal = { family = "IosevkaTerm NFP", style = "Regular" }
+bold = { family = "IosevkaTerm NFP", style = "Bold" }
+italic = { family = "IosevkaTerm NFP", style = "Italic" }
+bold_italic = { family = "IosevkaTerm NFP", style = "Bold Italic" }
+size = 14
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
