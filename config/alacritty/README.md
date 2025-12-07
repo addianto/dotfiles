@@ -1,7 +1,7 @@
 # Alacritty Setup
 
 Create a symbolic link to Alacritty configuration folder in the OS' expected location.
-On Windows, the folder should be located at `%APPDATA/alacritty`:
+On Windows, the folder should be located at `%APPDATA%\alacritty`:
 
 ```shell
 cd $env:APPDATA
