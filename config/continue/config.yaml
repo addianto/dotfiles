@@ -57,6 +57,9 @@ models:
     capabilities:
       - tool_use
       - image_input
+    defaultCompletionOptions:
+      temperature: 0.7
+      top_p: 0.95
 
   - uses: openai/gpt-4.1
     with:
