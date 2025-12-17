@@ -117,6 +117,10 @@ mcpServers:
       GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
       GITHUB_TOOLSETS: "default,code_security,secret_protection,security_advisories"
       GITHUB_LOCKDOWN_MODE: "1"
+  
+  - name: Mermaid
+    type: streamable-http
+    url: https://mcp.mermaidchart.com/mcp
 
 context:
   - provider: file
