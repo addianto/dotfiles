@@ -73,7 +73,7 @@ mcpServers:
     command: pnpm
     args:
       - "dlx"
-      - "@upstash/context7-mcp@1.0.31"
+      - "@upstash/context7-mcp@1.0.32"
 
   - name: Sequential Thinking
     command: pnpm
@@ -85,7 +85,7 @@ mcpServers:
     command: pnpm
     args:
       - "dlx"
-      - "@google-cloud/gcloud-mcp@0.4.0"
+      - "@google-cloud/gcloud-mcp@0.5.2"
 
   - name: Time
     command: uvx
@@ -110,10 +110,13 @@ mcpServers:
       - "GITHUB_PERSONAL_ACCESS_TOKEN"
       - "-e"
       - "GITHUB_TOOLSETS"
-      - "ghcr.io/github/github-mcp-server:v0.24.0"
+      - "-e"
+      - "GITHUB_LOCKDOWN_MODE"
+      - "ghcr.io/github/github-mcp-server:v0.25.0"
     env:
       GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
-      GITHUB_TOOLSETS: default,code_security,secret_protection,security_advisories
+      GITHUB_TOOLSETS: "default,code_security,secret_protection,security_advisories"
+      GITHUB_LOCKDOWN_MODE: "1"
 
 context:
   - provider: file
