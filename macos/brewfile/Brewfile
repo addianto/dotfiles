@@ -7,11 +7,11 @@ cask_args require_sha: true
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "buo/cask-upgrade"
-tap "leoafarias/fvm"
 tap "rcmdnk/file"
-tap "th-ch/youtube-music"
 
 ## Common
+tap "th-ch/youtube-music"
+
 brew "btop"
 brew "czkawka"
 brew "flac"
@@ -41,7 +41,11 @@ mas "Windows App", id: 1295203466
 mas "WireGuard", id: 1451685025
 
 ## Development Tools
+tap "leoafarias/fvm"
+tap "oven-sh/bun"
+
 brew "azure-cli"
+brew "bun"
 brew "difftastic"
 brew "fd"
 brew "firebase-cli"
