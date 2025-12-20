@@ -124,6 +124,10 @@ mcpServers:
   - name: Mermaid
     type: streamable-http
     url: https://mcp.mermaidchart.com/mcp
+  
+  - name: Microsoft Learn
+    type: streamable-http
+    url: https://learn.microsoft.com/api/mcp
 
 context:
   - provider: file

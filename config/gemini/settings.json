@@ -106,6 +106,9 @@
         "USE_PIPELINE": "false",
         "USE_MILESTONE": "true"
       }
+    },
+    "microsoft-learn": {
+      "httpUrl": "https://learn.microsoft.com/api/mcp"
     }
   }
 }
