@@ -19,7 +19,7 @@ properties:
         Id: KDE.Krita
         Source: winget
         Ensure: Present
-        Version: "5.2.13.0"
+        Version: "5.2.14.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShotcut
       directives:
@@ -29,7 +29,7 @@ properties:
         Id: Meltytech.Shotcut
         Source: winget
         Ensure: Present
-        Version: "25.07.26"
+        Version: "25.10.31"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOBSStudio
       directives:
@@ -87,7 +87,7 @@ properties:
         Id: Gyan.FFmpeg
         Source: winget
         Ensure: Present
-        Version: "8.0"
+        Version: "8.0.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHaruna
       directives:
@@ -107,4 +107,4 @@ properties:
         Id: PeterPawlowski.foobar2000
         Source: winget
         Ensure: Present
-        Version: "2.25.2"
+        Version: "2.25.3"

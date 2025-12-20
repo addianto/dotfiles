@@ -155,7 +155,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.95.0"
+        Version: "0.96.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWinSCP
       directives:
@@ -165,7 +165,7 @@ properties:
         Id: WinSCP.WinSCP
         Source: winget
         Ensure: Present
-        Version: "6.5.4"
+        Version: "6.5.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOpenVPN
       directives:
@@ -175,7 +175,7 @@ properties:
         Id: OpenVPNTechnologies.OpenVPN
         Source: winget
         Ensure: Present
-        Version: "2.6.1402"
+        Version: "2.6.1701"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCPUZ
       directives:
