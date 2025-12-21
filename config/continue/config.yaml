@@ -4,6 +4,33 @@ version: 1.0.0
 schema: v1
 
 models:
+  # OpenAI
+  - uses: openai/gpt-5.1
+    override:
+      name: GPT-5.2 Pro
+      model: gpt-5.2-pro
+      capabilities:
+        - tool_use
+        - image_input
+  - uses: openai/gpt-5.1
+    override:
+      name: GPT-5.1
+      capabilities:
+        - tool_use
+        - image_input
+  - uses: openai/gpt-5.1
+    override:
+      name: GPT-5.1 Codex
+      model: gpt-5.1-codex
+      capabilities:
+        - tool_use
+        - image_input
+  - uses: openai/gpt-5
+    override:
+      capabilities:
+        - tool_use
+        - image_input
+        
   - uses: ollama/qwen2.5-coder-1.5b
     override:
       name: Qwen 2.5 Coder 1.5B
@@ -65,7 +92,7 @@ models:
     with:
       # Use API key from GitHub Copilot
       # Refer to https://aider.chat/docs/llms/github.html
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.GITHUB_COPILOT_API_KEY }}
     override:
       name: GPT 4.1 (via GitHub Copilot)
       apiBase: https://api.githubcopilot.com
