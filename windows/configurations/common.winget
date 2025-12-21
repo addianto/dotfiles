@@ -167,14 +167,14 @@ properties:
         Ensure: Present
         Version: "6.5.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installOpenVPN
+      id: uninstallOpenVPN
       directives:
-        description: Install OpenVPN
+        description: Uninstall OpenVPN
         allowPrerelease: true
       settings:
         Id: OpenVPNTechnologies.OpenVPN
         Source: winget
-        Ensure: Present
+        Ensure: Absent
         Version: "2.6.1701"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCPUZ
@@ -196,6 +196,16 @@ properties:
         Source: winget
         Ensure: Present
         Version: "10.0.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installViscosity
+      directives:
+        description: Install Viscosity
+        allowPrerelease: true
+      settings:
+        Id: SparkLabs.Viscosity
+        Source: winget
+        Ensure: Present
+        Version: "1.11.5.1842"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys
