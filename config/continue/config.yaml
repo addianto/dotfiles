@@ -30,7 +30,40 @@ models:
       capabilities:
         - tool_use
         - image_input
-        
+
+  # OpenRouter
+  - name: MiMo V2 Flash (Free)
+    provider: openrouter
+    model: xiaomi/mimo-v2-flash:free
+    apiKey: ${{ secrets.OPENROUTER_API_KEY }}
+    defaultCompletionOptions:
+      contextLength: 262000
+      maxToken: 65000
+      topP: 0.95
+      temperature: 0.3
+      reasoning: true
+    capabilities:
+      - tool_use
+    roles:
+      - apply
+      - chat
+      - edit
+
+  - name: gpt-oss-120b (Free)
+    provider: openrouter
+    model: openai/gpt-oss-120b:free
+    apiKey: ${{ secrets.OPENROUTER_API_KEY }}
+    defaultCompletionOptions:
+      contextLength: 128000
+      maxToken: 128000
+      reasoning: true
+    capabilities:
+      - tool_use
+    roles:
+      - apply
+      - chat
+      - edit
+
   - uses: ollama/qwen2.5-coder-1.5b
     override:
       name: Qwen 2.5 Coder 1.5B
@@ -147,11 +180,11 @@ mcpServers:
       GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
       GITHUB_TOOLSETS: "default,code_security,secret_protection,security_advisories"
       GITHUB_LOCKDOWN_MODE: "1"
-  
+
   - name: Mermaid
     type: streamable-http
     url: https://mcp.mermaidchart.com/mcp
-  
+
   - name: Microsoft Learn
     type: streamable-http
     url: https://learn.microsoft.com/api/mcp
