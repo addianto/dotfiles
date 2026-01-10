@@ -10,7 +10,7 @@ tap "buo/cask-upgrade"
 tap "rcmdnk/file"
 
 ## Common
-tap "th-ch/youtube-music"
+tap "pear-devs/pear"
 
 brew "btop"
 brew "czkawka"
@@ -29,10 +29,10 @@ cask "iterm2"
 cask "joplin"
 cask "librewolf", args: { no_quarantine: true }
 cask "obs"
+cask "pear-desktop", args: { no_quarantine: true }
 cask "scroll-reverser"
 cask "syncthing-app", args: { no_quarantine: true }
 cask "viscosity"
-cask "th-ch/youtube-music/youtube-music", args: { no_quarantine: true }
 cask "zotero"
 mas "AdGuard for Safari", id: 1440147259
 mas "BitWarden", id: 1352778147
