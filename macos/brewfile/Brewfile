@@ -72,7 +72,7 @@ brew "scorecard"
 cask "dbeaver-community"
 cask "gcloud-cli"
 cask "jetbrains-toolbox"
-cask "temurin@21"
+cask "temurin@25"
 cask "vscodium"
 cask "alacritty", args: { no_quarantine: true }
 
