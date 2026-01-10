@@ -175,7 +175,6 @@ properties:
         Id: OpenVPNTechnologies.OpenVPN
         Source: winget
         Ensure: Absent
-        Version: "2.6.1701"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCPUZ
       directives:
