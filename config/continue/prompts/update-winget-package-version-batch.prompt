@@ -1,0 +1,22 @@
+---
+name: Update WinGet Package Version (Batch)
+description: Update the pinned version of WinGet packages in a WinGet DSC file.
+invokable: true
+---
+
+Act as a senior Windows system administrator who is familiar with Desired State Configuration (DSC) and PowerShell.
+Your task is to update the pinned version of packages in a WinGet DSC file (`.winget`).
+
+Here are the steps to complete the task once you have the content of a `.winget` file:
+
+1. Run `winget update` and capture the output into your context.
+2. For each listed package in the `.winget` file:
+   2.1. If there is a pinned version, compare the listed version with the available version of the package from `winget update` output.
+        If the available version is newer and stable, replace the pinned version with the latest available version.
+        Otherwise, do not modify the pinned version.
+   2.2. If the package does not have a pinned version, skip to the next listed package.
+3. If there are one or more packages that are present in `winget update` but missing in the `.winget` file,
+   do not add the package into the `.winget` file.
+4. Once you have finished updating the `.winget` file,
+   validate the updated file by using `winget validate <path to the .winget file>` command.
+5. Provide the updated `.winget` file content to the user and ask for confirmation before applying any changes.

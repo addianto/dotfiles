@@ -25,6 +25,7 @@
   "context": {
     "fileName": [
       "AGENTS.md",
+      "CLAUDE.md",
       "CONTEXT.md",
       "GEMINI.md"
     ]
@@ -62,21 +63,14 @@
       "command": "pnpm",
       "args": [
         "dlx",
-        "@upstash/context7-mcp@1.0.31"
+        "@upstash/context7-mcp@1.0.32"
       ]
     },
     "sequentialthinking": {
       "command": "pnpm",
       "args": [
         "dlx",
-        "@modelcontextprotocol/server-sequential-thinking@2025.11.25"
-      ]
-    },
-    "gcloud": {
-      "command": "pnpm",
-      "args": [
-        "dlx",
-        "@google-cloud/gcloud-mcp@0.4.0"
+        "@modelcontextprotocol/server-sequential-thinking@2025.12.18"
       ]
     },
     "time": {
@@ -105,6 +99,9 @@
         "USE_PIPELINE": "false",
         "USE_MILESTONE": "true"
       }
+    },
+    "microsoft-learn": {
+      "httpUrl": "https://learn.microsoft.com/api/mcp"
     }
   }
 }

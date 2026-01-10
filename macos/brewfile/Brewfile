@@ -7,11 +7,11 @@ cask_args require_sha: true
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "buo/cask-upgrade"
-tap "leoafarias/fvm"
 tap "rcmdnk/file"
-tap "th-ch/youtube-music"
 
 ## Common
+tap "th-ch/youtube-music"
+
 brew "btop"
 brew "czkawka"
 brew "flac"
@@ -25,7 +25,6 @@ brew "vale"
 brew "zsh"
 cask "ungoogled-chromium"
 cask "discord"
-cask "font-fira-code-nerd-font"
 cask "iterm2"
 cask "joplin"
 cask "librewolf", args: { no_quarantine: true }
@@ -42,7 +41,11 @@ mas "Windows App", id: 1295203466
 mas "WireGuard", id: 1451685025
 
 ## Development Tools
+tap "leoafarias/fvm"
+tap "oven-sh/bun"
+
 brew "azure-cli"
+brew "bun"
 brew "difftastic"
 brew "fd"
 brew "firebase-cli"
@@ -62,13 +65,13 @@ brew "ruby@3.2"
 brew "ruff"
 brew "rustup"
 brew "shellcheck"
+brew "tmux"
 brew "trivy"
 brew "uv"
 brew "scorecard"
 cask "dbeaver-community"
 cask "gcloud-cli"
 cask "jetbrains-toolbox"
-cask "mactex-no-gui"
 cask "temurin@21"
 cask "vscodium"
 cask "alacritty", args: { no_quarantine: true }
