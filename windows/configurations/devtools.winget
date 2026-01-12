@@ -219,7 +219,7 @@ properties:
         Id: Bruno.Bruno
         Source: winget
         Ensure: Present
-        Version: "2.15.1"
+        Version: "3.0.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installAlacritty
       directives:
