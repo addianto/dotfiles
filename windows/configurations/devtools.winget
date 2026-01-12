@@ -230,3 +230,12 @@ properties:
         Source: winget
         Ensure: Present
         Version: "0.16.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installWindowsApp
+      directives:
+        description: Install Windows App
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.WindowsApp
+        Source: winget
+        Ensure: Present
