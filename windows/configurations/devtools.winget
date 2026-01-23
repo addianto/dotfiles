@@ -91,7 +91,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "10.26.0"
+        Version: "10.28.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -121,7 +121,7 @@ properties:
         Id: GrafanaLabs.k6
         Source: winget
         Ensure: Present
-        Version: "1.4.2"
+        Version: "1.5.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallPostman
       directives:
@@ -140,7 +140,7 @@ properties:
         Id: DBeaver.DBeaver.Community
         Source: winget
         Ensure: Present
-        Version: "25.3.0"
+        Version: "25.3.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGoogleCloudSDK
       directives:
@@ -188,7 +188,7 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.11.2"
+        Version: "1.11.4"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setRustupHome
       directives:

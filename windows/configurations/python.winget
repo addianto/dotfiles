@@ -16,10 +16,10 @@ properties:
         description: Install Python 3
         allowPrerelease: true
       settings:
-        Id: Python.Python.3.13
+        Id: Python.Python.3.14
         Source: winget
         Ensure: Present
-        Version: "3.13.11"
+        Version: "3.14.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installUv
       directives:
@@ -29,7 +29,7 @@ properties:
         Id: astral-sh.uv
         Source: winget
         Ensure: Present
-        Version: "0.9.18"
+        Version: "0.9.26"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installRuff
       directives:
@@ -39,4 +39,4 @@ properties:
         Id: astral-sh.ruff
         Source: winget
         Ensure: Present
-        Version: "0.14.10"
+        Version: "0.14.13"
