@@ -29,7 +29,7 @@ properties:
         Id: Meltytech.Shotcut
         Source: winget
         Ensure: Present
-        Version: "25.10.31"
+        Version: "25.12.31"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOBSStudio
       directives:
@@ -97,7 +97,7 @@ properties:
         Id: KDE.Haruna
         Source: winget
         Ensure: Present
-        Version: "1.6.0"
+        Version: "1.7.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFoobar2000
       directives:
@@ -107,4 +107,4 @@ properties:
         Id: PeterPawlowski.foobar2000
         Source: winget
         Ensure: Present
-        Version: "2.25.3"
+        Version: "2.25.5"
