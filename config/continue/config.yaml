@@ -64,23 +64,6 @@ models:
       - chat
       - edit
 
-  - uses: ollama/qwen2.5-coder-1.5b
-    override:
-      name: Qwen 2.5 Coder 1.5B
-      model: addianto/qwen2.5-coder-abliterated:1.5b
-
-  - name: Qwen 3 Embedding 0.6B
-    provider: ollama
-    model: hf.co/Qwen/Qwen3-Embedding-0.6B-GGUF:Q8_0
-    roles:
-      - embed
-
-  - name: Qwen 3 Reranker 0.6B
-    provider: ollama
-    model: hf.co/mradermacher/Qwen3-Reranker-0.6B-GGUF:Q8_0
-    roles:
-      - rerank
-
   - uses: mistral/codestral
     with:
       MISTRAL_API_KEY: ${{ secrets.CODESTRAL_API_KEY }}
