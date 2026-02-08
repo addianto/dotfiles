@@ -6,6 +6,8 @@ schema: v1
 models:
   # OpenAI
   - uses: openai/gpt-5.1
+    with:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     override:
       name: GPT-5.2 Pro
       model: gpt-5.2-pro
@@ -13,12 +15,16 @@ models:
         - tool_use
         - image_input
   - uses: openai/gpt-5.1
+    with:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     override:
       name: GPT-5.1
       capabilities:
         - tool_use
         - image_input
   - uses: openai/gpt-5.1
+    with:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     override:
       name: GPT-5.1 Codex
       model: gpt-5.1-codex
@@ -26,6 +32,8 @@ models:
         - tool_use
         - image_input
   - uses: openai/gpt-5
+    with:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     override:
       capabilities:
         - tool_use
