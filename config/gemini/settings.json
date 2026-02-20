@@ -65,7 +65,7 @@
       "command": "pnpm",
       "args": [
         "dlx",
-        "@upstash/context7-mcp@1.0.32"
+        "@upstash/context7-mcp@2.1.1"
       ]
     },
     "sequentialthinking": {
@@ -78,20 +78,20 @@
     "time": {
       "command": "uvx",
       "args": [
-        "mcp-server-time==2025.9.25"
+        "mcp-server-time==2026.1.26"
       ]
     },
     "git": {
       "command": "uvx",
       "args": [
-        "mcp-server-git==2025.11.25"
+        "mcp-server-git==2026.1.14"
       ]
     },
     "gitlab-csui": {
       "command": "pnpm",
       "args": [
         "dlx",
-        "@zereight/mcp-gitlab@2.0.13"
+        "@zereight/mcp-gitlab@2.0.30"
       ],
       "env": {
         "GITLAB_PERSONAL_ACCESS_TOKEN": "$GITLAB_CSUI_PERSONAL_ACCESS_TOKEN",
