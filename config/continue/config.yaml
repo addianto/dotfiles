@@ -44,16 +44,6 @@ models:
       temperature: 0.7
       top_p: 0.95
 
-  - uses: openai/gpt-4.1
-    with:
-      # Use API key from GitHub Copilot
-      # Refer to https://aider.chat/docs/llms/github.html
-      OPENAI_API_KEY: ${{ secrets.GITHUB_COPILOT_API_KEY }}
-    override:
-      name: GPT 4.1 (via GitHub Copilot)
-      apiBase: https://api.githubcopilot.com
-      model: gpt-4.1
-
 mcpServers:
   - name: Context7
     command: pnpm

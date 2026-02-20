@@ -1,0 +1,60 @@
+---
+name: GitHub Copilot
+version: 1.0.0
+schema: v1
+
+models:
+  - name: Gemini 3.1 Pro Preview (via GitHub Copilot)
+    provider: openai
+    apiBase: https://api.githubcopilot.com
+    model: gemini-3.1-pro-preview
+    apiKey: ${{ secrets.GITHUB_COPILOT_API_KEY }}
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: Claude Opus 4.6 (via GitHub Copilot)
+    provider: openai
+    apiBase: https://api.githubcopilot.com
+    model: claude-opus-4.6
+    apiKey: ${{ secrets.GITHUB_COPILOT_API_KEY }}
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: Claude Sonnet 4.6 (via GitHub Copilot)
+    provider: openai
+    apiBase: https://api.githubcopilot.com
+    model: claude-sonnet-4.6
+    apiKey: ${{ secrets.GITHUB_COPILOT_API_KEY }}
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: GPT 5.2 Codex (via GitHub Copilot)
+    provider: openai
+    apiBase: https://api.githubcopilot.com
+    model: gpt-5.2-codex
+    apiKey: ${{ secrets.GITHUB_COPILOT_API_KEY }}
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: Gemini 3 Flash Preview (via GitHub Copilot)
+    provider: openai
+    apiBase: https://api.githubcopilot.com
+    model: gemini-3-flash-preview
+    apiKey: ${{ secrets.GITHUB_COPILOT_API_KEY }}
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: GPT 5 Mini (via GitHub Copilot)
+    provider: openai
+    apiBase: https://api.githubcopilot.com
+    model: gpt-5-mini
+    apiKey: ${{ secrets.GITHUB_COPILOT_API_KEY }}
+    roles:
+      - chat
+      - edit
+      - apply
