@@ -7,7 +7,9 @@
     "checkpointing": {
       "enabled": false
     },
-    "previewFeatures": true
+    "previewFeatures": true,
+    "enableAutoUpdate": false,
+    "enableAutoUpdateNotification": true
   },
   "output": {
     "format": "text"
