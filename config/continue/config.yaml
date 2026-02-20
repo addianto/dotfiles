@@ -59,7 +59,7 @@ mcpServers:
     command: pnpm
     args:
       - "dlx"
-      - "@upstash/context7-mcp@1.0.32"
+      - "@upstash/context7-mcp@2.1.1"
 
   - name: Sequential Thinking
     command: pnpm
@@ -70,12 +70,12 @@ mcpServers:
   - name: Time
     command: uvx
     args:
-      - "mcp-server-time==2025.9.25"
+      - "mcp-server-time==2026.1.26"
 
   - name: Git
     command: uvx
     args:
-      - "mcp-server-git==2025.11.25"
+      - "mcp-server-git==2026.1.14"
 
   - name: GitHub
     command: pnpm
