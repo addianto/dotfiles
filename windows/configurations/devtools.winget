@@ -230,3 +230,13 @@ properties:
         Source: winget
         Ensure: Present
         Version: "0.16.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installMiKTeX
+      directives:
+        description: Install MiKTeX
+        allowPrerelease: true
+      settings:
+        Id: MiKTeX.MiKTeX
+        Source: winget
+        Ensure: Present
+        Version: "25.12"
