@@ -19,7 +19,7 @@ properties:
         Id: KDE.Krita
         Source: winget
         Ensure: Present
-        Version: "5.2.14.0"
+        Version: "5.2.16.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShotcut
       directives:
@@ -29,7 +29,7 @@ properties:
         Id: Meltytech.Shotcut
         Source: winget
         Ensure: Present
-        Version: "25.12.31"
+        Version: "26.1.30"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOBSStudio
       directives:
@@ -68,7 +68,7 @@ properties:
         Id: Wacom.WacomTabletDriver
         Source: winget
         Ensure: Present
-        Version: "6.4.11-1"
+        Version: "6.4.12-3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installYouTubeMusic
       directives:
@@ -107,4 +107,23 @@ properties:
         Id: PeterPawlowski.foobar2000
         Source: winget
         Ensure: Present
-        Version: "2.25.5"
+        Version: "2.25.7"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallHoneyview
+      directives:
+        description: Uninstall Honeyview
+        allowPrerelease: true
+      settings:
+        Id: Bandisoft.Honeyview
+        Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installBandiView
+      directives:
+        description: Install BandiView
+        allowPrerelease: true
+      settings:
+        Id: Bandisoft.BandiView
+        Source: winget
+        Ensure: Present
+        Version: "7.25"
