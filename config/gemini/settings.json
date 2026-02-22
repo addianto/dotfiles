@@ -39,27 +39,18 @@
   },
   "mcpServers": {
     "github": {
-      "httpUrl": "https://api.githubcopilot.com/mcp/",
-      "headers": {
-        "Authorization": "Bearer $GITHUB_PERSONAL_ACCESS_TOKEN"
-      },
-      "excludeTools": [
-        "cancel_workflow_run",
-        "delete_workflow_run_logs",
-        "create_gist",
-        "list_gist",
-        "update_gist",
-        "dismiss_notification",
-        "get_notification_details",
-        "list_notifications",
-        "manage_notification_subscription",
-        "manage_repository_notification_subscription",
-        "mark_all_notifications_read",
-        "search_orgs",
-        "star_repository",
-        "unstar_repository",
-        "search_users"
-      ]
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "mcp-remote@0.1.38",
+        "https://api.githubcopilot.com/mcp/",
+        "--header",
+        "Authorization: Bearer $GITHUB_PERSONAL_ACCESS_TOKEN"
+      ],
+      "env": {
+        "GITHUB_TOOLSETS": "default,code_security,secret_protection,security_advisories",
+        "GITHUB_LOCKDOWN_MODE": "1"
+      }
     },
     "context7": {
       "command": "pnpm",
