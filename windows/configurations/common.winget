@@ -97,7 +97,7 @@ properties:
         Id: errata-ai.Vale
         Source: winget
         Ensure: Present
-        Version: "3.13.0"
+        Version: "3.13.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNanaZip
       directives:
@@ -155,7 +155,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.97.0"
+        Version: "0.97.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWinSCP
       directives:
@@ -194,7 +194,7 @@ properties:
         Id: qarmin.czkawka.cli
         Source: winget
         Ensure: Present
-        Version: "10.0.0"
+        Version: "11.0.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installViscosity
       directives:
@@ -205,6 +205,15 @@ properties:
         Source: winget
         Ensure: Present
         Version: "1.11.5.1842"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installMicrosoftPCManager
+      directives:
+        description: Install Microsoft PC Manager
+        allowPrerelease: true
+      settings:
+        Id: 9PM860492SZD
+        Source: msstore
+        Ensure: Present
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys
