@@ -1,4 +1,3 @@
----
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
 properties:
   configurationVersion: 0.2.0
@@ -11,23 +10,32 @@ properties:
         MinVersion: "10.0.19041"
   resources:
     - resource: xPSDesiredStateConfiguration/xEnvironment
-      id: setOllamaFlashAttention
+      id: removeOllamaFlashAttention
       directives:
-        description: Set OLLAMA_FLASH_ATTENTION environment variable
+        description: Remove OLLAMA_FLASH_ATTENTION environment variable
         allowPrerelease: true
       settings:
         Name: OLLAMA_FLASH_ATTENTION
         Value: 1
-        Ensure: Present
+        Ensure: Absent
         Path: false
         Target: Process
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installOllama
+      id: uninstallOllama
       directives:
-        description: Install Ollama
+        description: Uninstall Ollama
         allowPrerelease: true
       settings:
         Id: Ollama.Ollama
+        Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installJan
+      directives:
+        description: Install Jan
+        allowPrerelease: true
+      settings:
+        Id: Jan.Jan
         Source: winget
         Ensure: Present
     - resource: xPSDesiredStateConfiguration/xEnvironment
