@@ -9,13 +9,20 @@
     },
     "previewFeatures": true,
     "enableAutoUpdate": false,
-    "enableAutoUpdateNotification": true
+    "enableAutoUpdateNotification": true,
+    "sessionRetention": {
+      "warningAcknowledged": true,
+      "enabled": true,
+      "maxAge": "30d"
+    }
   },
   "output": {
     "format": "text"
   },
   "ui": {
-    "theme": "ANSI"
+    "theme": "Solarized Dark",
+    "showCitations": true,
+    "loadingPhrases": "all"
   },
   "ide": {
     "enabled": true,
@@ -37,6 +44,10 @@
       "selectedType": "oauth-personal"
     }
   },
+  "experimental": {
+    "enableAgents": true,
+    "plan": true
+  },
   "mcpServers": {
     "github": {
       "command": "pnpm",
@@ -56,7 +67,7 @@
       "command": "pnpm",
       "args": [
         "dlx",
-        "@upstash/context7-mcp@2.1.1"
+        "@upstash/context7-mcp@2.1.2"
       ]
     },
     "sequentialthinking": {
