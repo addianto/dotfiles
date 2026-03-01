@@ -1,72 +1,27 @@
 ---
 name: Default
-version: 1.0.0
+version: 1.0.1
 schema: v1
-
-models:
-  - uses: mistral/codestral
-    with:
-      MISTRAL_API_KEY: ${{ secrets.CODESTRAL_API_KEY }}
-    override:
-      model: codestral-2508
-      defaultCompletionOptions:
-        contextLength: 128000
-
-  - uses: mistral/mistral-large
-    with:
-      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-    override:
-      model: mistral-large-2512
-      defaultCompletionOptions:
-        contextLength: 256000
-      capabilities:
-        - tool_use
-        - image_input
-
-  - uses: mistral/devstral-medium
-    with:
-      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-    override:
-      model: devstral-medium-2507
-      defaultCompletionOptions:
-        contextLength: 128000
-
-  - name: Magistral Medium 1.2
-    provider: mistral
-    model: magistral-medium-2509
-    apiKey: ${{ secrets.MISTRAL_API_KEY }}
-    roles:
-      - chat
-    capabilities:
-      - tool_use
-      - image_input
-    defaultCompletionOptions:
-      temperature: 0.7
-      top_p: 0.95
 
 mcpServers:
   - name: Context7
     command: pnpm
     args:
       - "dlx"
-      - "@upstash/context7-mcp@2.1.1"
-
+      - "@upstash/context7-mcp@2.1.2"
   - name: Sequential Thinking
     command: pnpm
     args:
       - "dlx"
       - "@modelcontextprotocol/server-sequential-thinking@2025.12.18"
-
   - name: Time
     command: uvx
     args:
       - "mcp-server-time==2026.1.26"
-
   - name: Git
     command: uvx
     args:
       - "mcp-server-git==2026.1.14"
-
   - name: GitHub
     command: pnpm
     args:
@@ -78,11 +33,9 @@ mcpServers:
     env:
       GITHUB_TOOLSETS: "default,code_security,secret_protection,security_advisories"
       GITHUB_LOCKDOWN_MODE: "1"
-
   - name: Mermaid
     type: streamable-http
     url: https://mcp.mermaidchart.com/mcp
-
   - name: Microsoft Learn
     type: streamable-http
     url: https://learn.microsoft.com/api/mcp
