@@ -30,14 +30,14 @@ properties:
         Source: winget
         Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installJan
+      id: uninstallJan
       directives:
-        description: Install Jan
+        description: Uninstall Jan
         allowPrerelease: true
       settings:
         Id: Jan.Jan
         Source: winget
-        Ensure: Present
+        Ensure: Absent
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setDisableTelemetry
       directives:
@@ -67,3 +67,16 @@ properties:
         Id: NicolasBonamy.Witsy
         Source: winget
         Ensure: Present
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: removeEnableSystemTrayIcon
+      dependsOn:
+        - uninstallJan
+      directives:
+        description: Remove ENABLE_SYSTEM_TRAY_ICON environment variable
+        allowPrerelease: true
+      settings:
+        Name: ENABLE_SYSTEM_TRAY_ICON
+        Value: true
+        Ensure: Absent
+        Path: false
+        Target: Process
