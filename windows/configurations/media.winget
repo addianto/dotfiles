@@ -29,7 +29,7 @@ properties:
         Id: Meltytech.Shotcut
         Source: winget
         Ensure: Present
-        Version: "26.1.30"
+        Version: "26.2.26"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOBSStudio
       directives:
@@ -87,7 +87,7 @@ properties:
         Id: Gyan.FFmpeg
         Source: winget
         Ensure: Present
-        Version: "8.0.1"
+        Version: "8.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHaruna
       directives:
@@ -126,4 +126,4 @@ properties:
         Id: Bandisoft.BandiView
         Source: winget
         Ensure: Present
-        Version: "7.25"
+        Version: "7.26"
