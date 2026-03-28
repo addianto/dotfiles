@@ -94,7 +94,7 @@ mas "Slack", id: 803453959
 ## AI/LLM
 brew "gemini-cli"
 cask "block-goose"
-cask "llamabarn"
+cask "llama.cpp"
 cask "witsy"
 mas "Draw Things", id: 6444050820
 
