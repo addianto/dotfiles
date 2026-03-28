@@ -4,6 +4,23 @@ set -eu
 CONFIG_DIR="$HOME/.config/llama.cpp"
 PORT=11434
 
+show_help() {
+    cat <<EOF
+Usage: $(basename "$0") [options]
+
+Starts llama-server with a preset from $CONFIG_DIR.
+
+Options:
+  -h, --help    Show this help message and exit
+EOF
+}
+
+# Handle help flag
+if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
+    show_help
+    exit 0
+fi
+
 # Find available .ini files
 presets=$(ls "$CONFIG_DIR"/*.ini 2>/dev/null || true)
 
