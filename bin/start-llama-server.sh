@@ -43,4 +43,4 @@ exec llama-server \
     --models-preset "$PRESET_PATH" \
     --port "$PORT" \
     --metrics \
-    --models-max 2
+    --models-max 3
