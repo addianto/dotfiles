@@ -67,6 +67,7 @@ Write-Host "Starting llama-server with: $(Split-Path $PresetPath -Leaf)" -Foregr
 
 & llama-server `
     --models-preset "$PresetPath" `
+    --host "0.0.0.0" `
     --port "$Port" `
     --metrics `
-    --models-max 2
+    --models-max 3
