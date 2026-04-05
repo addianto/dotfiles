@@ -41,7 +41,7 @@ properties:
         Id: Neovim.Neovim
         Source: winget
         Ensure: Present
-        Version: "0.11.6"
+        Version: "0.12.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovide
       dependsOn:
@@ -53,7 +53,7 @@ properties:
         Id: Neovide.Neovide
         Source: winget
         Ensure: Present
-        Version: "0.15.2"
+        Version: "0.16.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVSCodium
       directives:
@@ -121,7 +121,7 @@ properties:
         Id: GrafanaLabs.k6
         Source: winget
         Ensure: Present
-        Version: "1.6.1"
+        Version: "1.7.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallPostman
       directives:
@@ -231,6 +231,16 @@ properties:
         Ensure: Present
         Version: "0.16.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: InstallRipGrep
+      directives:
+        description: Install RipGrep
+        allowPrerelease: true
+      settings:
+        Id: BurntSushi.ripgrep.MSVC
+        Source: winget
+        Ensure: Present
+        Version: "15.1.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMiKTeX
       directives:
         description: Install MiKTeX
@@ -239,4 +249,21 @@ properties:
         Id: MiKTeX.MiKTeX
         Source: winget
         Ensure: Present
-        Version: "25.12"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallMsODBCDriver18
+      directives:
+        description: Uninstall Microsoft ODBC Driver 18
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.msodbcsql.18
+        Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallSSMS22
+      directives:
+        description: Uninstall SQL Server Management Studio 22
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.SQLServerManagementStudio.22
+        Source: winget
+        Ensure: Absent
