@@ -1,13 +1,13 @@
 ---
 name: CSUI
-version: 1.0.0
+version: 1.0.1
 schema: v1
 mcpServers:
   - name: GitLab CSUI
     command: pnpm
     args:
       - "dlx"
-      - "@zereight/mcp-gitlab@2.0.30"
+      - "@zereight/mcp-gitlab@2.0.36"
     env:
       GITLAB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITLAB_CSUI_PERSONAL_ACCESS_TOKEN }}
       GITLAB_API_URL: ${{ secrets.GITLAB_CSUI_API_URL }}

@@ -89,18 +89,33 @@
         "mcp-server-git==2026.1.14"
       ]
     },
+    "gitlab": {
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "@zereight/mcp-gitlab@2.0.36"
+      ],
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "$GITLAB_PERSONAL_ACCESS_TOKEN",
+        "GITLAB_API_URL": "https://gitlab.com/api/v4",
+        "GITLAB_DENIED_TOOLS_REGEX": "(label|labels|release|releases|release_evidence|release_asset|namespace|namespaces)$",
+        "USE_GITLAB_WIKI": "false",
+        "USE_PIPELINE": "true",
+        "USE_MILESTONE": "true"
+      }
+    },
     "gitlab-csui": {
       "command": "pnpm",
       "args": [
         "dlx",
-        "@zereight/mcp-gitlab@2.0.30"
+        "@zereight/mcp-gitlab@2.0.36"
       ],
       "env": {
         "GITLAB_PERSONAL_ACCESS_TOKEN": "$GITLAB_CSUI_PERSONAL_ACCESS_TOKEN",
         "GITLAB_API_URL": "$GITLAB_CSUI_API_URL",
         "GITLAB_DENIED_TOOLS_REGEX": "(label|labels|release|releases|release_evidence|release_asset|namespace|namespaces)$",
         "USE_GITLAB_WIKI": "false",
-        "USE_PIPELINE": "false",
+        "USE_PIPELINE": "true",
         "USE_MILESTONE": "true"
       }
     },

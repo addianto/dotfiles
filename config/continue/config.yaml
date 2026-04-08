@@ -1,6 +1,6 @@
 ---
 name: Default
-version: 1.0.1
+version: 1.1.0
 schema: v1
 
 mcpServers:
@@ -33,6 +33,18 @@ mcpServers:
     env:
       GITHUB_TOOLSETS: "default,code_security,secret_protection,security_advisories"
       GITHUB_LOCKDOWN_MODE: "1"
+  - name: GitLab
+    command: pnpm
+    args:
+      - "dlx"
+      - "@zereight/mcp-gitlab@2.0.36"
+    env:
+      GITLAB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITLAB_PERSONAL_ACCESS_TOKEN }}
+      GITLAB_API_URL: "https://gitlab.com/api/v4"
+      GITLAB_DENIED_TOOLS_REGEX: "(label|labels|release|releases|release_evidence|release_asset|namespace|namespaces)$"
+      USE_GITLAB_WIKI: "false"
+      USE_PIPELINE: "false"
+      USE_MILESTONE: "true"
   - name: Mermaid
     type: streamable-http
     url: https://mcp.mermaidchart.com/mcp
