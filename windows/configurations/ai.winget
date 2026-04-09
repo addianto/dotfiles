@@ -88,11 +88,11 @@ properties:
       settings:
         # TODO: Figure out how to specify the path via environment variable.
         #       The related DSC resource currently does not support this: https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/main/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.psm1
-        DestinationPath: "C:\\Temp\\llama-b8646-bin-win-cuda-13.1-x64.zip"
-        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b8665/llama-b8665-bin-win-cuda-13.1-x64.zip
+        DestinationPath: "C:\\Temp\\llama-b8738-bin-win-cuda-13.1-x64.zip"
+        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b8738/llama-b8738-bin-win-cuda-13.1-x64.zip
         MatchSource: true
         ChecksumType: SHA256
-        Checksum: 02667158aa3aeab7791ee9f5a9dc0002d1475cd6a81af1f314cc5bbcd01b03a2
+        Checksum: daf024a26320fd7ce70c10690ea2c5ef90416fcba2557effd4a9c2cc7e070f0f
     - resource: xPSDesiredStateConfiguration/xRemoteFile
       id: downloadCUDART13
       directives:
@@ -100,7 +100,7 @@ properties:
         allowPrerelease: true
       settings:
         DestinationPath: "C:\\Temp\\cudart-llama-bin-win-cuda-13.1-x64.zip"
-        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b8665/cudart-llama-bin-win-cuda-13.1-x64.zip
+        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b8738/cudart-llama-bin-win-cuda-13.1-x64.zip
         MatchSource: true
         ChecksumType: SHA256
         Checksum: f96935e7e385e3b2d0189239077c10fe8fd7e95690fea4afec455b1b6c7e3f18
