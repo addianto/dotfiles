@@ -93,7 +93,7 @@
       "command": "pnpm",
       "args": [
         "dlx",
-        "@zereight/mcp-gitlab@2.0.36"
+        "@zereight/mcp-gitlab@2.1.0"
       ],
       "env": {
         "GITLAB_PERSONAL_ACCESS_TOKEN": "$GITLAB_PERSONAL_ACCESS_TOKEN",
@@ -108,7 +108,7 @@
       "command": "pnpm",
       "args": [
         "dlx",
-        "@zereight/mcp-gitlab@2.0.36"
+        "@zereight/mcp-gitlab@2.1.0"
       ],
       "env": {
         "GITLAB_PERSONAL_ACCESS_TOKEN": "$GITLAB_CSUI_PERSONAL_ACCESS_TOKEN",
