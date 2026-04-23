@@ -2,8 +2,6 @@
   "general": {
     "preferredEditor": "nvim",
     "vimMode": true,
-    "disableAutoUpdate": true,
-    "disableUpdateNag": false,
     "checkpointing": {
       "enabled": false
     },
@@ -14,6 +12,9 @@
       "warningAcknowledged": true,
       "enabled": true,
       "maxAge": "30d"
+    },
+    "plan": {
+      "enabled": true
     }
   },
   "output": {
@@ -45,8 +46,7 @@
     }
   },
   "experimental": {
-    "enableAgents": true,
-    "plan": true
+    "enableAgents": true
   },
   "mcpServers": {
     "github": {
@@ -122,5 +122,8 @@
     "microsoft-learn": {
       "httpUrl": "https://learn.microsoft.com/api/mcp"
     }
+  },
+  "agents": {
+    "overrides": {}
   }
 }

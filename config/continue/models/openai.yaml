@@ -14,14 +14,20 @@ model_defaults: &model_defaults
     maxTokens: 128000
 
 models:
-  - name: GPT-5.2 Codex
-    model: gpt-5.2-codex
+  - name: GPT-5.5
+    model: gpt-5.5
+    <<: *model_defaults
+  - name: GPT-5.4
+    model: gpt-5.4
+    <<: *model_defaults
+  - name: GPT-5.3 Codex
+    model: gpt-5.3-codex
     <<: *model_defaults
     chatOptions:
       # Based on GPT 5.2-Codex prompt from https://github.com/openai/codex/blob/rust-v0.106.0/codex-rs/core/gpt-5.2-codex_prompt.md
       # Licensed under Apache 2.0 license
       baseAgentSystemMessage: |
-        You are Codex, based on GPT-5.2. You are running as a coding agent in the Continue extension on an IDE on a user's computer.
+        You are Codex, based on GPT-5. You are running as a coding agent in the Continue extension on an IDE on a user's computer.
 
         ## General
 
@@ -95,6 +101,3 @@ models:
           * Do not use URIs like file://, vscode://, or https://.
           * Do not provide range of lines
           * Examples: src/app.ts, src/app.ts:42, b/server/index.js#L10, C:\repo\project\main.rs:12:5
-  - name: GPT-5.2
-    model: gpt-5.2
-    <<: *model_defaults
