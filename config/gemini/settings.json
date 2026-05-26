@@ -67,7 +67,7 @@
       "command": "pnpm",
       "args": [
         "dlx",
-        "@upstash/context7-mcp@2.1.2"
+        "@upstash/context7-mcp@3.0.0"
       ]
     },
     "sequentialthinking": {
@@ -93,11 +93,11 @@
       "command": "pnpm",
       "args": [
         "dlx",
-        "@zereight/mcp-gitlab@2.1.0"
+        "@zereight/mcp-gitlab@2.1.16",
+        "--api-url=https://gitlab.com/api/v4",
+        "--token=$GITLAB_PERSONAL_ACCESS_TOKEN"
       ],
       "env": {
-        "GITLAB_PERSONAL_ACCESS_TOKEN": "$GITLAB_PERSONAL_ACCESS_TOKEN",
-        "GITLAB_API_URL": "https://gitlab.com/api/v4",
         "GITLAB_DENIED_TOOLS_REGEX": "(label|labels|release|releases|release_evidence|release_asset|namespace|namespaces)$",
         "USE_GITLAB_WIKI": "false",
         "USE_PIPELINE": "true",
@@ -108,11 +108,11 @@
       "command": "pnpm",
       "args": [
         "dlx",
-        "@zereight/mcp-gitlab@2.1.0"
+        "@zereight/mcp-gitlab@2.1.16",
+        "--api-url=https://gitlab.cs.ui.ac.id/api/v4",
+        "--token=$GITLAB_CSUI_PERSONAL_ACCESS_TOKEN"
       ],
       "env": {
-        "GITLAB_PERSONAL_ACCESS_TOKEN": "$GITLAB_CSUI_PERSONAL_ACCESS_TOKEN",
-        "GITLAB_API_URL": "$GITLAB_CSUI_API_URL",
         "GITLAB_DENIED_TOOLS_REGEX": "(label|labels|release|releases|release_evidence|release_asset|namespace|namespaces)$",
         "USE_GITLAB_WIKI": "false",
         "USE_PIPELINE": "true",
