@@ -26,15 +26,11 @@ return {
                 ensure_installed = {
                     "ansiblels",
                     "bashls",
-                    "cssls",
                     "dockerls",
-                    "html",
-                    "htmx",
                     "jsonls",
                     "rust_analyzer",
                     "taplo",
                     "texlab",
-                    "vale_ls",
                     "yamlls",
                 },
                 automatic_installation = true,
@@ -118,23 +114,11 @@ return {
                 capabilities = capabilities,
             })
 
-            -- CSS
-            require("lspconfig").cssls.setup({
-                on_attach = on_attach,
-                capabilities = capabilities,
-            })
-
             -- Docker
             require("lspconfig").dockerls.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
                 filetypes = { "Dockerfile", "Containerfile", "dockerfile", "containerfile" },
-            })
-
-            -- HTML
-            require("lspconfig").html.setup({
-                on_attach = on_attach,
-                capabilities = capabilities,
             })
 
             -- JSON
@@ -187,12 +171,6 @@ return {
 
             -- LaTeX
             require("lspconfig").texlab.setup({
-                on_attach = on_attach,
-                capabilities = capabilities,
-            })
-
-            -- Vale Language Server
-            require("lspconfig").vale_ls.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
             })
