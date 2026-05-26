@@ -267,3 +267,13 @@ properties:
         Id: Microsoft.SQLServerManagementStudio.22
         Source: winget
         Ensure: Absent
+        Version: "0.16.1"
+      id: installTreeSitterCli
+      directives:
+        description: Install tree-sitter-cli
+        allowPrerelease: true
+      settings:
+        Id: tree-sitter.tree-sitter-cli
+        Source: winget
+        Ensure: Present
+        Version: "0.26.9"
