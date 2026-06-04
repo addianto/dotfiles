@@ -1,6 +1,6 @@
 {
   "general": {
-    "preferredEditor": "nvim",
+    "preferredEditor": "neovim",
     "vimMode": true,
     "checkpointing": {
       "enabled": false
