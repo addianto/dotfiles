@@ -1,0 +1,53 @@
+%YAML 1.1
+---
+name: Mistral
+version: 1.0.0
+schema: v1
+model_defaults: &model_defaults
+  provider: mistral
+  apiKey: ${{ secrets.MISTRAL_API_KEY }}
+
+models:
+  - name: Magistral Medium 1.2
+    model: magistral-medium-2509
+    <<: *model_defaults
+    # Based on https://unsloth.ai/docs/models/tutorials/magistral-how-to-run-and-fine-tune#official-recommended-settings
+    defaultCompletionOptions:
+      contextLength: 128000
+      temperature: 0.7
+      top_p: 0.95
+      reasoning: true
+    capabilities:
+      - tool_use
+      - image_input
+  - name: Mistral Large 3
+    model: mistral-large-2512
+    <<: *model_defaults
+    defaultCompletionOptions:
+      contextLength: 256000
+    capabilities:
+      - tool_use
+      - image_input
+  - name: Devstral 2
+    model: devstral-2512
+    <<: *model_defaults
+    # Based on https://unsloth.ai/docs/models/tutorials/devstral-2#usage-guide
+    defaultCompletionOptions:
+      contextLength: 256000
+      temperature: 0.15
+    capabilities:
+      - tool_use
+  - name: Codestral Embed
+    model: codestral-embed-2505
+    <<: *model_defaults
+    roles:
+      - embed
+  - name: Codestral
+    provider: mistral
+    model: codestral-2508
+    apiBase: https://codestral.mistral.ai/v1
+    apiKey: ${{ secrets.CODESTRAL_API_KEY }}
+    roles:
+      - autocomplete
+    defaultCompletionOptions:
+      contextLength: 128000

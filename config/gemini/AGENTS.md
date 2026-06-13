@@ -1,9 +1,11 @@
-# General Instructions for Gemini AI Agent
+# Guidelines for AI Agents
 
-## Shared Rules With Other AI Agent
+This document expands the default system prompt embedded in the AI agent.
 
-@rules/context7-usage.md
+## Shared Rules with Other Agents
 
-@rules/command-substitutes.md
+Load the following rules into the agent's context:
 
-@rules/english-writing.md
+- @rules/context7-usage.md
+- @rules/command-substitutes.md
+- @rules/english-writing.md

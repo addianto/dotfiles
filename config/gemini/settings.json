@@ -1,19 +1,29 @@
 {
   "general": {
-    "preferredEditor": "nvim",
+    "preferredEditor": "neovim",
     "vimMode": true,
-    "disableAutoUpdate": true,
-    "disableUpdateNag": false,
     "checkpointing": {
       "enabled": false
     },
-    "previewFeatures": true
+    "previewFeatures": true,
+    "enableAutoUpdate": false,
+    "enableAutoUpdateNotification": true,
+    "sessionRetention": {
+      "warningAcknowledged": true,
+      "enabled": true,
+      "maxAge": "30d"
+    },
+    "plan": {
+      "enabled": true
+    }
   },
   "output": {
     "format": "text"
   },
   "ui": {
-    "theme": "ANSI"
+    "theme": "Solarized Dark",
+    "showCitations": true,
+    "loadingPhrases": "all"
   },
   "ide": {
     "enabled": true,
@@ -35,35 +45,29 @@
       "selectedType": "oauth-personal"
     }
   },
+  "experimental": {
+    "enableAgents": true
+  },
   "mcpServers": {
     "github": {
-      "httpUrl": "https://api.githubcopilot.com/mcp/",
-      "headers": {
-        "Authorization": "Bearer $GITHUB_PERSONAL_ACCESS_TOKEN"
-      },
-      "excludeTools": [
-        "cancel_workflow_run",
-        "delete_workflow_run_logs",
-        "create_gist",
-        "list_gist",
-        "update_gist",
-        "dismiss_notification",
-        "get_notification_details",
-        "list_notifications",
-        "manage_notification_subscription",
-        "manage_repository_notification_subscription",
-        "mark_all_notifications_read",
-        "search_orgs",
-        "star_repository",
-        "unstar_repository",
-        "search_users"
-      ]
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "mcp-remote@0.1.38",
+        "https://api.githubcopilot.com/mcp/",
+        "--header",
+        "Authorization: Bearer $GITHUB_PERSONAL_ACCESS_TOKEN"
+      ],
+      "env": {
+        "GITHUB_TOOLSETS": "default,code_security,secret_protection,security_advisories",
+        "GITHUB_LOCKDOWN_MODE": "1"
+      }
     },
     "context7": {
       "command": "pnpm",
       "args": [
         "dlx",
-        "@upstash/context7-mcp@1.0.32"
+        "@upstash/context7-mcp@3.0.0"
       ]
     },
     "sequentialthinking": {
@@ -76,32 +80,50 @@
     "time": {
       "command": "uvx",
       "args": [
-        "mcp-server-time==2025.9.25"
+        "mcp-server-time==2026.1.26"
       ]
     },
     "git": {
       "command": "uvx",
       "args": [
-        "mcp-server-git==2025.11.25"
+        "mcp-server-git==2026.1.14"
       ]
+    },
+    "gitlab": {
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "@zereight/mcp-gitlab@2.1.16",
+        "--api-url=https://gitlab.com/api/v4",
+        "--token=$GITLAB_PERSONAL_ACCESS_TOKEN"
+      ],
+      "env": {
+        "GITLAB_DENIED_TOOLS_REGEX": "(label|labels|release|releases|release_evidence|release_asset|namespace|namespaces)$",
+        "USE_GITLAB_WIKI": "false",
+        "USE_PIPELINE": "true",
+        "USE_MILESTONE": "true"
+      }
     },
     "gitlab-csui": {
       "command": "pnpm",
       "args": [
         "dlx",
-        "@zereight/mcp-gitlab@2.0.13"
+        "@zereight/mcp-gitlab@2.1.16",
+        "--api-url=https://gitlab.cs.ui.ac.id/api/v4",
+        "--token=$GITLAB_CSUI_PERSONAL_ACCESS_TOKEN"
       ],
       "env": {
-        "GITLAB_PERSONAL_ACCESS_TOKEN": "$GITLAB_CSUI_PERSONAL_ACCESS_TOKEN",
-        "GITLAB_API_URL": "$GITLAB_CSUI_API_URL",
         "GITLAB_DENIED_TOOLS_REGEX": "(label|labels|release|releases|release_evidence|release_asset|namespace|namespaces)$",
         "USE_GITLAB_WIKI": "false",
-        "USE_PIPELINE": "false",
+        "USE_PIPELINE": "true",
         "USE_MILESTONE": "true"
       }
     },
     "microsoft-learn": {
       "httpUrl": "https://learn.microsoft.com/api/mcp"
     }
+  },
+  "agents": {
+    "overrides": {}
   }
 }

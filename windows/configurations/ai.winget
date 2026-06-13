@@ -1,0 +1,109 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: removeOllamaFlashAttention
+      directives:
+        description: Remove OLLAMA_FLASH_ATTENTION environment variable
+        allowPrerelease: true
+      settings:
+        Name: OLLAMA_FLASH_ATTENTION
+        Value: 1
+        Ensure: Absent
+        Path: false
+        Target: Process
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallOllama
+      directives:
+        description: Uninstall Ollama
+        allowPrerelease: true
+      settings:
+        Id: Ollama.Ollama
+        Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallJan
+      directives:
+        description: Uninstall Jan
+        allowPrerelease: true
+      settings:
+        Id: Jan.Jan
+        Source: winget
+        Ensure: Absent
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: setDisableTelemetry
+      directives:
+        description: Set DISABLE_TELEMETRY environment variable
+        allowPrerelease: true
+      settings:
+        Name: DISABLE_TELEMETRY
+        Value: true
+        Ensure: Present
+        Path: false
+        Target: Process
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallWindsurf
+      directives:
+        description: Uninstall Windsurf
+        allowPrerelease: true
+      settings:
+        Id: Codeium.Windsurf
+        Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installWitsy
+      directives:
+        description: Install Witsy
+        allowPrerelease: true
+      settings:
+        Id: NicolasBonamy.Witsy
+        Source: winget
+        Ensure: Present
+    - resource: xPSDesiredStateConfiguration/xEnvironment
+      id: removeEnableSystemTrayIcon
+      dependsOn:
+        - uninstallJan
+      directives:
+        description: Remove ENABLE_SYSTEM_TRAY_ICON environment variable
+        allowPrerelease: true
+      settings:
+        Name: ENABLE_SYSTEM_TRAY_ICON
+        Value: true
+        Ensure: Absent
+        Path: false
+        Target: Process
+    - resource: xPSDesiredStateConfiguration/xRemoteFile
+      id: downloadLlamaCpp
+      directives:
+        description: Download llama.cpp
+        allowPrerelease: true
+      settings:
+        # TODO: Figure out how to specify the path via environment variable.
+        #       The related DSC resource currently does not support this: https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/main/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.psm1
+        DestinationPath: "C:\\Temp\\llama-b8738-bin-win-cuda-13.1-x64.zip"
+        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b8738/llama-b8738-bin-win-cuda-13.1-x64.zip
+        MatchSource: true
+        ChecksumType: SHA256
+        Checksum: daf024a26320fd7ce70c10690ea2c5ef90416fcba2557effd4a9c2cc7e070f0f
+    - resource: xPSDesiredStateConfiguration/xRemoteFile
+      id: downloadCUDART13
+      directives:
+        description: Download CUDA Runtime 13
+        allowPrerelease: true
+      settings:
+        DestinationPath: "C:\\Temp\\cudart-llama-bin-win-cuda-13.1-x64.zip"
+        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b8738/cudart-llama-bin-win-cuda-13.1-x64.zip
+        MatchSource: true
+        ChecksumType: SHA256
+        Checksum: f96935e7e385e3b2d0189239077c10fe8fd7e95690fea4afec455b1b6c7e3f18
+    # TODO: Automate llama.cpp installation using DSC resource(s)
+    #       1. Extract the archive files into ~/.local/opt/llama.cpp
+    #       2. Create a symbolic link to the llama.cpp executable in ~/.local/bin

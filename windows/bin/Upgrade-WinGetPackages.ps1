@@ -1,6 +1,7 @@
 <#
 .SYNOPSIS
     Upgrades WinGet packages declared in a WinGet DSC YAML file.
+
 .DESCRIPTION
     This script parses YAML files containing WinGet package configurations
     and upgrades all packages that have Ensure set to Present.

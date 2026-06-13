@@ -1,184 +1,53 @@
 ---
 name: Default
-version: 1.0.0
+version: 1.1.0
 schema: v1
-
-models:
-  # OpenAI
-  - uses: openai/gpt-5.1
-    override:
-      name: GPT-5.2 Pro
-      model: gpt-5.2-pro
-      capabilities:
-        - tool_use
-        - image_input
-  - uses: openai/gpt-5.1
-    override:
-      name: GPT-5.1
-      capabilities:
-        - tool_use
-        - image_input
-  - uses: openai/gpt-5.1
-    override:
-      name: GPT-5.1 Codex
-      model: gpt-5.1-codex
-      capabilities:
-        - tool_use
-        - image_input
-  - uses: openai/gpt-5
-    override:
-      capabilities:
-        - tool_use
-        - image_input
-
-  # OpenRouter
-  - name: MiMo V2 Flash (Free)
-    provider: openrouter
-    model: xiaomi/mimo-v2-flash:free
-    apiKey: ${{ secrets.OPENROUTER_API_KEY }}
-    defaultCompletionOptions:
-      contextLength: 262000
-      maxToken: 65000
-      topP: 0.95
-      temperature: 0.3
-      reasoning: true
-    capabilities:
-      - tool_use
-    roles:
-      - apply
-      - chat
-      - edit
-
-  - name: gpt-oss-120b (Free)
-    provider: openrouter
-    model: openai/gpt-oss-120b:free
-    apiKey: ${{ secrets.OPENROUTER_API_KEY }}
-    defaultCompletionOptions:
-      contextLength: 128000
-      maxToken: 128000
-      reasoning: true
-    capabilities:
-      - tool_use
-    roles:
-      - apply
-      - chat
-      - edit
-
-  - uses: ollama/qwen2.5-coder-1.5b
-    override:
-      name: Qwen 2.5 Coder 1.5B
-      model: addianto/qwen2.5-coder-abliterated:1.5b
-
-  - name: Qwen 3 Embedding 0.6B
-    provider: ollama
-    model: hf.co/Qwen/Qwen3-Embedding-0.6B-GGUF:Q8_0
-    roles:
-      - embed
-
-  - name: Qwen 3 Reranker 0.6B
-    provider: ollama
-    model: hf.co/mradermacher/Qwen3-Reranker-0.6B-GGUF:Q8_0
-    roles:
-      - rerank
-
-  - uses: mistral/codestral
-    with:
-      MISTRAL_API_KEY: ${{ secrets.CODESTRAL_API_KEY }}
-    override:
-      model: codestral-2508
-      defaultCompletionOptions:
-        contextLength: 128000
-
-  - uses: mistral/mistral-large
-    with:
-      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-    override:
-      model: mistral-large-2512
-      defaultCompletionOptions:
-        contextLength: 256000
-      capabilities:
-        - tool_use
-        - image_input
-
-  - uses: mistral/devstral-medium
-    with:
-      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-    override:
-      model: devstral-medium-2507
-      defaultCompletionOptions:
-        contextLength: 128000
-
-  - name: Magistral Medium 1.2
-    provider: mistral
-    model: magistral-medium-2509
-    apiKey: ${{ secrets.MISTRAL_API_KEY }}
-    roles:
-      - chat
-    capabilities:
-      - tool_use
-      - image_input
-    defaultCompletionOptions:
-      temperature: 0.7
-      top_p: 0.95
-
-  - uses: openai/gpt-4.1
-    with:
-      # Use API key from GitHub Copilot
-      # Refer to https://aider.chat/docs/llms/github.html
-      OPENAI_API_KEY: ${{ secrets.GITHUB_COPILOT_API_KEY }}
-    override:
-      name: GPT 4.1 (via GitHub Copilot)
-      apiBase: https://api.githubcopilot.com
-      model: gpt-4.1
 
 mcpServers:
   - name: Context7
     command: pnpm
     args:
       - "dlx"
-      - "@upstash/context7-mcp@1.0.32"
-
+      - "@upstash/context7-mcp@2.1.2"
   - name: Sequential Thinking
     command: pnpm
     args:
       - "dlx"
       - "@modelcontextprotocol/server-sequential-thinking@2025.12.18"
-
   - name: Time
     command: uvx
     args:
-      - "mcp-server-time==2025.9.25"
-
+      - "mcp-server-time==2026.1.26"
   - name: Git
     command: uvx
     args:
-      - "mcp-server-git==2025.11.25"
-
-  # TODO: Figure out why this GitHub MCP server config does not work on Windows.
-  #       The Continue plugin on VSCodium unable to call `podman`. Moreover,
-  #       calling the binary executable directly from ~/.local/bin also does not work.
+      - "mcp-server-git==2026.1.14"
   - name: GitHub
-    command: podman
+    command: pnpm
     args:
-      - "run"
-      - "-i"
-      - "--rm"
-      - "-e"
-      - "GITHUB_PERSONAL_ACCESS_TOKEN"
-      - "-e"
-      - "GITHUB_TOOLSETS"
-      - "-e"
-      - "GITHUB_LOCKDOWN_MODE"
-      - "ghcr.io/github/github-mcp-server:v0.25.0"
+      - "dlx"
+      - "mcp-remote@0.1.38"
+      - "https://api.githubcopilot.com/mcp/"
+      - "--header"
+      - "Authorization: Bearer ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}"
     env:
-      GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
       GITHUB_TOOLSETS: "default,code_security,secret_protection,security_advisories"
       GITHUB_LOCKDOWN_MODE: "1"
-
+  - name: GitLab
+    command: pnpm
+    args:
+      - "dlx"
+      - "@zereight/mcp-gitlab@2.1.0"
+    env:
+      GITLAB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITLAB_PERSONAL_ACCESS_TOKEN }}
+      GITLAB_API_URL: "https://gitlab.com/api/v4"
+      GITLAB_DENIED_TOOLS_REGEX: "(label|labels|release|releases|release_evidence|release_asset|namespace|namespaces)$"
+      USE_GITLAB_WIKI: "false"
+      USE_PIPELINE: "false"
+      USE_MILESTONE: "true"
   - name: Mermaid
     type: streamable-http
     url: https://mcp.mermaidchart.com/mcp
-
   - name: Microsoft Learn
     type: streamable-http
     url: https://learn.microsoft.com/api/mcp
