@@ -231,7 +231,7 @@ properties:
         Ensure: Present
         Version: "0.16.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: InstallRipGrep
+      id: installRipGrep
       directives:
         description: Install RipGrep
         allowPrerelease: true
