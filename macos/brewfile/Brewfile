@@ -10,7 +10,7 @@ tap "buo/cask-upgrade"
 tap "rcmdnk/file"
 
 ## Common
-tap "th-ch/youtube-music"
+tap "pear-devs/pear"
 
 brew "btop"
 brew "czkawka"
@@ -25,14 +25,13 @@ brew "vale"
 brew "zsh"
 cask "ungoogled-chromium"
 cask "discord"
-cask "iterm2"
 cask "joplin"
 cask "librewolf", args: { no_quarantine: true }
 cask "obs"
+cask "pear-desktop", args: { no_quarantine: true }
 cask "scroll-reverser"
 cask "syncthing-app", args: { no_quarantine: true }
 cask "viscosity"
-cask "th-ch/youtube-music/youtube-music", args: { no_quarantine: true }
 cask "zotero"
 mas "AdGuard for Safari", id: 1440147259
 mas "BitWarden", id: 1352778147
@@ -48,19 +47,17 @@ brew "azure-cli"
 brew "bun"
 brew "difftastic"
 brew "fd"
-brew "firebase-cli"
 brew "git"
 brew "hadolint"
 brew "jq"
 brew "k6"
-brew "leoafarias/fvm/fvm@3.2.1"
+brew "leoafarias/fvm/fvm@4.0.5"
 brew "neovide"
 brew "neovim"
 brew "node"
 brew "opentofu"
 brew "pnpm"
-brew "python@3.13"
-brew "postgresql@15", restart_service: true
+brew "python@3.14"
 brew "ruby@3.2"
 brew "ruff"
 brew "rustup"
@@ -70,10 +67,10 @@ brew "tree-sitter-cli"
 brew "trivy"
 brew "uv"
 brew "scorecard"
+cask "mactex-no-gui"
 cask "dbeaver-community"
-cask "gcloud-cli"
 cask "jetbrains-toolbox"
-cask "temurin@21"
+cask "temurin@25"
 cask "vscodium"
 cask "alacritty", args: { no_quarantine: true }
 
@@ -97,9 +94,8 @@ mas "Slack", id: 803453959
 
 ## AI/LLM
 brew "gemini-cli"
-cask "anythingllm", args: { require_sha: false }
-cask "ollama-app"
 cask "block-goose"
+cask "llama.cpp"
 cask "witsy"
 mas "Draw Things", id: 6444050820
 
@@ -113,15 +109,22 @@ cask "font-sarasa-gothic"
 
 ## Visual Studio Code & Extensions
 cask "visual-studio-code"
+vscode "AquaSecurityOfficial.trivy-vulnerability-scanner"
 vscode "asvetliakov.vscode-neovim"
-vscode "augment.vscode-augment"
 vscode "editorconfig.editorconfig"
 vscode "enkia.tokyo-night"
-vscode "github.copilot"
-vscode "github.copilot-chat"
+vscode "github.vscode-github-actions"
 vscode "github.vscode-pull-request-github"
 vscode "gitlab.gitlab-workflow"
+vscode "google.gemini-cli-vscode-ide-companion"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-python.black-formatter"
+vscode "ms-python.isort"
+vscode "ms-python.python"
+vscode "ms-python.vscode-python-envs"
+vscode "opentofu.vscode-opentofu"
 vscode "pflannery.vscode-versionlens"
+vscode "redhat.ansible"
 vscode "redhat.vscode-yaml"
 vscode "rust-lang.rust-analyzer"
 vscode "ryanluker.vscode-coverage-gutters"
@@ -130,5 +133,3 @@ vscode "timonwong.shellcheck"
 vscode "usernamehw.errorlens"
 vscode "vscode-icons-team.vscode-icons"
 vscode "vscjava.vscode-java-pack"
-vscode "Vue.volar"
-vscode "golang.go"

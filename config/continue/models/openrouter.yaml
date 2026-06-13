@@ -1,0 +1,15 @@
+%YAML 1.1
+---
+name: OpenRouter
+version: 1.0.0
+schema: v1
+model_defaults: &model_defaults
+  provider: openrouter
+  apiKey: ${{ secrets.OPENROUTER_API_KEY }}
+
+models:
+  - name: Free Models Router
+    model: openrouter/free
+    <<: *model_defaults
+    capabilities:
+      - tool_use

@@ -11,32 +11,20 @@ properties:
         MinVersion: "10.0.19041"
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installPython3
+      id: installDMMGamePlayer
       directives:
-        description: Install Python 3
+        description: Install DMM Game Player
         allowPrerelease: true
       settings:
-        Id: Python.Python.3.14
+        Id: DMM.GamePlayer
         Source: winget
         Ensure: Present
-        Version: "3.14.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installUv
+      id: installSteam
       directives:
-        description: Install uv
+        description: Install Steam
         allowPrerelease: true
       settings:
-        Id: astral-sh.uv
+        Id: Valve.Steam
         Source: winget
         Ensure: Present
-        Version: "0.10.7"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installRuff
-      directives:
-        description: Install Ruff
-        allowPrerelease: true
-      settings:
-        Id: astral-sh.ruff
-        Source: winget
-        Ensure: Present
-        Version: "0.15.4"
