@@ -5,11 +5,12 @@ return {
         branch = "v3.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
+            "nvim-tree/nvim-web-devicons",
         },
-        config = function()
-            require("neo-tree").setup()
+        lazy = false,
+        config = function(_, opts)
+            require("neo-tree").setup(opts or {})
             require("helpers.keys").map(
                 { "n", "v" },
                 "<leader>e",

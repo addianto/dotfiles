@@ -1,3 +1,4 @@
+---
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
 properties:
   configurationVersion: 0.2.0
@@ -64,7 +65,7 @@ properties:
         description: Install Witsy
         allowPrerelease: true
       settings:
-        Id: NicolasBonamy.Witsy
+        Id: KochavaStudios.Witsy
         Source: winget
         Ensure: Present
     - resource: xPSDesiredStateConfiguration/xEnvironment
@@ -88,19 +89,19 @@ properties:
       settings:
         # TODO: Figure out how to specify the path via environment variable.
         #       The related DSC resource currently does not support this: https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/main/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.psm1
-        DestinationPath: "C:\\Temp\\llama-b8738-bin-win-cuda-13.1-x64.zip"
-        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b8738/llama-b8738-bin-win-cuda-13.1-x64.zip
+        DestinationPath: "C:\\Temp\\llama.zip"
+        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b9360/llama-b9360-bin-win-cuda-13.1-x64.zip
         MatchSource: true
         ChecksumType: SHA256
-        Checksum: daf024a26320fd7ce70c10690ea2c5ef90416fcba2557effd4a9c2cc7e070f0f
+        Checksum: 31ddb8b42d7ab4a47cab8c48c397519f580ca502df7e73f3ab396eacc16c8e8d
     - resource: xPSDesiredStateConfiguration/xRemoteFile
       id: downloadCUDART13
       directives:
         description: Download CUDA Runtime 13
         allowPrerelease: true
       settings:
-        DestinationPath: "C:\\Temp\\cudart-llama-bin-win-cuda-13.1-x64.zip"
-        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b8738/cudart-llama-bin-win-cuda-13.1-x64.zip
+        DestinationPath: "C:\\Temp\\cudart.zip"
+        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b9360/cudart-llama-bin-win-cuda-13.1-x64.zip
         MatchSource: true
         ChecksumType: SHA256
         Checksum: f96935e7e385e3b2d0189239077c10fe8fd7e95690fea4afec455b1b6c7e3f18

@@ -19,7 +19,7 @@ properties:
         Id: Wilfred.difftastic
         Source: winget
         Ensure: Present
-        Version: "0.67.0"
+        Version: "0.69.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGit
       dependsOn:
@@ -31,7 +31,7 @@ properties:
         Id: Git.Git
         Source: winget
         Ensure: Present
-        Version: "2.53.0"
+        Version: "2.54.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovim
       directives:
@@ -41,7 +41,7 @@ properties:
         Id: Neovim.Neovim
         Source: winget
         Ensure: Present
-        Version: "0.11.6"
+        Version: "0.12.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovide
       dependsOn:
@@ -53,7 +53,7 @@ properties:
         Id: Neovide.Neovide
         Source: winget
         Ensure: Present
-        Version: "0.15.2"
+        Version: "0.16.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVSCodium
       directives:
@@ -91,7 +91,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "10.30.1"
+        Version: "11.3.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -121,7 +121,7 @@ properties:
         Id: GrafanaLabs.k6
         Source: winget
         Ensure: Present
-        Version: "1.7.1"
+        Version: "2.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallPostman
       directives:
@@ -140,7 +140,7 @@ properties:
         Id: DBeaver.DBeaver.Community
         Source: winget
         Ensure: Present
-        Version: "25.3.5"
+        Version: "26.1.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallGoogleCloudSDK
       directives:
@@ -168,7 +168,7 @@ properties:
         Id: sharkdp.fd
         Source: winget
         Ensure: Present
-        Version: "10.3.0"
+        Version: "10.4.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installRufus
       directives:
@@ -178,7 +178,7 @@ properties:
         Id: Rufus.Rufus
         Source: winget
         Ensure: Present
-        Version: "4.13"
+        Version: "4.14"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOpenTofu
       directives:
@@ -188,7 +188,7 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.11.5"
+        Version: "1.12.2"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setRustupHome
       directives:
@@ -209,7 +209,7 @@ properties:
         Id: Rustlang.Rustup
         Source: winget
         Ensure: Present
-        Version: "1.28.2"
+        Version: "1.29.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installBruno
       directives:
@@ -229,7 +229,7 @@ properties:
         Id: Alacritty.Alacritty
         Source: winget
         Ensure: Present
-        Version: "0.16.1"
+        Version: "0.17.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installRipGrep
       directives:
@@ -268,6 +268,7 @@ properties:
         Source: winget
         Ensure: Absent
         Version: "0.16.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installTreeSitterCli
       directives:
         description: Install tree-sitter-cli
