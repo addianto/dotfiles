@@ -14,7 +14,7 @@ return {
     },
     {
         "akinsho/git-conflict.nvim",
-        tag = "v1.3.0",
+        tag = "v2.1.0",
         config = function()
             require("git-conflict").setup({
                 default_mappings = {
