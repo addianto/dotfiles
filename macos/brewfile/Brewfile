@@ -93,7 +93,6 @@ cask "zoom"
 mas "Slack", id: 803453959
 
 ## AI/LLM
-brew "gemini-cli"
 cask "block-goose"
 cask "llama.cpp"
 cask "witsy"
@@ -116,7 +115,6 @@ vscode "enkia.tokyo-night"
 vscode "github.vscode-github-actions"
 vscode "github.vscode-pull-request-github"
 vscode "gitlab.gitlab-workflow"
-vscode "google.gemini-cli-vscode-ide-companion"
 vscode "ms-azuretools.vscode-containers"
 vscode "ms-python.black-formatter"
 vscode "ms-python.isort"
