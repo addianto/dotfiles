@@ -1,5 +1,7 @@
 {
   "colorScheme": "tokyo night",
   "enableTelemetry": false,
-  "enableTerminalSandbox": true
+  "enableTerminalSandbox": true,
+  "showFeedbackSurvey": false,
+  "verbosity": "high"
 }
