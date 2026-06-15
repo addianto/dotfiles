@@ -21,3 +21,5 @@ ln -s $HOME/.local/src/dotfiles/config/gemini/antigravity-cli
 ```
 
 > Note: Antigravity CLI's configuration directory is stored in Gemini CLI's configuration directory by default.
+> Moreover, some of the configuration files are still shared with Gemini CLI in `.gemini` directory.
+> See: https://antigravity.google/docs/gcli-migration
