@@ -6,6 +6,7 @@ cache/
 conversations/
 knowledge/
 log/
+mcp/
 updater/
 cli.log
 history.jsonl
@@ -15,3 +16,4 @@ last_check.timestamp
 # Except:
 !keybindings.json
 !settings.json
+!mcp_config.json
