@@ -30,3 +30,7 @@ ln -s "$HOME/.local/src/dotfiles/gemini/.env"
 ln -s "$HOME/.continue/rules"
 # On Windows, use `New-Item -Type SymbolicLink` command to create symbolic links.
 ```
+
+## Antigravity CLI
+
+Find the configuration files in [`antigravity-cli`](./antigravity-cli) directory.
