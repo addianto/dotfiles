@@ -1,20 +1,2 @@
 # Ignore these files & folders from version control:
-bin/
-brain/
-builtin/
-cache/
-conversations/
-knowledge/
-log/
-mcp/
-updater/
 .env
-cli.log
-history.jsonl
-installation_id
-last_check.timestamp
-
-# Except:
-!keybindings.json
-!settings.json
-!mcp_config.json
