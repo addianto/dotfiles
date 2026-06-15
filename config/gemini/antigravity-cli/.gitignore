@@ -8,6 +8,7 @@ knowledge/
 log/
 mcp/
 updater/
+.env
 cli.log
 history.jsonl
 installation_id
