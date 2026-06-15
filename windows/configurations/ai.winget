@@ -30,15 +30,6 @@ properties:
         Id: Ollama.Ollama
         Source: winget
         Ensure: Absent
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallJan
-      directives:
-        description: Uninstall Jan
-        allowPrerelease: true
-      settings:
-        Id: Jan.Jan
-        Source: winget
-        Ensure: Absent
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setDisableTelemetry
       directives:
@@ -68,43 +59,3 @@ properties:
         Id: KochavaStudios.Witsy
         Source: winget
         Ensure: Present
-    - resource: xPSDesiredStateConfiguration/xEnvironment
-      id: removeEnableSystemTrayIcon
-      dependsOn:
-        - uninstallJan
-      directives:
-        description: Remove ENABLE_SYSTEM_TRAY_ICON environment variable
-        allowPrerelease: true
-      settings:
-        Name: ENABLE_SYSTEM_TRAY_ICON
-        Value: true
-        Ensure: Absent
-        Path: false
-        Target: Process
-    - resource: xPSDesiredStateConfiguration/xRemoteFile
-      id: downloadLlamaCpp
-      directives:
-        description: Download llama.cpp
-        allowPrerelease: true
-      settings:
-        # TODO: Figure out how to specify the path via environment variable.
-        #       The related DSC resource currently does not support this: https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/main/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.psm1
-        DestinationPath: "C:\\Temp\\llama.zip"
-        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b9360/llama-b9360-bin-win-cuda-13.1-x64.zip
-        MatchSource: true
-        ChecksumType: SHA256
-        Checksum: 31ddb8b42d7ab4a47cab8c48c397519f580ca502df7e73f3ab396eacc16c8e8d
-    - resource: xPSDesiredStateConfiguration/xRemoteFile
-      id: downloadCUDART13
-      directives:
-        description: Download CUDA Runtime 13
-        allowPrerelease: true
-      settings:
-        DestinationPath: "C:\\Temp\\cudart.zip"
-        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b9360/cudart-llama-bin-win-cuda-13.1-x64.zip
-        MatchSource: true
-        ChecksumType: SHA256
-        Checksum: f96935e7e385e3b2d0189239077c10fe8fd7e95690fea4afec455b1b6c7e3f18
-    # TODO: Automate llama.cpp installation using DSC resource(s)
-    #       1. Extract the archive files into ~/.local/opt/llama.cpp
-    #       2. Create a symbolic link to the llama.cpp executable in ~/.local/bin
