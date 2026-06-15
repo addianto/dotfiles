@@ -59,3 +59,14 @@ properties:
         Id: KochavaStudios.Witsy
         Source: winget
         Ensure: Present
+        Version: "3.5.2"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installAntigravityCLI
+      directives:
+        description: Install Antigravity CLI
+        allowPrerelease: true
+      settings:
+        Id: Google.AntigravityCLI
+        Source: winget
+        Ensure: Present
+        Version: "1.0.8"
