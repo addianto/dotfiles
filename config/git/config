@@ -1,6 +1,6 @@
 [core]
     autocrlf = input
-    editor = nvim
+    editor = vi
 [color]
     ui = auto
 [init]
@@ -9,28 +9,21 @@
     gpgSign = true
     verbose = true
 [gpg]
-    format = openpgp
+    format = ssh
 [push]
     default = simple
     autoSetupRemote = true
     gpgSign = if-asked
 [user]
     useConfigOnly = true
+    signingKey = /home/hermes/.ssh/id_ed25519.pub
+    name = Daya Adianto
+    email = addianto@users.noreply.github.com
 [diff]
     algorithm = histogram
-    tool = difftastic
     colorMoved = plain
     mnemonicPrefix = true
     renames = true
-[difftool]
-    prompt = false
-[difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE"
-[pager]
-    difftool = true
-[merge]
-    conflictStyle = zdiff3
-    tool = nvimdiff
 [rerere]
     enabled = true
     autoUpdate = true
@@ -52,6 +45,5 @@
     search = log -E -i --grep
     stash-all = stash --all
     word-diff = diff --word-diff --ignore-all-space
-    difft = difftool
     unstage = reset HEAD
     uncommit = reset --soft HEAD^
