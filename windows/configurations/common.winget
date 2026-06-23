@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "29.14.0"
+        Version: "29.18.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -41,7 +41,7 @@ properties:
         Id: Microsoft.WindowsTerminal
         Source: winget
         Ensure: Present
-        Version: "1.23.13503.0"
+        Version: "1.24.11321.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
@@ -63,15 +63,6 @@ properties:
         Ensure: Present
         Version: "2.3.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installPaintDotNet
-      directives:
-        description: Install Paint.NET
-        allowPrerelease: true
-      settings:
-        Id: dotPDN.PaintDotNet
-        Source: winget
-        Ensure: Present
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installLibreWolf
       directives:
         description: Install LibreWolf
@@ -80,6 +71,7 @@ properties:
         Id: LibreWolf.LibreWolf
         Source: winget
         Ensure: Present
+        Version: "152.0.2-1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installUngoogledChromium
       directives:
@@ -89,6 +81,7 @@ properties:
         Id: eloston.ungoogled-chromium
         Source: winget
         Ensure: Present
+        Version: "149.0.7827.155"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVale
       directives:
@@ -108,7 +101,7 @@ properties:
         Id: M2Team.NanaZip
         Source: winget
         Ensure: Present
-        Version: "5.0.1263.0"
+        Version: "6.5.1750.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installScrcpy
       directives:
@@ -148,6 +141,7 @@ properties:
         Id: Joplin.Joplin
         Source: winget
         Ensure: Present
+        Version: "3.6.15"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerToys
       directives:
@@ -157,7 +151,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.100.0"
+        Version: "0.100.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWinSCP
       directives:

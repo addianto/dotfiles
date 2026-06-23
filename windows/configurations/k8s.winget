@@ -28,6 +28,7 @@ properties:
         Id: RedHat.Podman
         Source: winget
         Ensure: Present
+        Version: "5.8.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPodmanDesktop
       directives:
@@ -37,6 +38,7 @@ properties:
         Id: RedHat.Podman-Desktop
         Source: winget
         Ensure: Present
+        Version: "1.28.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKubectl
       directives:
@@ -46,7 +48,7 @@ properties:
         Id: Kubernetes.kubectl
         Source: winget
         Ensure: Present
-        Version: "1.35.2"
+        Version: "1.36.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMinikube
       dependsOn:
@@ -69,7 +71,7 @@ properties:
         Id: Helm.Helm
         Source: winget
         Ensure: Present
-        Version: "4.1.1" # See supported version skew in https://helm.sh/docs/topics/version_skew/
+        Version: "4.2.2" # See supported version skew in https://helm.sh/docs/topics/version_skew/
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installK9s
       directives:
@@ -79,7 +81,7 @@ properties:
         Id: Derailed.k9s
         Source: winget
         Ensure: Present
-        Version: "0.50.18" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
+        Version: "0.51.0" # See version compatibility matrix in https://github.com/derailed/k9s#k8s-compatibility-matrix
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKubeLinter
       directives:
@@ -89,4 +91,4 @@ properties:
         Id: stackrox.kube-linter
         Source: winget
         Ensure: Present
-        Version: "0.8.1"
+        Version: "0.8.3"
