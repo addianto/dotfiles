@@ -38,7 +38,7 @@
         "-y",
         "@nanogpt/mcp@1.4.0"
       ],
-      "eny": {
+      "env": {
         "NANOGPT_API_KEY": "$NANOGPT_API_KEY"
       }
     }
