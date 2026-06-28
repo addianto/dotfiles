@@ -1,0 +1,39 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: xPSDesiredStateConfiguration/xRemoteFile
+      id: downloadLlamaCpp
+      directives:
+        description: Download llama.cpp
+        allowPrerelease: true
+      settings:
+        # TODO: Figure out how to specify the path via environment variable.
+        #       The related DSC resource currently does not support this: https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/main/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.psm1
+        DestinationPath: "C:\\Temp\\llama_b9827.zip"
+        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b9827/llama-b9827-bin-win-cuda-13.3-x64.zip
+        MatchSource: true
+        ChecksumType: SHA256
+        Checksum: d3572ee451d65dec55c8f496a869a3748bd72c4a6435d3924c16009060a00542
+    - resource: xPSDesiredStateConfiguration/xRemoteFile
+      id: downloadCUDART13
+      directives:
+        description: Download CUDA Runtime 13
+        allowPrerelease: true
+      settings:
+        DestinationPath: "C:\\Temp\\cudart_b9827.zip"
+        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b9827/cudart-llama-bin-win-cuda-13.3-x64.zip
+        MatchSource: true
+        ChecksumType: SHA256
+        Checksum: 1462a050eb4c684921ba51dcc4cc488a036674c3e73e9945ee705b854808d03e
+    # TODO: Automate llama.cpp installation using DSC resource(s)
+    #       1. Extract the archive files into ~/.local/opt/llama.cpp
+    #       2. Create a symbolic link to the llama.cpp executable in ~/.local/bin

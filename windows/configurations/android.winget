@@ -11,32 +11,22 @@ properties:
         MinVersion: "10.0.19041"
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installPython3
+      id: installScrcpy
       directives:
-        description: Install Python 3
+        description: Install scrcpy
         allowPrerelease: true
       settings:
-        Id: Python.Python.3.14
+        Id: Genymobile.scrcpy
         Source: winget
         Ensure: Present
-        Version: "3.14.6"
+        Version: "4.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installUv
+      id: installAndroidCLI
       directives:
-        description: Install uv
+        description: Install Android CLI
         allowPrerelease: true
       settings:
-        Id: astral-sh.uv
+        Id: Google.AndroidCLI
         Source: winget
         Ensure: Present
-        Version: "0.11.25"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installRuff
-      directives:
-        description: Install Ruff
-        allowPrerelease: true
-      settings:
-        Id: astral-sh.ruff
-        Source: winget
-        Ensure: Present
-        Version: "0.15.20"
+        Version: "1.0.15498356"

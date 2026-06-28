@@ -41,7 +41,7 @@ properties:
         Id: Neovim.Neovim
         Source: winget
         Ensure: Present
-        Version: "0.12.2"
+        Version: "0.12.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovide
       dependsOn:
@@ -72,6 +72,7 @@ properties:
         Id: JetBrains.Toolbox
         Source: winget
         Ensure: Present
+        Version: "3.5.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShellcheck
       directives:
@@ -111,7 +112,7 @@ properties:
         Id: jqlang.jq
         Source: winget
         Ensure: Present
-        Version: "1.8.1"
+        Version: "1.8.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installK6
       directives:
@@ -140,7 +141,7 @@ properties:
         Id: DBeaver.DBeaver.Community
         Source: winget
         Ensure: Present
-        Version: "26.1.0"
+        Version: "26.1.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallGoogleCloudSDK
       directives:
@@ -159,6 +160,7 @@ properties:
         Id: Microsoft.AzureCLI
         Source: winget
         Ensure: Present
+        Version: "2.87.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFd
       directives:
@@ -219,7 +221,7 @@ properties:
         Id: Bruno.Bruno
         Source: winget
         Ensure: Present
-        Version: "3.1.4"
+        Version: "3.5.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installAlacritty
       directives:
@@ -268,6 +270,15 @@ properties:
         Source: winget
         Ensure: Absent
         Version: "0.16.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallVisualStudioCode
+      directives:
+        description: Uninstall Visual Studio Code
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.VisualStudioCode
+        Source: winget
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installTreeSitterCli
       directives:
