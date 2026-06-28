@@ -103,16 +103,6 @@ properties:
         Ensure: Present
         Version: "6.5.1750.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installScrcpy
-      directives:
-        description: Install scrcpy
-        allowPrerelease: true
-      settings:
-        Id: Genymobile.scrcpy
-        Source: winget
-        Ensure: Present
-        Version: "4.0"
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installZotero
       directives:
         description: Install Zotero
