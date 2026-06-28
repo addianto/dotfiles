@@ -4,5 +4,5 @@ TBD.
 
 ## Notes
 
-- The `.mmproj` files are downloaded into `~/AppData/Local/llama.cpp` on Windows.
+- The `.mmproj` files are downloaded into `%LOCALAPPDATA%\llama.cpp` on Windows.
   Do not forget to clear up old files.
