@@ -1,0 +1,32 @@
+---
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.19041"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installScrcpy
+      directives:
+        description: Install scrcpy
+        allowPrerelease: true
+      settings:
+        Id: Genymobile.scrcpy
+        Source: winget
+        Ensure: Present
+        Version: "4.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installAndroidCLI
+      directives:
+        description: Install Android CLI
+        allowPrerelease: true
+      settings:
+        Id: Google.AndroidCLI
+        Source: winget
+        Ensure: Present
+        Version: "1.0.15498356"

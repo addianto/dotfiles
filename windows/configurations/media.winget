@@ -11,6 +11,15 @@ properties:
         MinVersion: "10.0.19041"
   resources:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPaintDotNet
+      directives:
+        description: Install Paint.NET
+        allowPrerelease: true
+      settings:
+        Id: dotPDN.PaintDotNet
+        Source: winget
+        Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKrita
       directives:
         description: Install Krita
@@ -19,7 +28,7 @@ properties:
         Id: KDE.Krita
         Source: winget
         Ensure: Present
-        Version: "5.2.16.0"
+        Version: "5.3.2.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShotcut
       directives:
@@ -29,7 +38,7 @@ properties:
         Id: Meltytech.Shotcut
         Source: winget
         Ensure: Present
-        Version: "26.1.30"
+        Version: "26.6.25"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOBSStudio
       directives:
@@ -39,6 +48,7 @@ properties:
         Id: OBSProject.OBSStudio
         Source: winget
         Ensure: Present
+        Version: "32.1.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installExactAudioCopy
       directives:
@@ -68,7 +78,7 @@ properties:
         Id: Wacom.WacomTabletDriver
         Source: winget
         Ensure: Present
-        Version: "6.4.12-3"
+        Version: "6.4.13-4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installYouTubeMusic
       directives:
@@ -87,7 +97,7 @@ properties:
         Id: Gyan.FFmpeg
         Source: winget
         Ensure: Present
-        Version: "8.0.1"
+        Version: "8.1.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHaruna
       directives:
@@ -97,7 +107,7 @@ properties:
         Id: KDE.Haruna
         Source: winget
         Ensure: Present
-        Version: "1.7.0"
+        Version: "1.8.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFoobar2000
       directives:
@@ -107,7 +117,7 @@ properties:
         Id: PeterPawlowski.foobar2000
         Source: winget
         Ensure: Present
-        Version: "2.25.7"
+        Version: "2.25.10"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallHoneyview
       directives:
@@ -126,4 +136,4 @@ properties:
         Id: Bandisoft.BandiView
         Source: winget
         Ensure: Present
-        Version: "7.25"
+        Version: "7.27"

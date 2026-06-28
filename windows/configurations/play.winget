@@ -28,3 +28,13 @@ properties:
         Id: Valve.Steam
         Source: winget
         Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installItch
+      directives:
+        description: Install Itch
+        allowPrerelease: true
+      settings:
+        Id: ItchIo.Itch
+        Source: winget
+        Ensure: Present
+        Version: "26.13.0"
