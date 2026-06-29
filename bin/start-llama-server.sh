@@ -3,6 +3,7 @@ set -eu
 
 CONFIG_DIR="$HOME/.config/llama.cpp"
 PORT=11434
+SLEEP_DUR=300
 
 show_help() {
     cat <<EOF
@@ -60,4 +61,5 @@ exec llama-server \
     --models-preset "$PRESET_PATH" \
     --port "$PORT" \
     --metrics \
-    --models-max 3
+    --models-max 3 \
+    --sleep-dur-seconds "$SLEEP_DUR"

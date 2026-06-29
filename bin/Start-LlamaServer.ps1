@@ -28,6 +28,7 @@ if ($Help) {
 
 $ConfigDir = Join-Path $HOME ".config\llama.cpp"
 $Port = 11434
+$SleepDur = 300
 
 if (-not (Test-Path $ConfigDir)) {
     Write-Error "Configuration directory not found: $ConfigDir"
@@ -70,4 +71,5 @@ Write-Host "Starting llama-server with: $(Split-Path $PresetPath -Leaf)" -Foregr
     --host "0.0.0.0" `
     --port "$Port" `
     --metrics `
-    --models-max 3
+    --models-max 3 `
+    --sleep-idle-seconds "$SleepDur"
