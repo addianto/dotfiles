@@ -5,7 +5,7 @@
       "args": [
         "dlx",
         "-y",
-        "chrome-devtools-mcp@1.4.0",
+        "chrome-devtools-mcp@1.6.0",
         "--no-usage-statistics"
       ],
       "env": {
@@ -30,6 +30,12 @@
       "headers": {
         "Authorization": "Bearer $GITHUB_PERSONAL_ACCESS_TOKEN"
       }
+    },
+    "markitdown": {
+      "command": "uvx",
+      "args": [
+        "markitdown-mcp==0.0.1a4"
+      ]
     },
     "nanogpt": {
       "command": "pnpm",
