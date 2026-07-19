@@ -70,3 +70,13 @@ properties:
         Source: winget
         Ensure: Present
         Version: "1.1.4"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installCherryStudio
+      directives:
+        description: Install Cherry Studio
+        allowPrerelease: true
+      settings:
+        Id: kangfenmao.CherryStudio
+        Source: winget
+        Ensure: Present
+        Version: "1.9.12"
