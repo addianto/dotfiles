@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "29.18.0"
+        Version: "29.31.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -81,7 +81,7 @@ properties:
         Id: eloston.ungoogled-chromium
         Source: winget
         Ensure: Present
-        Version: "149.0.7827.155"
+        Version: "150.0.7871.46"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVale
       directives:
@@ -111,7 +111,7 @@ properties:
         Id: DigitalScholar.Zotero
         Source: winget
         Ensure: Present
-        Version: "9.0.5"
+        Version: "9.0.6"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSSHFS
       directives:
@@ -190,6 +190,7 @@ properties:
         Id: SparkLabs.Viscosity
         Source: winget
         Ensure: Present
+        Version: "1.13.0.1877"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMicrosoftPCManager
       directives:
