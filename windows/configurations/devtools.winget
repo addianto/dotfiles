@@ -271,14 +271,15 @@ properties:
         Ensure: Absent
         Version: "0.16.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallVisualStudioCode
+      id: installVisualStudioCode
       directives:
-        description: Uninstall Visual Studio Code
+        description: Install Visual Studio Code
         allowPrerelease: true
       settings:
         Id: Microsoft.VisualStudioCode
         Source: winget
-        Ensure: Absent
+        Ensure: Present
+        Version: "1.126.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installTreeSitterCli
       directives:
