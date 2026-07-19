@@ -88,6 +88,7 @@ properties:
         Id: th-ch.YouTubeMusic
         Source: winget
         Ensure: Present
+        Version: "3.12.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFFmpeg
       directives:
@@ -136,4 +137,4 @@ properties:
         Id: Bandisoft.BandiView
         Source: winget
         Ensure: Present
-        Version: "7.27"
+        Version: "7.28"

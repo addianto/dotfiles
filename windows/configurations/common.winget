@@ -71,7 +71,7 @@ properties:
         Id: LibreWolf.LibreWolf
         Source: winget
         Ensure: Present
-        Version: "152.0.2-1"
+        Version: "152.0.6-1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installUngoogledChromium
       directives:
@@ -180,7 +180,7 @@ properties:
         Id: qarmin.czkawka.cli
         Source: winget
         Ensure: Present
-        Version: "11.0.1"
+        Version: "12.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installViscosity
       directives:
