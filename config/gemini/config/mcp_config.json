@@ -12,13 +12,6 @@
         "CHROME_DEVTOOLS_MCP_NO_USAGE_STATISTICS": "True"
       }
     },
-    "dart-mcp-server": {
-      "command": "dart",
-      "args": [
-        "mcp-server",
-        "--disable-analytics"
-      ]
-    },
     "context7": {
       "serverUrl": "https://mcp.context7.com/mcp",
       "headers": {
