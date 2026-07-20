@@ -50,6 +50,7 @@ properties:
         Id: Codeium.Windsurf
         Source: winget
         Ensure: Absent
+    # TODO Replace Witsy with Cherry Studio
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWitsy
       directives:

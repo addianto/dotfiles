@@ -141,7 +141,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.100.1"
+        Version: "0.100.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWinSCP
       directives:
@@ -200,6 +200,16 @@ properties:
         Id: 9PM860492SZD
         Source: msstore
         Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installTeraCopy
+      directives:
+        description: Install TeraCopy
+        allowPrerelease: true
+      settings:
+        Id: Codesector.TeraCopy
+        Source: winget
+        Ensure: Present
+        Version: "4.0.3.2"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys
