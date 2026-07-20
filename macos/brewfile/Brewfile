@@ -28,6 +28,7 @@ cask "discord"
 cask "joplin"
 cask "librewolf", args: { no_quarantine: true }
 cask "obs"
+# pear-desktop is YouTube Music client
 cask "pear-desktop", args: { no_quarantine: true }
 cask "scroll-reverser"
 cask "syncthing-app", args: { no_quarantine: true }
@@ -95,6 +96,7 @@ mas "Slack", id: 803453959
 ## AI/LLM
 cask "antigravity-cli"
 cask "llama.cpp"
+# TODO Replace Witsy with Cherry Studio / Fluent
 cask "witsy"
 mas "Draw Things", id: 6444050820
 
