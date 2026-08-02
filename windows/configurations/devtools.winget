@@ -55,6 +55,26 @@ properties:
         Ensure: Present
         Version: "0.16.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installGpg4win
+      directives:
+        description: Install Gpg4win
+        allowPrerelease: true
+      settings:
+        Id: GnuPG.Gpg4win
+        Source: winget
+        Ensure: Present
+        Version: "5.0.2"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installCoreutils
+      directives:
+        description: Install Coreutils for Windows
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.Coreutils
+        Source: winget
+        Ensure: Present
+        Version: "2026.6.16"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVSCodium
       directives:
         description: Install VSCodium
@@ -73,7 +93,7 @@ properties:
         Id: JetBrains.Toolbox
         Source: winget
         Ensure: Present
-        Version: "3.6.2.0"
+        Version: "3.6.3.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShellcheck
       directives:
@@ -93,7 +113,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "11.15.0"
+        Version: "11.15.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -142,7 +162,7 @@ properties:
         Id: DBeaver.DBeaver.Community
         Source: winget
         Ensure: Present
-        Version: "26.1.2"
+        Version: "26.1.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallGoogleCloudSDK
       directives:
@@ -191,7 +211,7 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.12.4"
+        Version: "1.12.5"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setRustupHome
       directives:
@@ -222,7 +242,7 @@ properties:
         Id: Bruno.Bruno
         Source: winget
         Ensure: Present
-        Version: "3.5.2"
+        Version: "4.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installAlacritty
       directives:
@@ -270,7 +290,6 @@ properties:
         Id: Microsoft.SQLServerManagementStudio.22
         Source: winget
         Ensure: Absent
-        Version: "0.16.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVisualStudioCode
       directives:
@@ -280,7 +299,7 @@ properties:
         Id: Microsoft.VisualStudioCode
         Source: winget
         Ensure: Present
-        Version: "1.126.0"
+        Version: "1.130.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installTreeSitterCli
       directives:

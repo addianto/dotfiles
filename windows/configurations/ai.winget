@@ -50,17 +50,15 @@ properties:
         Id: Codeium.Windsurf
         Source: winget
         Ensure: Absent
-    # TODO Replace Witsy with Cherry Studio
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installWitsy
+      id: uninstallWitsy
       directives:
-        description: Install Witsy
+        description: Uninstall Witsy
         allowPrerelease: true
       settings:
         Id: KochavaStudios.Witsy
         Source: winget
-        Ensure: Present
-        Version: "3.5.2"
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installAntigravityCLI
       directives:
@@ -70,7 +68,7 @@ properties:
         Id: Google.AntigravityCLI
         Source: winget
         Ensure: Present
-        Version: "1.1.4"
+        Version: "1.1.9"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCherryStudio
       directives:

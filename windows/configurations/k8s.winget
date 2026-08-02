@@ -38,7 +38,7 @@ properties:
         Id: RedHat.Podman-Desktop
         Source: winget
         Ensure: Present
-        Version: "1.28.2"
+        Version: "1.29.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKubectl
       directives:
@@ -48,7 +48,7 @@ properties:
         Id: Kubernetes.kubectl
         Source: winget
         Ensure: Present
-        Version: "1.36.2"
+        Version: "1.36.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMinikube
       dependsOn:
