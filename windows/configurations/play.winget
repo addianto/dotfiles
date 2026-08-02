@@ -37,4 +37,4 @@ properties:
         Id: ItchIo.Itch
         Source: winget
         Ensure: Present
-        Version: "26.15.0"
+        Version: "26.17.0"
