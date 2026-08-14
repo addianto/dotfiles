@@ -55,3 +55,7 @@
     difft = difftool
     unstage = reset HEAD
     uncommit = reset --soft HEAD^
+[lfs "customtransfer.xet"]
+	path = git-xet
+	args = transfer
+	concurrent = true
