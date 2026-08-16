@@ -322,3 +322,13 @@ properties:
         Source: winget
         Ensure: Present
         Version: "0.26.11"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPsmux
+      directives:
+        description: Install psmux
+        allowPrerelease: true
+      settings:
+        Id: marlocarlo.psmux
+        Source: winget
+        Ensure: Present
+        Version: "3.3.7"
