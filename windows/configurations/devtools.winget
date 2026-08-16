@@ -33,6 +33,18 @@ properties:
         Ensure: Present
         Version: "2.55.0.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installGitXet
+      dependsOn:
+        - installGit
+      directives:
+        description: Install Git-Xet
+        allowPrerelease: true
+      settings:
+        Id: HuggingFace.Git-Xet
+        Source: winget
+        Ensure: Present
+        Version: "0.2.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovim
       directives:
         description: Install Neovim
