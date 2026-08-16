@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "30.1.1"
+        Version: "30.6.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -71,7 +71,7 @@ properties:
         Id: LibreWolf.LibreWolf
         Source: winget
         Ensure: Present
-        Version: "153.0.1-1"
+        Version: "153.0.3-1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installUngoogledChromium
       directives:
@@ -81,7 +81,7 @@ properties:
         Id: eloston.ungoogled-chromium
         Source: winget
         Ensure: Present
-        Version: "150.0.7871.186"
+        Version: "151.0.7922.71"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVale
       directives:
@@ -190,7 +190,7 @@ properties:
         Id: SparkLabs.Viscosity
         Source: winget
         Ensure: Present
-        Version: "1.13.0.1877"
+        Version: "1.13.1.1884"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMicrosoftPCManager
       directives:
