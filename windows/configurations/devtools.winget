@@ -105,7 +105,7 @@ properties:
         Id: JetBrains.Toolbox
         Source: winget
         Ensure: Present
-        Version: "3.6.4.0"
+        Version: "3.7.0.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShellcheck
       directives:
@@ -174,7 +174,7 @@ properties:
         Id: DBeaver.DBeaver.Community
         Source: winget
         Ensure: Present
-        Version: "26.1.4"
+        Version: "26.1.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallGoogleCloudSDK
       directives:
