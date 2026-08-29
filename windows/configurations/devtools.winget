@@ -53,7 +53,7 @@ properties:
         Id: Neovim.Neovim
         Source: winget
         Ensure: Present
-        Version: "0.12.4"
+        Version: "0.12.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovide
       dependsOn:
@@ -105,7 +105,7 @@ properties:
         Id: JetBrains.Toolbox
         Source: winget
         Ensure: Present
-        Version: "3.7.0.0"
+        Version: "3.7.2.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShellcheck
       directives:
@@ -125,7 +125,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "11.22.0"
+        Version: "11.23.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -203,7 +203,7 @@ properties:
         Id: sharkdp.fd
         Source: winget
         Ensure: Present
-        Version: "10.4.2"
+        Version: "10.5.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installRufus
       directives:
@@ -254,7 +254,7 @@ properties:
         Id: Bruno.Bruno
         Source: winget
         Ensure: Present
-        Version: "4.0.0"
+        Version: "4.1.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installAlacritty
       directives:
@@ -311,7 +311,7 @@ properties:
         Id: Microsoft.VisualStudioCode
         Source: winget
         Ensure: Present
-        Version: "1.130.0"
+        Version: "1.135.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installTreeSitterCli
       directives:
@@ -321,7 +321,7 @@ properties:
         Id: tree-sitter.tree-sitter-cli
         Source: winget
         Ensure: Present
-        Version: "0.26.11"
+        Version: "0.26.12"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPsmux
       directives:
@@ -331,4 +331,4 @@ properties:
         Id: marlocarlo.psmux
         Source: winget
         Ensure: Present
-        Version: "3.3.7"
+        Version: "3.3.8"
