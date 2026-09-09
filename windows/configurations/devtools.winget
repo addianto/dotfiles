@@ -85,7 +85,7 @@ properties:
         Id: Microsoft.Coreutils
         Source: winget
         Ensure: Present
-        Version: "2026.6.16"
+        Version: "2026.9.3"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVSCodium
       directives:
@@ -125,7 +125,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "11.23.0"
+        Version: "12.3.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -174,7 +174,7 @@ properties:
         Id: DBeaver.DBeaver.Community
         Source: winget
         Ensure: Present
-        Version: "26.1.5"
+        Version: "26.2.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallGoogleCloudSDK
       directives:
@@ -193,7 +193,7 @@ properties:
         Id: Microsoft.AzureCLI
         Source: winget
         Ensure: Present
-        Version: "2.89.1"
+        Version: "2.90.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFd
       directives:
@@ -244,7 +244,7 @@ properties:
         Id: Rustlang.Rustup
         Source: winget
         Ensure: Present
-        Version: "1.29.0"
+        Version: "1.29.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installBruno
       directives:
@@ -311,7 +311,7 @@ properties:
         Id: Microsoft.VisualStudioCode
         Source: winget
         Ensure: Present
-        Version: "1.135.0"
+        Version: "1.136.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installTreeSitterCli
       directives:
