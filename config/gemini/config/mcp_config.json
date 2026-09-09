@@ -24,18 +24,12 @@
         "Authorization": "Bearer $GITHUB_PERSONAL_ACCESS_TOKEN"
       }
     },
-    "markitdown": {
-      "command": "uvx",
-      "args": [
-        "markitdown-mcp==0.0.1a4"
-      ]
-    },
     "nanogpt": {
       "command": "pnpm",
       "args": [
         "dlx",
         "-y",
-        "@nanogpt/mcp@1.4.0"
+        "@nanogpt/mcp@1.4.1"
       ],
       "env": {
         "NANOGPT_API_KEY": "$NANOGPT_API_KEY"
