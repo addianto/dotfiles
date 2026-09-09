@@ -19,7 +19,7 @@ properties:
         Id: Microsoft.PowerShell
         Source: winget
         Ensure: Present
-        Version: "7.6.4.0"
+        Version: "7.6.6.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOhMyPosh
       directives:
@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "30.9.0"
+        Version: "31.2.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -71,7 +71,7 @@ properties:
         Id: LibreWolf.LibreWolf
         Source: winget
         Ensure: Present
-        Version: "154.0.1-3"
+        Version: "155.0.1-1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installUngoogledChromium
       directives:
@@ -131,7 +131,7 @@ properties:
         Id: Joplin.Joplin
         Source: winget
         Ensure: Present
-        Version: "3.6.16"
+        Version: "3.7.16"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerToys
       directives:
@@ -161,7 +161,7 @@ properties:
         Id: OpenVPNTechnologies.OpenVPN
         Source: winget
         Ensure: Present
-        Version: "2.7.601"
+        Version: "2.7.701"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCPUZ
       directives:
@@ -171,7 +171,7 @@ properties:
         Id: CPUID.CPU-Z
         Source: winget
         Ensure: Present
-        Version: "2.21"
+        Version: "3.01"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCzkawka
       directives:
@@ -183,15 +183,14 @@ properties:
         Ensure: Present
         Version: "12.0.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installViscosity
+      id: uninstallViscosity
       directives:
-        description: Install Viscosity
+        description: Uninstall Viscosity
         allowPrerelease: true
       settings:
         Id: SparkLabs.Viscosity
         Source: winget
-        Ensure: Present
-        Version: "1.13.1.1884"
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMicrosoftPCManager
       directives:
