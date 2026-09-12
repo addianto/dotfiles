@@ -99,7 +99,7 @@ properties:
         Id: Gyan.FFmpeg
         Source: winget
         Ensure: Present
-        Version: "9.0"
+        Version: "9.0.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHaruna
       directives:

@@ -29,7 +29,7 @@ properties:
         Id: astral-sh.uv
         Source: winget
         Ensure: Present
-        Version: "0.12.7"
+        Version: "0.12.13"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installRuff
       directives:
@@ -39,4 +39,4 @@ properties:
         Id: astral-sh.ruff
         Source: winget
         Ensure: Present
-        Version: "0.16.2"
+        Version: "0.16.7"

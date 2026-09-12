@@ -223,7 +223,7 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.12.5"
+        Version: "1.12.6"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setRustupHome
       directives:
@@ -311,7 +311,7 @@ properties:
         Id: Microsoft.VisualStudioCode
         Source: winget
         Ensure: Present
-        Version: "1.136.2"
+        Version: "1.137.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installTreeSitterCli
       directives:

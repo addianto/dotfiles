@@ -131,7 +131,7 @@ properties:
         Id: Joplin.Joplin
         Source: winget
         Ensure: Present
-        Version: "3.7.16"
+        Version: "3.7.18"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerToys
       directives:
@@ -181,7 +181,7 @@ properties:
         Id: qarmin.czkawka.cli
         Source: winget
         Ensure: Present
-        Version: "12.0.1"
+        Version: "12.0.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallViscosity
       directives:

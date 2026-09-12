@@ -64,4 +64,4 @@ properties:
         Id: Mozilla.Thunderbird.en-GB
         Source: winget
         Ensure: Present
-        Version: "153.0.2"
+        Version: "155.0.1"
