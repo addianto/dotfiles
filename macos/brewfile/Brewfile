@@ -44,7 +44,6 @@ mas "WireGuard", id: 1451685025
 tap "leoafarias/fvm"
 tap "oven-sh/bun"
 
-brew "azure-cli"
 brew "bun"
 brew "difftastic"
 brew "fd"
@@ -69,6 +68,7 @@ brew "tree-sitter-cli"
 brew "trivy"
 brew "uv"
 brew "scorecard"
+cask "azure-cli"
 cask "mactex-no-gui"
 cask "dbeaver-community"
 cask "jetbrains-toolbox"
@@ -97,8 +97,6 @@ mas "Slack", id: 803453959
 ## AI/LLM
 cask "antigravity-cli"
 cask "llama.cpp"
-# TODO Replace Witsy with Cherry Studio / Fluent
-cask "witsy"
 mas "Draw Things", id: 6444050820
 
 ## Fonts
