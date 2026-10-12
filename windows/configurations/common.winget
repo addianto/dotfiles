@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "31.2.1"
+        Version: "31.7.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -41,7 +41,7 @@ properties:
         Id: Microsoft.WindowsTerminal
         Source: winget
         Ensure: Present
-        Version: "1.24.11911.0"
+        Version: "1.25.2733.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
@@ -71,7 +71,7 @@ properties:
         Id: LibreWolf.LibreWolf
         Source: winget
         Ensure: Present
-        Version: "155.0.1-1"
+        Version: "157.0.1-1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installUngoogledChromium
       directives:
@@ -81,7 +81,7 @@ properties:
         Id: eloston.ungoogled-chromium
         Source: winget
         Ensure: Present
-        Version: "151.0.7922.173"
+        Version: "153.0.8010.52"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVale
       directives:
@@ -91,7 +91,7 @@ properties:
         Id: errata-ai.Vale
         Source: winget
         Ensure: Present
-        Version: "3.17.1"
+        Version: "3.24.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNanaZip
       directives:
@@ -101,7 +101,7 @@ properties:
         Id: M2Team.NanaZip
         Source: winget
         Ensure: Present
-        Version: "6.5.1767.0"
+        Version: "7.0.1843.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installZotero
       directives:
@@ -111,7 +111,7 @@ properties:
         Id: DigitalScholar.Zotero
         Source: winget
         Ensure: Present
-        Version: "10.0.1"
+        Version: "10.0.6"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSSHFS
       directives:
@@ -131,7 +131,7 @@ properties:
         Id: Joplin.Joplin
         Source: winget
         Ensure: Present
-        Version: "3.7.18"
+        Version: "3.7.21"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerToys
       directives:
@@ -151,7 +151,7 @@ properties:
         Id: WinSCP.WinSCP
         Source: winget
         Ensure: Present
-        Version: "6.5.6"
+        Version: "6.5.7"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOpenVPN
       directives:
@@ -209,7 +209,7 @@ properties:
         Id: Codesector.TeraCopy
         Source: winget
         Ensure: Present
-        Version: "4.0.3.2"
+        Version: "4.0.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installBulkCrapUninstaller
       directives:
@@ -219,7 +219,7 @@ properties:
         Id: Klocman.BulkCrapUninstaller
         Source: winget
         Ensure: Present
-        Version: "6.2"
+        Version: "6.3.0.0"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys

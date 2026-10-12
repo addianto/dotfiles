@@ -18,22 +18,22 @@ properties:
       settings:
         # TODO: Figure out how to specify the path via environment variable.
         #       The related DSC resource currently does not support this: https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/main/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.psm1
-        DestinationPath: "C:\\Temp\\llama_b10809.zip"
-        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b10809/llama-b10809-bin-win-cuda-13.3-x64.zip
+        DestinationPath: "C:\\Temp\\llama_b11565.zip"
+        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b11565/llama-b11565-bin-win-cuda-13.4-x64.zip
         MatchSource: true
         ChecksumType: SHA256
-        Checksum: 790a89e7c40049b8b1cd1a2565abe1d40cfc4e18843cdefa77ed2ce52d6a7b2d
+        Checksum: 8293cc5ee4762576f6f5ac70e5cfae3928b5689870410daa4f83acd56c16b723
     - resource: xPSDesiredStateConfiguration/xRemoteFile
       id: downloadCUDART13
       directives:
-        description: Download CUDA Runtime 13
+        description: Download CUDA Runtime 13.4
         allowPrerelease: true
       settings:
-        DestinationPath: "C:\\Temp\\cudart_b10809.zip"
-        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b10809/cudart-llama-bin-win-cuda-13.3-x64.zip
+        DestinationPath: "C:\\Temp\\cudart_b11565.zip"
+        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b11565/cudart-llama-bin-win-cuda-13.4-x64.zip
         MatchSource: true
         ChecksumType: SHA256
-        Checksum: 1462a050eb4c684921ba51dcc4cc488a036674c3e73e9945ee705b854808d03e
+        Checksum: 738f8c251ac22b70c3ae6f83a10cf222725df0395246a2cf58f32bdb85fbe668
     # TODO: Automate llama.cpp installation using DSC resource(s)
     #       1. Extract the archive files into ~/.local/opt/llama.cpp
     #       2. Create a symbolic link to the llama.cpp executable in ~/.local/bin

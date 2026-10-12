@@ -19,7 +19,7 @@ properties:
         Id: Wilfred.difftastic
         Source: winget
         Ensure: Present
-        Version: "0.70.0"
+        Version: "0.71.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGit
       dependsOn:
@@ -31,7 +31,7 @@ properties:
         Id: Git.Git
         Source: winget
         Ensure: Present
-        Version: "2.55.0.3"
+        Version: "2.55.0.5"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGitXet
       dependsOn:
@@ -53,7 +53,7 @@ properties:
         Id: Neovim.Neovim
         Source: winget
         Ensure: Present
-        Version: "0.12.5"
+        Version: "0.12.6"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovide
       dependsOn:
@@ -75,7 +75,7 @@ properties:
         Id: GnuPG.Gpg4win
         Source: winget
         Ensure: Present
-        Version: "5.1.0"
+        Version: "5.1.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCoreutils
       directives:
@@ -105,7 +105,7 @@ properties:
         Id: JetBrains.Toolbox
         Source: winget
         Ensure: Present
-        Version: "3.7.2.0"
+        Version: "3.8.1.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShellcheck
       directives:
@@ -125,7 +125,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "12.3.4"
+        Version: "12.11.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -135,7 +135,7 @@ properties:
         Id: hadolint.hadolint
         Source: winget
         Ensure: Present
-        Version: "2.14.0"
+        Version: "2.15.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installJq
       directives:
@@ -193,7 +193,7 @@ properties:
         Id: Microsoft.AzureCLI
         Source: winget
         Ensure: Present
-        Version: "2.90.0"
+        Version: "2.91.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFd
       directives:
@@ -223,7 +223,7 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.12.6"
+        Version: "1.13.0"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setRustupHome
       directives:
@@ -254,7 +254,7 @@ properties:
         Id: Bruno.Bruno
         Source: winget
         Ensure: Present
-        Version: "4.1.0"
+        Version: "4.2.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installAlacritty
       directives:
@@ -311,7 +311,7 @@ properties:
         Id: Microsoft.VisualStudioCode
         Source: winget
         Ensure: Present
-        Version: "1.137.0"
+        Version: "1.141.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installTreeSitterCli
       directives:
@@ -321,7 +321,7 @@ properties:
         Id: tree-sitter.tree-sitter-cli
         Source: winget
         Ensure: Present
-        Version: "0.26.12"
+        Version: "0.27.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPsmux
       directives:
