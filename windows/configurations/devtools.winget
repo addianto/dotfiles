@@ -332,3 +332,13 @@ properties:
         Source: winget
         Ensure: Present
         Version: "3.3.8"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installCUDATookit
+      directives:
+        description: Install CUDA Toolkit
+        allowPrerelease: true
+      settings:
+        Id: Nvidia.CUDA
+        Source: winget
+        Ensure: Present
+        Version: "13.4"

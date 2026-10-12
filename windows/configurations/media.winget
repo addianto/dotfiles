@@ -119,7 +119,7 @@ properties:
         Id: PeterPawlowski.foobar2000
         Source: winget
         Ensure: Present
-        Version: "2.25.10"
+        Version: "2.26.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallHoneyview
       directives:
@@ -139,3 +139,13 @@ properties:
         Source: winget
         Ensure: Present
         Version: "8.02"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installLAME
+      directives:
+        description: Install LAME
+        allowPrerelease: true
+      settings:
+        Id: LAME.LAME
+        Source: winget
+        Ensure: Present
+        Version: "4.0"
