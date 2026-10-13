@@ -1,24 +1,19 @@
-# tmux Configuration
-
-On Mac OS and Linux-based system, use `tmux` available on package manager.
-On Windows, use `psmux` instead. The config mostly the same and compatible with `tmux`.
+# tmux/psmux Configuration
 
 ## Setup
 
-> Mac OS / Linux-based system
+On a Mac OS or Linux-based system, create the configuration directory and enable the configuration via symbolic link:
 
 ```shell
 mkdir -p $HOME/.config
-cd $HOME/.config
-ln -s <dotfiles>/config/tmux
+ln -s <dotfiles>/config/tmux $HOME/.config/tmux
 ```
 
-> Windows (PowerShell)
+Similarly, on Windows (PowerShell):
 
 ```pwsh
-mkdir -p $HOME/.config/psmux
-cd $HOME/.config/psmux
-New-Item -Type SymbolicLink -Target <dotfiles>/config/tmux/tmux.conf -Path psmux.conf
+mkdir -p $HOME/.config
+New-Item -Type SymbolicLink -Target <dotfiles>/config/tmux -Path $HOME/.config/psmux
 ```
 
 ## References
