@@ -10,56 +10,15 @@ properties:
       settings:
         MinVersion: "10.0.19041"
   resources:
-    - resource: xPSDesiredStateConfiguration/xEnvironment
-      id: removeOllamaFlashAttention
-      directives:
-        description: Remove OLLAMA_FLASH_ATTENTION environment variable
-        allowPrerelease: true
-      settings:
-        Name: OLLAMA_FLASH_ATTENTION
-        Value: 1
-        Ensure: Absent
-        Path: false
-        Target: Process
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallOllama
+      id: uninstallWitsy
       directives:
-        description: Uninstall Ollama
-        allowPrerelease: true
-      settings:
-        Id: Ollama.Ollama
-        Source: winget
-        Ensure: Absent
-    - resource: xPSDesiredStateConfiguration/xEnvironment
-      id: setDisableTelemetry
-      directives:
-        description: Set DISABLE_TELEMETRY environment variable
-        allowPrerelease: true
-      settings:
-        Name: DISABLE_TELEMETRY
-        Value: true
-        Ensure: Present
-        Path: false
-        Target: Process
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallWindsurf
-      directives:
-        description: Uninstall Windsurf
-        allowPrerelease: true
-      settings:
-        Id: Codeium.Windsurf
-        Source: winget
-        Ensure: Absent
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installWitsy
-      directives:
-        description: Install Witsy
+        description: Uninstall Witsy
         allowPrerelease: true
       settings:
         Id: KochavaStudios.Witsy
         Source: winget
-        Ensure: Present
-        Version: "3.5.2"
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installAntigravityCLI
       directives:
@@ -69,4 +28,14 @@ properties:
         Id: Google.AntigravityCLI
         Source: winget
         Ensure: Present
-        Version: "1.0.13"
+        Version: "1.3.3"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installCherryStudio
+      directives:
+        description: Install Cherry Studio
+        allowPrerelease: true
+      settings:
+        Id: kangfenmao.CherryStudio
+        Source: winget
+        Ensure: Present
+        Version: "2.1.6"

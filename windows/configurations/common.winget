@@ -19,7 +19,7 @@ properties:
         Id: Microsoft.PowerShell
         Source: winget
         Ensure: Present
-        Version: "7.6.2.0"
+        Version: "7.6.6.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOhMyPosh
       directives:
@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "29.18.0"
+        Version: "31.8.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -41,7 +41,7 @@ properties:
         Id: Microsoft.WindowsTerminal
         Source: winget
         Ensure: Present
-        Version: "1.24.11321.0"
+        Version: "1.25.2733.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSumatraPDF
       directives:
@@ -71,7 +71,7 @@ properties:
         Id: LibreWolf.LibreWolf
         Source: winget
         Ensure: Present
-        Version: "152.0.2-1"
+        Version: "157.0.1-1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installUngoogledChromium
       directives:
@@ -81,7 +81,7 @@ properties:
         Id: eloston.ungoogled-chromium
         Source: winget
         Ensure: Present
-        Version: "149.0.7827.155"
+        Version: "153.0.8010.52"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVale
       directives:
@@ -91,7 +91,7 @@ properties:
         Id: errata-ai.Vale
         Source: winget
         Ensure: Present
-        Version: "3.15.1"
+        Version: "3.24.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNanaZip
       directives:
@@ -101,7 +101,7 @@ properties:
         Id: M2Team.NanaZip
         Source: winget
         Ensure: Present
-        Version: "6.5.1750.0"
+        Version: "7.0.1843.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installZotero
       directives:
@@ -111,7 +111,7 @@ properties:
         Id: DigitalScholar.Zotero
         Source: winget
         Ensure: Present
-        Version: "9.0.5"
+        Version: "10.0.6"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSSHFS
       directives:
@@ -131,7 +131,7 @@ properties:
         Id: Joplin.Joplin
         Source: winget
         Ensure: Present
-        Version: "3.6.15"
+        Version: "3.7.21"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerToys
       directives:
@@ -141,7 +141,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.100.1"
+        Version: "0.101.2362.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWinSCP
       directives:
@@ -151,16 +151,27 @@ properties:
         Id: WinSCP.WinSCP
         Source: winget
         Ensure: Present
-        Version: "6.5.6"
+        Version: "6.5.7"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallOpenVPN
+      id: installOpenVPN
       directives:
-        description: Uninstall OpenVPN
+        description: Install OpenVPN
         allowPrerelease: true
       settings:
         Id: OpenVPNTechnologies.OpenVPN
         Source: winget
-        Ensure: Absent
+        Ensure: Present
+        Version: "2.7.701"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installWireguard
+      directives:
+        description: Install WireGuard
+        allowPrerelease: true
+      settings:
+        Id: WireGuard.WireGuard
+        Source: winget
+        Ensure: Present
+        Version: "1.1.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCPUZ
       directives:
@@ -170,7 +181,7 @@ properties:
         Id: CPUID.CPU-Z
         Source: winget
         Ensure: Present
-        Version: "2.20"
+        Version: "3.01"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCzkawka
       directives:
@@ -180,16 +191,16 @@ properties:
         Id: qarmin.czkawka.cli
         Source: winget
         Ensure: Present
-        Version: "11.0.1"
+        Version: "12.0.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: installViscosity
+      id: uninstallViscosity
       directives:
-        description: Install Viscosity
+        description: Uninstall Viscosity
         allowPrerelease: true
       settings:
         Id: SparkLabs.Viscosity
         Source: winget
-        Ensure: Present
+        Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMicrosoftPCManager
       directives:
@@ -199,6 +210,26 @@ properties:
         Id: 9PM860492SZD
         Source: msstore
         Ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installTeraCopy
+      directives:
+        description: Install TeraCopy
+        allowPrerelease: true
+      settings:
+        Id: Codesector.TeraCopy
+        Source: winget
+        Ensure: Present
+        Version: "4.0.5"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installBulkCrapUninstaller
+      directives:
+        description: Install Bulk Crap Uninstaller
+        allowPrerelease: true
+      settings:
+        Id: Klocman.BulkCrapUninstaller
+        Source: winget
+        Ensure: Present
+        Version: "6.3.0.0"
     - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
       dependsOn:
         - installPowerToys

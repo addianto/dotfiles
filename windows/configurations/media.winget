@@ -19,6 +19,7 @@ properties:
         Id: dotPDN.PaintDotNet
         Source: winget
         Ensure: Present
+        Version: "5.1.12"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installKrita
       directives:
@@ -28,7 +29,7 @@ properties:
         Id: KDE.Krita
         Source: winget
         Ensure: Present
-        Version: "5.3.2.1"
+        Version: "5.3.4.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShotcut
       directives:
@@ -38,7 +39,7 @@ properties:
         Id: Meltytech.Shotcut
         Source: winget
         Ensure: Present
-        Version: "26.6.25"
+        Version: "26.9.27"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOBSStudio
       directives:
@@ -48,7 +49,7 @@ properties:
         Id: OBSProject.OBSStudio
         Source: winget
         Ensure: Present
-        Version: "32.1.2"
+        Version: "32.2.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installExactAudioCopy
       directives:
@@ -78,7 +79,7 @@ properties:
         Id: Wacom.WacomTabletDriver
         Source: winget
         Ensure: Present
-        Version: "6.4.13-4"
+        Version: "6.4.15-1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installYouTubeMusic
       directives:
@@ -88,6 +89,7 @@ properties:
         Id: th-ch.YouTubeMusic
         Source: winget
         Ensure: Present
+        Version: "3.12.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFFmpeg
       directives:
@@ -97,7 +99,7 @@ properties:
         Id: Gyan.FFmpeg
         Source: winget
         Ensure: Present
-        Version: "8.1.2"
+        Version: "9.0.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHaruna
       directives:
@@ -117,7 +119,7 @@ properties:
         Id: PeterPawlowski.foobar2000
         Source: winget
         Ensure: Present
-        Version: "2.25.10"
+        Version: "2.26.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallHoneyview
       directives:
@@ -136,4 +138,14 @@ properties:
         Id: Bandisoft.BandiView
         Source: winget
         Ensure: Present
-        Version: "7.27"
+        Version: "8.02"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installLAME
+      directives:
+        description: Install LAME
+        allowPrerelease: true
+      settings:
+        Id: LAME.LAME
+        Source: winget
+        Ensure: Present
+        Version: "4.0"

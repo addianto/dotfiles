@@ -28,6 +28,7 @@ cask "discord"
 cask "joplin"
 cask "librewolf", args: { no_quarantine: true }
 cask "obs"
+# pear-desktop is YouTube Music client
 cask "pear-desktop", args: { no_quarantine: true }
 cask "scroll-reverser"
 cask "syncthing-app", args: { no_quarantine: true }
@@ -43,11 +44,12 @@ mas "WireGuard", id: 1451685025
 tap "leoafarias/fvm"
 tap "oven-sh/bun"
 
-brew "azure-cli"
 brew "bun"
 brew "difftastic"
 brew "fd"
 brew "git"
+brew "git-lfs"
+brew "git-xet"
 brew "hadolint"
 brew "jq"
 brew "k6"
@@ -67,6 +69,7 @@ brew "tree-sitter-cli"
 brew "trivy"
 brew "uv"
 brew "scorecard"
+cask "azure-cli"
 cask "mactex-no-gui"
 cask "dbeaver-community"
 cask "jetbrains-toolbox"
@@ -95,7 +98,6 @@ mas "Slack", id: 803453959
 ## AI/LLM
 cask "antigravity-cli"
 cask "llama.cpp"
-cask "witsy"
 mas "Draw Things", id: 6444050820
 
 ## Fonts

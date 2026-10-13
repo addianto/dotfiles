@@ -19,7 +19,7 @@ properties:
         Id: Wilfred.difftastic
         Source: winget
         Ensure: Present
-        Version: "0.69.0"
+        Version: "0.71.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGit
       dependsOn:
@@ -31,7 +31,19 @@ properties:
         Id: Git.Git
         Source: winget
         Ensure: Present
-        Version: "2.54.0"
+        Version: "2.55.0.5"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installGitXet
+      dependsOn:
+        - installGit
+      directives:
+        description: Install Git-Xet
+        allowPrerelease: true
+      settings:
+        Id: HuggingFace.Git-Xet
+        Source: winget
+        Ensure: Present
+        Version: "0.2.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovim
       directives:
@@ -41,7 +53,7 @@ properties:
         Id: Neovim.Neovim
         Source: winget
         Ensure: Present
-        Version: "0.12.3"
+        Version: "0.12.6"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNeovide
       dependsOn:
@@ -55,6 +67,26 @@ properties:
         Ensure: Present
         Version: "0.16.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installGpg4win
+      directives:
+        description: Install Gpg4win
+        allowPrerelease: true
+      settings:
+        Id: GnuPG.Gpg4win
+        Source: winget
+        Ensure: Present
+        Version: "5.1.1"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installCoreutils
+      directives:
+        description: Install Coreutils for Windows
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.Coreutils
+        Source: winget
+        Ensure: Present
+        Version: "2026.9.3"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVSCodium
       directives:
         description: Install VSCodium
@@ -63,6 +95,7 @@ properties:
         Id: VSCodium.VSCodium
         Source: winget
         Ensure: Present
+        Version: "1.126.04524"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installJetBrainsToolbox
       directives:
@@ -72,7 +105,7 @@ properties:
         Id: JetBrains.Toolbox
         Source: winget
         Ensure: Present
-        Version: "3.5.0.0"
+        Version: "3.8.1.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShellcheck
       directives:
@@ -92,7 +125,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "11.3.0"
+        Version: "12.11.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -102,7 +135,7 @@ properties:
         Id: hadolint.hadolint
         Source: winget
         Ensure: Present
-        Version: "2.14.0"
+        Version: "2.15.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installJq
       directives:
@@ -122,7 +155,7 @@ properties:
         Id: GrafanaLabs.k6
         Source: winget
         Ensure: Present
-        Version: "2.0.0"
+        Version: "2.2.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallPostman
       directives:
@@ -141,7 +174,7 @@ properties:
         Id: DBeaver.DBeaver.Community
         Source: winget
         Ensure: Present
-        Version: "26.1.1"
+        Version: "26.2.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallGoogleCloudSDK
       directives:
@@ -160,7 +193,7 @@ properties:
         Id: Microsoft.AzureCLI
         Source: winget
         Ensure: Present
-        Version: "2.87.0"
+        Version: "2.91.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFd
       directives:
@@ -170,7 +203,7 @@ properties:
         Id: sharkdp.fd
         Source: winget
         Ensure: Present
-        Version: "10.4.2"
+        Version: "10.5.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installRufus
       directives:
@@ -180,7 +213,7 @@ properties:
         Id: Rufus.Rufus
         Source: winget
         Ensure: Present
-        Version: "4.14"
+        Version: "4.15"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installOpenTofu
       directives:
@@ -190,7 +223,7 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.12.2"
+        Version: "1.13.0"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setRustupHome
       directives:
@@ -211,7 +244,7 @@ properties:
         Id: Rustlang.Rustup
         Source: winget
         Ensure: Present
-        Version: "1.29.0"
+        Version: "1.29.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installBruno
       directives:
@@ -221,7 +254,7 @@ properties:
         Id: Bruno.Bruno
         Source: winget
         Ensure: Present
-        Version: "3.5.0"
+        Version: "4.2.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installAlacritty
       directives:
@@ -241,7 +274,7 @@ properties:
         Id: BurntSushi.ripgrep.MSVC
         Source: winget
         Ensure: Present
-        Version: "15.1.0"
+        Version: "15.2.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installMiKTeX
       directives:
@@ -269,16 +302,16 @@ properties:
         Id: Microsoft.SQLServerManagementStudio.22
         Source: winget
         Ensure: Absent
-        Version: "0.16.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uninstallVisualStudioCode
+      id: installVisualStudioCode
       directives:
-        description: Uninstall Visual Studio Code
+        description: Install Visual Studio Code
         allowPrerelease: true
       settings:
         Id: Microsoft.VisualStudioCode
         Source: winget
-        Ensure: Absent
+        Ensure: Present
+        Version: "1.141.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installTreeSitterCli
       directives:
@@ -288,4 +321,24 @@ properties:
         Id: tree-sitter.tree-sitter-cli
         Source: winget
         Ensure: Present
-        Version: "0.26.9"
+        Version: "0.27.0"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPsmux
+      directives:
+        description: Install psmux
+        allowPrerelease: true
+      settings:
+        Id: marlocarlo.psmux
+        Source: winget
+        Ensure: Present
+        Version: "3.3.8"
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installCUDATookit
+      directives:
+        description: Install CUDA Toolkit
+        allowPrerelease: true
+      settings:
+        Id: Nvidia.CUDA
+        Source: winget
+        Ensure: Present
+        Version: "13.4"

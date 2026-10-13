@@ -5,19 +5,12 @@
       "args": [
         "dlx",
         "-y",
-        "chrome-devtools-mcp@1.4.0",
+        "chrome-devtools-mcp@1.6.0",
         "--no-usage-statistics"
       ],
       "env": {
         "CHROME_DEVTOOLS_MCP_NO_USAGE_STATISTICS": "True"
       }
-    },
-    "dart-mcp-server": {
-      "command": "dart",
-      "args": [
-        "mcp-server",
-        "--disable-analytics"
-      ]
     },
     "context7": {
       "serverUrl": "https://mcp.context7.com/mcp",
@@ -36,7 +29,7 @@
       "args": [
         "dlx",
         "-y",
-        "@nanogpt/mcp@1.4.0"
+        "@nanogpt/mcp@1.4.1"
       ],
       "env": {
         "NANOGPT_API_KEY": "$NANOGPT_API_KEY"

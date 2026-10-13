@@ -1,0 +1,7 @@
+# Do not commit the actual mcp_config.json!
+# Antigravity CLI doesn't support using environment variables in JSON config file.
+# Thus, requiring me to hardcode the actual API keys.
+mcp_config.json
+
+# Do not ignore the example config file.
+!mcp_config.json.example
