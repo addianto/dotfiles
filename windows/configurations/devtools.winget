@@ -331,7 +331,7 @@ properties:
         Id: marlocarlo.psmux
         Source: winget
         Ensure: Present
-        Version: "3.3.8"
+        Version: "3.4.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCUDATookit
       directives:
