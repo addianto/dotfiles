@@ -2,7 +2,7 @@
 set -eu
 
 CONFIG_DIR="$HOME/.config/llama.cpp"
-PORT=11434
+PORT=9931
 IDLE_DURATION=300
 
 show_help() {
