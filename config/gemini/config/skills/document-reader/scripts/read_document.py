@@ -11,6 +11,7 @@ from pathlib import Path
 from markitdown import MarkItDown
 import pymupdf4llm
 
+
 def read_document(file_path: str) -> str:
     path = Path(file_path)
     if not path.exists():
@@ -26,6 +27,7 @@ def read_document(file_path: str) -> str:
         return result.text_content
     else:
         raise ValueError(f"Unsupported file format: {ext}")
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

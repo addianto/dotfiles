@@ -13,11 +13,11 @@ def main() -> None:
     command = [
         "pnpm",
         "dlx",
-        f"markdownlint-cli2=={MARKDOWNLINT_CLI2_VERSION}",
+        f"markdownlint-cli2@{MARKDOWNLINT_CLI2_VERSION}",
     ] + sys.argv[1:]
 
     try:
-        result = subprocess.run(command, check=True)
+        result = subprocess.run(command, check=False)
         sys.exit(result.returncode)
     except FileNotFoundError:
         print(
@@ -25,3 +25,7 @@ def main() -> None:
             file=sys.stderr,
         )
         sys.exit(127)
+
+
+if __name__ == "__main__":
+    main()
