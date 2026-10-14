@@ -27,7 +27,7 @@ if ($Help) {
 }
 
 $ConfigDir = Join-Path $HOME ".config\llama.cpp"
-$Port = 11434
+$Port = 9931
 $IdleDuration = 300
 
 if (-not (Test-Path $ConfigDir)) {

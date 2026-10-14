@@ -28,7 +28,7 @@ properties:
         Id: Google.AntigravityCLI
         Source: winget
         Ensure: Present
-        Version: "1.3.3"
+        Version: "1.3.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installCherryStudio
       directives:
