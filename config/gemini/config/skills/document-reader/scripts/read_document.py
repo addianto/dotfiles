@@ -5,11 +5,12 @@
 #   "pymupdf4llm==1.28.2",
 # ]
 # ///
-
+# SPDX-License-Identifier: MIT
 import sys
 from pathlib import Path
-from markitdown import MarkItDown
+
 import pymupdf4llm
+from markitdown import MarkItDown
 
 
 def read_document(file_path: str) -> str:
