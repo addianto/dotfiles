@@ -95,7 +95,7 @@ properties:
         Id: VSCodium.VSCodium
         Source: winget
         Ensure: Present
-        Version: "1.126.04524"
+        Version: "1.140.06880"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installJetBrainsToolbox
       directives:
@@ -223,7 +223,7 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.13.0"
+        Version: "1.13.1"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setRustupHome
       directives:
@@ -303,6 +303,15 @@ properties:
         Source: winget
         Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallOLEDBDriver
+      directives:
+        description: Uninstall Microsoft OLE DB Driver for SQL Server
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.SQLServer.OLEDBDriver
+        Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVisualStudioCode
       directives:
         description: Install Visual Studio Code
@@ -311,7 +320,7 @@ properties:
         Id: Microsoft.VisualStudioCode
         Source: winget
         Ensure: Present
-        Version: "1.141.0"
+        Version: "1.142.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installTreeSitterCli
       directives:
