@@ -10,6 +10,7 @@ properties:
       settings:
         MinVersion: "10.0.19041"
   resources:
+    # v0.7.0 assets are found at nightly build b11669
     - resource: xPSDesiredStateConfiguration/xRemoteFile
       id: downloadLlamaCpp
       directives:
@@ -18,19 +19,19 @@ properties:
       settings:
         # TODO: Figure out how to specify the path via environment variable.
         #       The related DSC resource currently does not support this: https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/main/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.psm1
-        DestinationPath: "C:\\Temp\\llama_b11565.zip"
-        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b11565/llama-b11565-bin-win-cuda-13.4-x64.zip
+        DestinationPath: "C:\\Temp\\llama_b11669.zip"
+        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-win-cuda-13.4-x64.zip
         MatchSource: true
         ChecksumType: SHA256
-        Checksum: 8293cc5ee4762576f6f5ac70e5cfae3928b5689870410daa4f83acd56c16b723
+        Checksum: 3b92d5c064f5032e603e531d3ec8961f3bd6613e5dfad047399a92dec8e95dbc
     - resource: xPSDesiredStateConfiguration/xRemoteFile
       id: downloadCUDART13
       directives:
         description: Download CUDA Runtime 13.4
         allowPrerelease: true
       settings:
-        DestinationPath: "C:\\Temp\\cudart_b11565.zip"
-        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b11565/cudart-llama-bin-win-cuda-13.4-x64.zip
+        DestinationPath: "C:\\Temp\\cudart_b11669.zip"
+        Uri: https://github.com/ggml-org/llama.cpp/releases/download/b11669/cudart-llama-bin-win-cuda-13.4-x64.zip
         MatchSource: true
         ChecksumType: SHA256
         Checksum: 738f8c251ac22b70c3ae6f83a10cf222725df0395246a2cf58f32bdb85fbe668
