@@ -29,7 +29,7 @@ properties:
         Id: JanDeDobbeleer.OhMyPosh
         Source: winget
         Ensure: Present
-        Version: "31.8.0"
+        Version: "31.9.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWindowsTerminal
       dependsOn:
@@ -71,7 +71,7 @@ properties:
         Id: LibreWolf.LibreWolf
         Source: winget
         Ensure: Present
-        Version: "158.0-1"
+        Version: "159.0-1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installUngoogledChromium
       directives:
@@ -81,7 +81,7 @@ properties:
         Id: eloston.ungoogled-chromium
         Source: winget
         Ensure: Present
-        Version: "153.0.8010.52"
+        Version: "155.0.8059.84"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVale
       directives:
@@ -91,7 +91,7 @@ properties:
         Id: errata-ai.Vale
         Source: winget
         Ensure: Present
-        Version: "3.24.0"
+        Version: "3.26.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installNanaZip
       directives:
@@ -111,7 +111,7 @@ properties:
         Id: DigitalScholar.Zotero
         Source: winget
         Ensure: Present
-        Version: "10.0.6"
+        Version: "10.0.7"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installSSHFS
       directives:
@@ -131,7 +131,7 @@ properties:
         Id: Joplin.Joplin
         Source: winget
         Ensure: Present
-        Version: "3.7.21"
+        Version: "3.7.22"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPowerToys
       directives:
@@ -141,7 +141,7 @@ properties:
         Id: Microsoft.PowerToys
         Source: winget
         Ensure: Present
-        Version: "0.102.2862.0"
+        Version: "0.102.3001"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installWinSCP
       directives:

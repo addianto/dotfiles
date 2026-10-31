@@ -19,7 +19,7 @@ properties:
         Id: Python.Python.3.14
         Source: winget
         Ensure: Present
-        Version: "3.14.7"
+        Version: "3.14.10"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installUv
       directives:
@@ -29,7 +29,7 @@ properties:
         Id: astral-sh.uv
         Source: winget
         Ensure: Present
-        Version: "0.13.1"
+        Version: "0.13.7"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installRuff
       directives:
