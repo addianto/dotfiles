@@ -19,7 +19,7 @@ properties:
         Id: Wilfred.difftastic
         Source: winget
         Ensure: Present
-        Version: "0.71.0"
+        Version: "0.72.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGit
       dependsOn:
@@ -31,7 +31,7 @@ properties:
         Id: Git.Git
         Source: winget
         Ensure: Present
-        Version: "2.55.0.5"
+        Version: "2.56.0.4"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGitXet
       dependsOn:
@@ -65,7 +65,7 @@ properties:
         Id: Neovide.Neovide
         Source: winget
         Ensure: Present
-        Version: "0.16.2"
+        Version: "0.17.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installGpg4win
       directives:
@@ -95,7 +95,7 @@ properties:
         Id: VSCodium.VSCodium
         Source: winget
         Ensure: Present
-        Version: "1.126.04524"
+        Version: "1.143.17232"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installJetBrainsToolbox
       directives:
@@ -105,7 +105,7 @@ properties:
         Id: JetBrains.Toolbox
         Source: winget
         Ensure: Present
-        Version: "3.8.1.0"
+        Version: "3.9.1.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installShellcheck
       directives:
@@ -125,7 +125,7 @@ properties:
         Id: pnpm.pnpm
         Source: winget
         Ensure: Present
-        Version: "12.11.2"
+        Version: "12.16.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installHadolint
       directives:
@@ -155,7 +155,7 @@ properties:
         Id: GrafanaLabs.k6
         Source: winget
         Ensure: Present
-        Version: "2.2.0"
+        Version: "2.3.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uninstallPostman
       directives:
@@ -193,7 +193,7 @@ properties:
         Id: Microsoft.AzureCLI
         Source: winget
         Ensure: Present
-        Version: "2.91.0"
+        Version: "2.92.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installFd
       directives:
@@ -223,7 +223,7 @@ properties:
         Id: OpenTofu.Tofu
         Source: winget
         Ensure: Present
-        Version: "1.13.0"
+        Version: "1.13.1"
     - resource: xPSDesiredStateConfiguration/xEnvironment
       id: setRustupHome
       directives:
@@ -244,7 +244,7 @@ properties:
         Id: Rustlang.Rustup
         Source: winget
         Ensure: Present
-        Version: "1.29.1"
+        Version: "1.29.2"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installBruno
       directives:
@@ -254,7 +254,7 @@ properties:
         Id: Bruno.Bruno
         Source: winget
         Ensure: Present
-        Version: "4.2.1"
+        Version: "4.3.0"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installAlacritty
       directives:
@@ -303,6 +303,15 @@ properties:
         Source: winget
         Ensure: Absent
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uninstallOLEDBDriver
+      directives:
+        description: Uninstall Microsoft OLE DB Driver for SQL Server
+        allowPrerelease: true
+      settings:
+        Id: Microsoft.SQLServer.OLEDBDriver
+        Source: winget
+        Ensure: Absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installVisualStudioCode
       directives:
         description: Install Visual Studio Code
@@ -311,7 +320,7 @@ properties:
         Id: Microsoft.VisualStudioCode
         Source: winget
         Ensure: Present
-        Version: "1.141.0"
+        Version: "1.143.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installTreeSitterCli
       directives:
@@ -321,7 +330,7 @@ properties:
         Id: tree-sitter.tree-sitter-cli
         Source: winget
         Ensure: Present
-        Version: "0.27.0"
+        Version: "0.27.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installPsmux
       directives:

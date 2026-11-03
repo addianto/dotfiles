@@ -28,7 +28,7 @@ if ($Help) {
 
 $ConfigDir = Join-Path $HOME ".config\llama.cpp"
 $Port = 9931
-$IdleDuration = 300
+$IdleDuration = 600
 
 if (-not (Test-Path $ConfigDir)) {
     Write-Error "Configuration directory not found: $ConfigDir"

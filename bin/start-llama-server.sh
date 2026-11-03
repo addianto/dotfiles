@@ -3,7 +3,7 @@ set -eu
 
 CONFIG_DIR="$HOME/.config/llama.cpp"
 PORT=9931
-IDLE_DURATION=300
+IDLE_DURATION=600
 
 show_help() {
     cat <<EOF

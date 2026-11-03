@@ -5,11 +5,13 @@
 #   "pymupdf4llm==1.28.2",
 # ]
 # ///
-
+# SPDX-License-Identifier: MIT
 import sys
 from pathlib import Path
-from markitdown import MarkItDown
+
 import pymupdf4llm
+from markitdown import MarkItDown
+
 
 def read_document(file_path: str) -> str:
     path = Path(file_path)
@@ -26,6 +28,7 @@ def read_document(file_path: str) -> str:
         return result.text_content
     else:
         raise ValueError(f"Unsupported file format: {ext}")
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

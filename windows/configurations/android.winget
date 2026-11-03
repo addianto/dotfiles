@@ -19,7 +19,7 @@ properties:
         Id: Genymobile.scrcpy
         Source: winget
         Ensure: Present
-        Version: "4.1"
+        Version: "5.0.1"
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: installAndroidCLI
       directives:
@@ -29,4 +29,4 @@ properties:
         Id: Google.AndroidCLI
         Source: winget
         Ensure: Present
-        Version: "1.0.16500706"
+        Version: "1.1.16717390"
